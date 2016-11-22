@@ -21845,7 +21845,7 @@
 			"name" : "Fleet Commander",
 			"text" : "One ship in your fleet may have a 2nd Captain assigned to it. That ship may use both of its Captain's Abilitys as normal throughout the game.\n\nThe overall Captain Skill Number of the ship is equal to the highest Captain Skill of its Two Captains plus 1. \n\nIn addition, the ship to which the 2nd Captain is assigned gains +1 to either its Shield or Hull value (max 6 Hull). This decision must be made at the start of the game during the Gather Forces step and cannot be changed for the remainder of the game.",
 			"cost" : 5,
-			"showShipResourceSlot" : true
+			"showShipResourceSlot" : false
 		}, {	
 			"type" : "resource",
 			"id" : "auxiliary_power",
@@ -21853,7 +21853,7 @@
 			"name" : "Auxiliary Power",
 			"text" : "At the start od the battle, place 5 Auxiliary Power Tokens on top of this card\n\nOnce per round, one ship in your fleet may use one of the following abilities.\n\n1. Roll 1 extra attack or defense die, OR\n\n2. Place 1 Evade Token beside your ship, even if there was one already there, OR\n\n3. Repair 1 Shield Token.\n\nIf you use any of their abilities, remove one Auxiliary Power Token from this card beside the ship that used this ability. Discard this card when there no more Auxiliary Power Tokens.",
 			"cost" : 5,
-			"showShipResourceSlot" : true
+			"showShipResourceSlot" : false
 		}
 	],
 	"others" : [{
