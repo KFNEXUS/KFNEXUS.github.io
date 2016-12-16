@@ -2,6 +2,24 @@
 	"sets" : [
 		{
 			"type" : "set",
+			"id" : "72282gp",
+			"name" : "Sela's Warbird",
+			"releaseDate" : "2017-12-12",
+			"parentSet" : "Klingon Civil War Grand Prize"
+		},	{
+			"type" : "set",
+			"id" : "72282p",
+			"name" : "I.K.S. Toral",
+			"releaseDate" : "2017-12-11",
+			"parentSet" : "Klingon Civil War"
+		},	{
+			"type" : "set",
+			"id" : "72282r",
+			"name" : "All Stop",
+			"releaseDate" : "2017-12-10",
+			"parentSet" : "Klingon Civil War"
+		},	{
+			"type" : "set",
 			"id" : "72281p",
 			"name" : "I.K.S. Hegh'Ta",
 			"releaseDate" : "2016-11-04",
@@ -1199,6 +1217,65 @@
 	],
 	"ships" : [
 		{
+			"type" : "ship",
+			"id" : "selas_warbrid_72282gp",
+			"set" : ["72282gp"],
+			"name" : "Sela's Warbird",
+			"class" : "D'deridex Class",
+			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
+			"upgrades" : ["tech", "tech", "weapon", "crew", "crew"],
+			"attack" : 3,
+			"agility" : 2,
+			"hull" : 6,
+			"shields" : 4,
+			"cost" : 30,
+			"text" : "During the Activation Phase, if your ship is Cloaked and performs the [echo] Action, you may flip your [cloak] Token over to its red side and immediately perform an additional [echo] Action as a free Action.",
+			"unique" : true,
+			"factions" : ["romulan"],
+			"squadron" : false
+		},	{
+			"type" : "ship",
+			"id" : "brel_generic_crew",
+			"set" : ["72282p"],
+			"name" : "Klingon Starship",
+			"class" : "B'Rel Class",
+			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
+			"upgrades" : ["weapon", "crew", "crew"],
+			"attack" : 4,
+			"agility" : 1,
+			"hull" : 3,
+			"shields" : 2,
+			"cost" : 20,
+			"text" : "",
+			"unique" : true,
+			"factions" : ["klingon"],
+			"intercept" : {
+				"ship" : {},
+				"fleet" : {}
+			},
+			"squadron" : false
+		},	{
+			"type" : "ship",
+			"id" : "klingon_civil_war_iks_toral",
+			"set" : ["72282p"],
+			"name" : "I.K.S. Toral",
+			"class" : "B'Rel Class",
+			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
+			"upgrades" : ["tech", "weapon", "crew", "crew"],
+			"attack" : 4,
+			"agility" : 1,
+			"hull" : 3,
+			"shields" : 3,
+			"cost" : 22,
+			"text" : "When defending, during the Roll Defence Dice step, if your ship is not Cloaked, you may roll +2 defence dice. If you do so place an Auxiliarly Power Token beside your ship.",
+			"unique" : true,
+			"factions" : ["klingon"],
+			"intercept" : {
+				"ship" : {},
+				"fleet" : {}
+			},
+			"squadron" : false
+		},	{
 			"type" : "ship",
 			"id" : "72281p_heghta",
 			"set" : ["72281p"],
@@ -2614,7 +2691,7 @@
 		}, {
 			"type" : "ship",
 			"id" : "1043",
-			"set" : ["OP3Prize", "71511"],
+			"set" : ["OP3Prize", "71511", "72282gp"],
 			"name" : "Romulan Starship",
 			"class" : "D'deridex Class",
 			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
@@ -8765,7 +8842,52 @@
 			}
 		}
 	],
-	"captains" : [{
+	"captains" : [
+		{		
+			"type" : "captain",
+			"id" : "sela_72282gp",
+			"set" : ["72282gp"],
+			"name" : "Sela",
+			"cost" : 4,
+			"skill" : 7,
+			"talents" : 1,
+			"text" : "<b>ACTION:</b> When defending this round, the attacking ship cannot benefit from or spend a [scan] Token that is beside it nor can they spend a [battlestations] Token that is beside it against your ship.",
+			"unique" : true,
+			"factions" : ["romulan"]
+		},	{		
+			"type" : "captain",
+			"id" : "movar_72282gp",
+			"set" : ["72282gp"],
+			"name" : "Movar",
+			"cost" : 3,
+			"skill" : 5,
+			"talents" : 0,
+			"text" : "During the Gather Forces step, you may switch one of your [crew], [tech], or [weapon] Upgrade slots on your ship for a [crew], [tech], [weapon], or [talent] Upgrade slot.",
+			"unique" : true,
+			"factions" : ["romulan"]
+		},	{		
+			"type" : "captain",
+			"id" : "betor_72282p",
+			"set" : ["72282p"],
+			"name" : "B'Etor",
+			"cost" : 3,
+			"skill" : 4,
+			"talents" : 1,
+			"text" : "A friendly ship within Range 1-2 of your ship may use the Action or Ability of your [talent] Upgrade as if it were assigned to that ship.\n\nIf Lursa is the Captain of your ship, you may fill one of your [crew] Upgrade slots with this card and gain +4 to your Captain Skill.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},	{		
+			"type" : "captain",
+			"id" : "lursa_72282p",
+			"set" : ["72282p"],
+			"name" : "Lursa",
+			"cost" : 3,
+			"skill" : 4,
+			"talents" : 1,
+			"text" : "You may preform a [cloak] or a [echo] Action as a free action, if your ship has the appropriate Action on its Action Bar\n\nIf B'Etor is the Captain of your ship, you may fill one of your [crew] Upgrade slots with this card and gain +4 to your Captain Skill.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},	{
 			"type" : "captain",
 			"id" : "kurn_72281p",
 			"set" : ["72281p"],
@@ -11884,6 +12006,78 @@
 	],
 	"upgrades" : [
 		{
+			"type" : "talent",
+			"id" : "klingon_romulan_alliance_72282gp",
+			"set" : ["72282gp"],
+			"name" : "Klingon-Romulan Alliance",
+			"cost" : 4,
+			"text" : "If your ship is within Range 1-2 of a friendly Klingon or Romulan ship, you may discard this card to re-roll any number of your defense dice.\n\nThis card may only be fielded by a Klingon or Romulan Captain assigned to a Klingon or Romulan Ship.",
+			"unique" : true,
+			"factions" : ["romulan"]
+		},	{
+			"type" : "talent",
+			"id" : "reverse_course_72282gp",
+			"set" : ["72282gp"],
+			"name" : "Reverse Course",
+			"cost" : 5,
+			"text" : "During the Activation Phase, you may disregard your chosen maneuver and execute a Full Astern [reverse] Maneuver with a speed of 1 or 2.",
+			"unique" : true,
+			"factions" : ["romulan"]
+		},	{
+			"type" : "crew",
+			"id" : "tokath_72282gp",
+			"set" : ["72282gp"],
+			"name" : "Tokath",
+			"cost" : 2,
+			"text" : "<b>ACTION:</b> Discard this card to remove 2 Disabled Upgrade Tokens from your other Upgrades.",
+			"unique" : true,
+			"factions" : ["romulan"]
+		},	{
+			"type" : "tech",
+			"id" : "tachyon_pulse_72282gp",
+			"set" : ["72282gp"],
+			"name" : "Tachyon Pulse",
+			"cost" : 4,
+			"text" : "When defending, during the Roll Defense Dice step you may disable this card to roll +1 defense die, +2 Defense dice if the attacking ship has a [scan] Token beside it\n\nNo ship may be equipped with more than one 'Tachyon Pulse' Upgrade.",
+			"unique" : false,
+			"factions" : ["romulan"]
+		},	{
+			"type" : "talent",
+			"id" : "enemy_of_the_empire_72282p",
+			"set" : ["72282p"],
+			"name" : "Enemy Of The Empire",
+			"cost" : 5,
+			"text" : "When attacking, during the Roll Attack Dice step, you may discard this card to gain +1 attack die. If the defending ship is a Klingon ship or with a Klingon Captain or Upgrade assigned to it, disable his card instead of discarding it.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},	{
+			"type" : "talent",
+			"id" : "interrogation_72282p",
+			"set" : ["72282p"],
+			"name" : "Interrogation",
+			"cost" : 5,
+			"text" : "When attacking, during the Roll Attack Dice step, you may discard this card to gain a number of attack dice equal to 1 plus the number of Upgrades on the defending ship, Max +3.\n\nThis Upgrade may only be fielded by a Klingon Captain assigned to a Klingon Ship.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},	{
+			"type" : "crew",
+			"id" : "kulge_72282p",
+			"set" : ["72282p"],
+			"name" : "Kulge",
+			"cost" : 5,
+			"text" : "<b>ACTION:</b> Discard this card to disable your Captain Card and place a [battlestations] Token beside your ship.\n\nWhile your Captain Card is disabled your Captain Skill is '0' and your ship may perform the [battlestations] Action as if it were on your Action Bar.",
+			"unique" : true,
+			"factions" : ["klingon"]
+		},	{
+			"type" : "tech",
+			"id" : "aft_shields_72282p",
+			"set" : ["72282p"],
+			"name" : "Aft Shields",
+			"cost" : 4,
+			"text" : "If you are not Cloaked and defending against an attack from a ship that is not in your forward firing arc, during the Compare Results step, you may discard this card to cancel up to 2 of attacking ship's [hit] or [crit] results. If you do so, place an Auxiliarly Power Token beside your ship.\n\nNo ship may be equipped with more than one 'Aft Shields' Upgrade.",
+			"unique" : false,
+			"factions" : ["klingon"]
+		},	{
 			"type" : "talent",
 			"id" : "on_my_command_72281p",
 			"set" : ["72281p"],
@@ -21852,6 +22046,14 @@
 			"set" : ["72281r"],
 			"name" : "Auxiliary Power",
 			"text" : "At the start od the battle, place 5 Auxiliary Power Tokens on top of this card\n\nOnce per round, one ship in your fleet may use one of the following abilities.\n\n1. Roll 1 extra attack or defense die, OR\n\n2. Place 1 Evade Token beside your ship, even if there was one already there, OR\n\n3. Repair 1 Shield Token.\n\nIf you use any of their abilities, remove one Auxiliary Power Token from this card beside the ship that used this ability. Discard this card when there no more Auxiliary Power Tokens.",
+			"cost" : 5,
+			"showShipResourceSlot" : false
+		},	{	
+			"type" : "resource",
+			"id" : "all_stop",
+			"set" : ["72282r"],
+			"name" : "All Stop",
+			"text" : "At the start of the game, place 5 Mission Tokens on top of this card.\n\nEach round, during the Activation Phase, one ship in your fleet may disregard its chosen maneuver and not move. A ship that uses this ability must skip its Perform Action step.\n\nDiscard this card when there are no more Mission Tokens on this card",
 			"cost" : 5,
 			"showShipResourceSlot" : false
 		}
