@@ -1229,30 +1229,9 @@
 			"hull" : 6,
 			"shields" : 4,
 			"cost" : 30,
-			"text" : "During the Activation Phase, if your ship is Cloaked and performs the [echo] Action, you may flip your [cloak] Token over to its red side and immediately perform an additional [echo] Action as a free Action.",
+			"text" : "During the Activation Phase, if your ship is Cloaked and performs the [sensor-echo] Action, you may flip your [cloak] Token over to its red side and immediately perform an additional [sensor-echo] Action as a free Action.",
 			"unique" : true,
 			"factions" : ["romulan"],
-			"squadron" : false
-		},	{
-			"type" : "ship",
-			"id" : "brel_generic_crew",
-			"set" : ["72282p"],
-			"name" : "Klingon Starship",
-			"class" : "B'Rel Class",
-			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
-			"upgrades" : ["weapon", "crew", "crew"],
-			"attack" : 4,
-			"agility" : 1,
-			"hull" : 3,
-			"shields" : 2,
-			"cost" : 20,
-			"text" : "",
-			"unique" : true,
-			"factions" : ["klingon"],
-			"intercept" : {
-				"ship" : {},
-				"fleet" : {}
-			},
 			"squadron" : false
 		},	{
 			"type" : "ship",
@@ -1269,6 +1248,27 @@
 			"cost" : 22,
 			"text" : "When defending, during the Roll Defence Dice step, if your ship is not Cloaked, you may roll +2 defence dice. If you do so place an Auxiliarly Power Token beside your ship.",
 			"unique" : true,
+			"factions" : ["klingon"],
+			"intercept" : {
+				"ship" : {},
+				"fleet" : {}
+			},
+			"squadron" : false
+		},	{
+			"type" : "ship",
+			"id" : "brel_generic_crew",
+			"set" : ["72282p"],
+			"name" : "Klingon Starship",
+			"class" : "B'Rel Class",
+			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
+			"upgrades" : ["weapon", "crew", "crew"],
+			"attack" : 4,
+			"agility" : 1,
+			"hull" : 3,
+			"shields" : 2,
+			"cost" : 20,
+			"text" : "",
+			"unique" : false,
 			"factions" : ["klingon"],
 			"intercept" : {
 				"ship" : {},
@@ -8884,7 +8884,7 @@
 			"cost" : 3,
 			"skill" : 4,
 			"talents" : 1,
-			"text" : "You may preform a [cloak] or a [echo] Action as a free action, if your ship has the appropriate Action on its Action Bar\n\nIf B'Etor is the Captain of your ship, you may fill one of your [crew] Upgrade slots with this card and gain +4 to your Captain Skill.",
+			"text" : "You may preform a [cloak] or a [sensor-echo] Action as a free action, if your ship has the appropriate Action on its Action Bar\n\nIf B'Etor is the Captain of your ship, you may fill one of your [crew] Upgrade slots with this card and gain +4 to your Captain Skill.",
 			"unique" : true,
 			"factions" : ["klingon"]
 		},	{
