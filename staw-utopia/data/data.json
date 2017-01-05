@@ -12151,6 +12151,24 @@
 			"attack" : 0,
 			"range" : ""
 		}, {
+			"type" : "crew",
+			"id" : "beverly_crusher_72271",
+			"set" : ["72271"],
+			"name" : "Beverly Crusher",
+			"unique" : true,
+			"text" : "If one of your other [crew] Upgrades is supposed to be disabled for any reason, you may disable this card instead\n\nOR\n\nIf one of your other [crew] Upgrades is supposed to be discarded for any reason, you may discard this card instead.",
+			"factions" : ["federation"],
+			"cost" : 3,
+		},	{
+			"type" : "crew",
+			"id" : "deanna_troi_72271",
+			"set" : ["72271"],
+			"name" : "Deanna Troi",
+			"unique" : true,
+			"text" : "<b>ACTION:</b> Discard this card to target a ship at Range 1-2. Disabled the Captain or 1 [crew] Upgrade on the target ship. Place a [battlestations] Token beside your ship. If the target ship is Cloaked, flip its [cloak] Token over to its red side.",
+			"factions" : ["federation"],
+			"cost" : 3,
+		},	{
 			"type" : "tech",
 			"id" : "tunneling_neutrino_beam_71996",
 			"set" : ["71996"],
