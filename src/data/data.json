@@ -11453,7 +11453,7 @@
 			"text" : "Your ship costs -2SP and each Upgrade assigned to your ship costs -1SP.\nMax -5SP total",
 			"cost" : 5,
 			"skill" : 8,
-			"talents" : 1
+			"talents" : 1,
 			"factions" : ["federation"]
 		}, {
 			"type" : "captain",
