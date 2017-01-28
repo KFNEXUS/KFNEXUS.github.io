@@ -1,12 +1,11 @@
 {
-	"sets" : [
-			{
+	"sets" : [{
 			"type" : "set",
 			"id" : "72284p",
 			"name" : "U.S.S. Enterprise-D",
 			"releaseDate" : "2017-1-26",
 			"parentSet" : "Yesterday's Enterprise"
-		}, 	{
+		}, {
 			"type" : "set",
 			"id" : "72284r",
 			"name" : "Senior Staff",
@@ -12026,7 +12025,7 @@
 			"set" : ["72284p"],
 			"name" : "Transporter",
 			"cost" : 3,
-			"text" : "<b>ACTION:</b> Disable this card to target a friendly ship within Range 1-2 and disable all remaining shields on both ships. Then switch 1 [crew] Upgrade between this ships.\n\nNo Ship may be equipped with more than one 'Transporter' Upgrade.",
+			"text" : "<b>ACTION:</b> Disable this card to target a friendly ship within Range 1-2 and disable all remaining shields on both ships. Then switch 1 [crew] Upgrade between this ships.\n\nNo Ship may be equipped with more than one \"Transporter\" Upgrade.",
 			"unique" : false,
 			"factions" : ["federation"]
 		}, {
@@ -12034,7 +12033,7 @@
 			"id" : "aft_phaser_emitters_72284p",
 			"set" : ["72284p"],
 			"name" : "Aft Phaser Emitters",
-			"cost" : "*",
+			"cost" : 0,
 			"attack" : "*",
 			"range" : "1 - 3",
 			"text" : "<b>ATTACK:</b> You may fire this weapon from your rear firing arc. This attack value is equal to the ships Primary Weapon value -1\n\nThis Upgrade may only be purchased for a Federation ship with a Hull value of 4 or greater and the SP cost is equal to the ships Primary Weapon Value.",
@@ -22171,7 +22170,7 @@
 			"text" : "At the start of the game, place 5 Mission Tokens on top of this card.\n\nEach round, during the Activation Phase, one ship in your fleet may disregard its chosen maneuver and not move. A ship that uses this ability must skip its Perform Action step.\n\nDiscard this card when there are no more Mission Tokens on this card",
 			"cost" : 5,
 			"showShipResourceSlot" : false
-		},	{
+		}, {
 			"type" : "resource",
 			"id" : "senior_staff",
 			"set" : ["72284r"],

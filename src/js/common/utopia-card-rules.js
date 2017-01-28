@@ -5265,7 +5265,68 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"tech:full_reverse_enterprise_b": {
 			rules: "Only one per ship",
 			canEquip: onePerShip("Full Reverse")
-		}
+		},
+
+		// Jean-Luc Picard - Enterprise-D
+		"captain:jean_luc_picard_enterprise_72284p": {
+			intercept: {
+				self: {
+					cost: function(upgrade,ship,fleet,cost) {
+						modifier = 0;
+						
+						if ( ship )
+							modifier += 2;
+						
+						if ( modifier > 5)
+							modifier = 5;
+						
+						return cost - modifier;
+					}
+				}
+			}
+		},
 		
+		// Natasha Yar - U.S.S. Enterprise-D
+		"crew:natasha_yar_72284p": {
+			upgradeSlots: [ 
+				{ 
+					type: ["weapon"]
+				},
+				{ 
+					type: ["weapon"]
+				}
+			]
+		},
+		
+		// Aft Phaser Emitters - U.S.S. Enterprise-D
+		"weapon:aft_phaser_emitters_72284p": {
+			attack: 0,
+			// Equip only on a Federation ship with hull 4 or more
+			canEquip: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship,"federation", ship, fleet) && ship.hull >= 4;
+			},
+			intercept: {
+				self: {
+					// Attack is same as ship primary - 1
+					attack: function(upgrade,ship,fleet,attack) {
+						if( ship )
+							return valueOf(ship,"attack",ship,fleet) - 1;
+						return attack;
+					},
+					// Cost is primary weapon
+					cost: function(upgrade,ship,fleet,cost) {
+						if( ship )
+							return resolve(upgrade,ship,fleet,cost) + valueOf(ship,"attack",ship,fleet);
+						return cost;
+					}
+				}
+			}
+		},
+		
+		// Transporter - U.S.S. Enterprise-D
+		"tech:transporter_72284p": {
+			rules: "Only one per ship",
+			canEquip: onePerShip("Transporter")
+		}
 	};
 }]);
