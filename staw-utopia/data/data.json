@@ -11584,7 +11584,7 @@
 			"text" : "Your ship costs -2SP and each Upgrade assigned to your ship costs -1SP.\nMax -5SP total",
 			"cost" : 5,
 			"skill" : 8,
-			"talents" : 1
+			"talents" : 1,
 			"factions" : ["federation"]
 		}, {
 			"type" : "captain",
@@ -22179,7 +22179,7 @@
 			"text" : "Each ship in your fleet may field 1 additional [talent] Upgrade for every [crew] Upgrade assigned to it. Each [talent] Upgrade is placed next to the [crew] Upgrade that fielded it. If the [crew] Upgrade is ever discarded, you must also discard the [talent] Upgrade that was fielded by that [crew] Upgrade. The cost of this resource is 1 sp for each additional [talent] Upgrade you assign to your fleet.",
 			"cost" : "?",
 			"showShipResourceSlot" : false
-		}, 
+		}
 	],
 	"others" : [{
 			"type" : "token",
