@@ -5197,6 +5197,15 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			
 		},
 	
+		// Montgomery Scott - H.M.S. Bounty
+		"crew:montgomery_scott_bounty": {
+			upgradeSlots: [ 
+				{ 
+					type: ["tech", "weapon"]
+				}
+			]
+		},
+		
 		// Computer Core - U.S.S. Venture
 		"question:computer_core_venture": {
 			isSlotCompatible: function(slotTypes) {
