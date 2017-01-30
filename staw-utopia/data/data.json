@@ -11693,7 +11693,18 @@
 	],
 	"admirals" : [{
 			"type" : "admiral",
-			"id" : "kiaphet_amman'sor_72281",
+			"id" : "admiral_sela_72282gp",
+			"set" : ["72282gp"],
+			"name" : "Sela",
+			"cost" : 4,
+			"skill" : 1,
+			"talents" : 1,
+			"text" : "<b>FLEET ACTION:</b> When defending this round, the attacking ship cannot benefit from or spend a [scan] Token that is beside it nor can they spend a [battlestations] Token that is beside it against your ship.",
+			"unique" : true,
+			"factions" : ["romulan"]
+		}, {
+			"type" : "admiral",
+			"id" : "kiaphet_amman'sor_admiral_72281",
 			"set" : ["72281"],
 			"name" : "Kiaphet Amman'Sor",
 			"cost" : 3,
