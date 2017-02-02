@@ -1404,7 +1404,7 @@
 			"name" : "Kohlars Battle Cruiser",
 			"class" : "D7 Class",
 			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
-			"upgrades" : ["tech", "crew", "crew", "crew"],
+			"upgrades" : ["weapon", "crew", "crew", "crew"],
 			"attack" : 3,
 			"agility" : 1,
 			"hull" : 3,
