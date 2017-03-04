@@ -1258,8 +1258,8 @@
 	],
 	"ships" : [{
 			"type" : "ship",
-			"id" : "xindus",
-			"set" : ["72224p"],
+			"id" : "muratas_72293",
+			"set" : ["72293"],
 			"name" : "Muratas",
 			"class" : "Xindi Reptilian Warship",
 			"actions" : ["evade", "target-lock", "scan", "battlestations"],
