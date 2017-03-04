@@ -9759,7 +9759,7 @@
 		}, {
 			"type" : "captain",
 			"id" : "degra_muratas",
-			"set" : ["72283"],
+			"set" : ["72293"],
 			"name" : "Degra",
 			"cost" : 3,
 			"skill" : 4,
