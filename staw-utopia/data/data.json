@@ -11141,7 +11141,7 @@
 			"cost" : 4,
 			"skill" : 6,
 			"talents" : 1,
-			"text" : "",
+			"text" : "When attacking, during the Compare Results step, you may place an Auxiliary Power Token beside your ship to convert 1 of your [crit] results into  2 [hit] results.",
 			"unique" : true,
 			"factions" : ["mirror-universe"],
 			"intercept" : {
