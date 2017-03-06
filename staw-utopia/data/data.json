@@ -1,6 +1,18 @@
 {
 	"sets" : [{
 			"type" : "set",
+			"id" : "72290p",
+			"name" : "U.S.S. Defiant NCC-1764",
+			"releaseDate" : "2017-02-29",
+			"parentSet" : "In a Mirror Darkly"
+		}, {
+			"type" : "set",
+			"id" : "72290r",
+			"name" : "Mutiny",
+			"releaseDate" : "2017-02-28",
+			"parentSet" : "In a Mirror Darkly Resoruce"
+		}, {
+			"type" : "set",
 			"id" : "72293",
 			"name" : "Muratas",
 			"releaseDate" : "2017-02-03",
@@ -1258,6 +1270,23 @@
 	],
 	"ships" : [{
 			"type" : "ship",
+			"id" : "uss_defiant_72290p",
+			"set" : ["72290p"],
+			"name" : "U.S.S. Defiant NCC-1764",
+			"class" : "Constitution Class",
+			"actions" : ["evade", "target-lock", "scan", "battlestations"],
+			"upgrades" : ["weapon", "weapon", "crew", "crew"],
+			"attack" : 3,
+			"agility" : 1,
+			"hull" : 4,
+			"shields" : 3,
+			"cost" : 22,
+			"text" : "When attacking, if your ship is not in the target ship's forward firing arc, during the Modify Attack Dice step, you may re-roll all of your blank results.",
+			"unique" : true,
+			"factions" : ["federation","mirror-universe"],
+			"squadron" : false
+		}, {
+			"type" : "ship",
 			"id" : "muratas_72293",
 			"set" : ["72293"],
 			"name" : "Muratas",
@@ -2366,7 +2395,7 @@
 		}, {
 			"type" : "ship",
 			"id" : "1010",
-			"set" : ["71122", "72240", "72234p", "72002p"],
+			"set" : ["72290p","71122", "72240", "72234p", "72002p"],
 			"name" : "Federation Starship",
 			"class" : "Constitution Class",
 			"actions" : ["evade", "target-lock", "scan", "battlestations"],
@@ -11106,6 +11135,21 @@
 			"factions" : ["ferengi"]
 		}, {
 			"type" : "captain",
+			"id" : "jonathan_archer_72290p",
+			"set" : ["72290p"],
+			"name" : "Jonathan Archer",
+			"cost" : 4,
+			"skill" : 6,
+			"talents" : 1,
+			"text" : "",
+			"unique" : true,
+			"factions" : ["mirror-universe"],
+			"intercept" : {
+				"ship" : {},
+				"fleet" : {}
+			}
+		}, {
+			"type" : "captain",
 			"id" : "worf_71807",
 			"set" : ["71807"],
 			"name" : "Worf",
@@ -12087,6 +12131,44 @@
 		}
 	],
 	"upgrades" : [{
+			"type" : "weapon",
+			"id" : "aft_Photon_torpedoes_72290p",
+			"set" : ["72290p"],
+			"name" : "Aft Photon Torpedoes",
+			"cost" : 4,
+			"range": "2 - 3",
+			"attack" : 4,
+			"text" : "<b>ATTACK: Target Lock</b> Spend your target lock and place 3 Time Tokens on this card to perform this attack\n\nYou may convert 1 of your [battlestations] results into a [crit] result.\n\nYou may only target a ship that is not in your forward firing arc with this attack.",
+			"unique" : false,
+			"factions" : ["federation"]
+		}, {
+			"type" : "crew",
+			"id" : "assault_team_72290p",
+			"set" : ["72290p"],
+			"name" : "Assault Team",
+			"cost" : 5,
+			"text" : "<b>ACTION:</b> If your ship is not Cloaked, disable all of your remaining Shields and target a ship at Range 1-2 that is not Cloaked and has no Active Shields. Discard this card to place 2 Time Tokens on all Upgrades on the target ship that do not already have Time Tokens on them.",
+			"unique" : true,
+			"factions" : ["mirror-universe"]
+		}, {
+			"type" : "crew",
+			"id" : "charles_tucker_iii_72290p",
+			"set" : ["72290p"],
+			"name" : "Charles Tucker III",
+			"cost" : 4,
+			"text" : "<b>ACTION:</b> Disable this card to remove up to 2 Disabled Upgrade Tokens or up to 4 Time Tokens from any of your [tech] or [weapon] Upgrades.",
+			"unique" : true,
+			"factions" : ["mirror-universe"]
+		}, {
+			"type" : "crew",
+			"id" : "tpol_72290p",
+			"set" : ["72290p"],
+			"name" : "T'Pol",
+			"cost" : 4,
+			"text" : "<b>ACTION:</b> Discard this card to target a ship within Range 1-3. Disable 1 [crew] Upgrade and/or 1 [tech] or [weapon] Upgrade on the target ship.",
+			"unique" : true,
+			"factions" : ["mirror-universe"]
+		}, {
 			"type" : "talent",
 			"id" : "patience_is_for_the_dead_muratas",
 			"set" : ["72293"],
@@ -22313,6 +22395,14 @@
 			"name" : "Senior Staff",
 			"text" : "Each ship in your fleet may field 1 additional [talent] Upgrade for every [crew] Upgrade assigned to it.\n\nEach [talent] Upgrade is placed next to the [crew] Upgrade that fielded it. \n\nIf the [crew] Upgrade is ever discarded, you must also discard the [talent] Upgrade that was fielded by that [crew] Upgrade. The cost of this resource is 1 sp for each additional [talent] Upgrade you assign to your fleet.",
 			"cost" : 0,
+			"showShipResourceSlot" : false
+		}, {
+			"type" : "resource",
+			"id" : "mutiny_resource",
+			"set" : ["72290r"],
+			"name" : "Mutiny",
+			"text" : "At the start of the game place 3 Mission Tokens on this card.\n\nOnce per round, during an opposing ship's Perform Action step, if that ship chooses to perform an Action from its Action Bar, you may remove 1 Mission Token from this card to prevent that ship from performing that Action.\n\nNOTE: This ability occurs after the Action is announced, but before the Action is performed and the opposing ship cannot perform any additional Actions during this round in which you use this ability\n\nRemove this card from the game when there are no Mission Tokens left on this card.",
+			"cost" : 10,
 			"showShipResourceSlot" : false
 		}
 	],
