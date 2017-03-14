@@ -5336,6 +5336,30 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"tech:transporter_72284p": {
 			rules: "Only one per ship",
 			canEquip: onePerShip("Transporter")
+		},
+		
+		"weapon:particle_beam_weapon_muratas": {
+			attack: 0,
+			// Equip only on a Xindi ship with hull 4 or more
+			canEquip: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship,"xindi", ship, fleet);
+			},
+			intercept: {
+				self: {
+					// Attack is same as ship primary + 1
+					attack: function(upgrade,ship,fleet,attack) {
+						if( ship )
+							return valueOf(ship,"attack",ship,fleet) + 1;
+						return attack;
+					},
+					// Cost is primary weapon
+					cost: function(upgrade,ship,fleet,cost) {
+						if( ship )
+							return resolve(upgrade,ship,fleet,cost) + valueOf(ship,"attack",ship,fleet);
+						return cost;
+					}
+				}
+			}
 		}
 	};
 }]);

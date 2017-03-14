@@ -1,21 +1,57 @@
 {
 	"sets" : [{
 			"type" : "set",
+			"id" : "72290p",
+			"name" : "U.S.S. Defiant NCC-1764",
+			"releaseDate" : "2017-02-29",
+			"parentSet" : "In a Mirror Darkly"
+		}, {
+			"type" : "set",
+			"id" : "72290r",
+			"name" : "Mutiny",
+			"releaseDate" : "2017-02-28",
+			"parentSet" : "In a Mirror Darkly Resoruce"
+		}, {
+			"type" : "set",
+			"id" : "72293",
+			"name" : "Muratas",
+			"releaseDate" : "2017-02-03",
+			"parentSet" : "Wave 29"
+		}, {
+			"type" : "set",
+			"id" : "72292",
+			"name" : "U.S.S. Excelsior(Repaint)",
+			"releaseDate" : "2017-02-02",
+			"parentSet" : "Wave 29"
+		}, {
+			"type" : "set",
+			"id" : "72291",
+			"name" : "Bioship Alpha(Repaint)",
+			"releaseDate" : "2017-02-01",
+			"parentSet" : "Wave 29"
+		}, {
+			"type" : "set",
 			"id" : "72284p",
 			"name" : "U.S.S. Enterprise-D",
-			"releaseDate" : "2017-1-26",
+			"releaseDate" : "2017-01-26",
 			"parentSet" : "Yesterday's Enterprise"
-		}, {
+		},{
 			"type" : "set",
 			"id" : "72284r",
 			"name" : "Senior Staff",
-			"releaseDate" : "2017-1-25",
+			"releaseDate" : "2017-01-25",
 			"parentSet" : "Yesterday's Enterprise Resource"
 		}, {
 			"type" : "set",
 			"id" : "72281",
 			"name" : "Calindra",
 			"releaseDate" : "2016-12-20",
+			"parentSet" : "Wave 28"
+		}, {
+			"type" : "set",
+			"id" : "72282",
+			"name" : "U.S.S. Defiant(Repaint)",
+			"releaseDate" : "2016-12-18",
 			"parentSet" : "Wave 28"
 		}, {
 			"type" : "set",
@@ -1234,6 +1270,40 @@
 	],
 	"ships" : [{
 			"type" : "ship",
+			"id" : "uss_defiant_72290p",
+			"set" : ["72290p"],
+			"name" : "U.S.S. Defiant NCC-1764",
+			"class" : "Constitution Class",
+			"actions" : ["evade", "target-lock", "scan", "battlestations"],
+			"upgrades" : ["weapon", "weapon", "crew", "crew"],
+			"attack" : 3,
+			"agility" : 1,
+			"hull" : 4,
+			"shields" : 3,
+			"cost" : 22,
+			"text" : "When attacking, if your ship is not in the target ship's forward firing arc, during the Modify Attack Dice step, you may re-roll all of your blank results.",
+			"unique" : true,
+			"factions" : ["federation","mirror-universe"],
+			"squadron" : false
+		}, {
+			"type" : "ship",
+			"id" : "muratas_72293",
+			"set" : ["72293"],
+			"name" : "Muratas",
+			"class" : "Xindi Reptilian Warship",
+			"actions" : ["evade", "target-lock", "scan", "battlestations"],
+			"upgrades" : ["tech", "weapon", "weapon", "crew"],
+			"attack" : 4,
+			"agility" : 1,
+			"hull" : 4,
+			"shields" : 2,
+			"cost" : 22,
+			"text" : "When attacking, during the Modify Attack Dice step, you may disable one of your Active Shields to re-roll up to 2 of your attack dice.",
+			"unique" : true,
+			"factions" : ["xindi"],
+			"squadron" : false
+		}, {
+			"type" : "ship",
 			"id" : "uss_enterprise_d_72284p",
 			"set" : ["72284p"],
 			"name" : "U.S.S. Enterprise-D",
@@ -1671,7 +1741,7 @@
 		}, {
 			"type" : "ship",
 			"id" : "xindi_reptilian_warship",
-			"set" : ["72224p"],
+			"set" : ["72224p","72293"],
 			"name" : "Xindi Starship",
 			"class" : "Xindi Reptilian Warship",
 			"actions" : ["evade", "target-lock", "scan", "battlestations"],
@@ -2325,7 +2395,7 @@
 		}, {
 			"type" : "ship",
 			"id" : "1010",
-			"set" : ["71122", "72240", "72234p", "72002p"],
+			"set" : ["72290p","71122", "72240", "72234p", "72002p"],
 			"name" : "Federation Starship",
 			"class" : "Constitution Class",
 			"actions" : ["evade", "target-lock", "scan", "battlestations"],
@@ -2766,7 +2836,7 @@
 		}, {
 			"type" : "ship",
 			"id" : "1030",
-			"set" : ["71268"],
+			"set" : ["71268","72282"],
 			"name" : "U.S.S. Defiant",
 			"class" : "Defiant Class",
 			"actions" : ["evade", "target-lock", "scan", "battlestations"],
@@ -2787,7 +2857,7 @@
 		}, {
 			"type" : "ship",
 			"id" : "1031",
-			"set" : ["71268"],
+			"set" : ["71268","72282"],
 			"name" : "Federation Starship",
 			"class" : "Defiant Class",
 			"actions" : ["evade", "target-lock", "scan", "battlestations"],
@@ -3018,7 +3088,7 @@
 		}, {
 			"type" : "ship",
 			"id" : "1044",
-			"set" : ["71272"],
+			"set" : ["71272","72292"],
 			"name" : "U.S.S. Excelsior",
 			"class" : "Excelsior Class",
 			"actions" : ["evade", "target-lock", "scan", "battlestations"],
@@ -3039,7 +3109,7 @@
 		}, {
 			"type" : "ship",
 			"id" : "1045",
-			"set" : ["71272", "72261p", "72263", "blind_lakota"],
+			"set" : ["71272","72292", "72261p", "72263", "blind_lakota"],
 			"name" : "Federation Starship",
 			"class" : "Excelsior Class",
 			"actions" : ["evade", "target-lock", "scan", "battlestations"],
@@ -3564,7 +3634,7 @@
 		}, {
 			"type" : "ship",
 			"id" : "bioship_alpha_71281",
-			"set" : ["71281"],
+			"set" : ["71281","72291"],
 			"name" : "Bioship Alpha",
 			"class" : "Species 8472 Bioship",
 			"actions" : ["evade", "target-lock", "scan", "regenerate"],
@@ -3585,7 +3655,7 @@
 		}, {
 			"type" : "ship",
 			"id" : "species_8472_bioship_71281",
-			"set" : ["71281", "72012", "blind_bioship"],
+			"set" : ["71281","72291", "72012", "blind_bioship"],
 			"name" : "Species 8472 Starship",
 			"class" : "Species 8472 Bioship",
 			"actions" : ["evade", "target-lock", "scan", "regenerate"],
@@ -8898,17 +8968,8 @@
 	],
 	"captains" : [{
 			"type" : "captain",
-			"id" : "fleet_commander_upgrade",
-			"set" : ["72280r"],
-			"name" : "Fleet Commander",
-			"text" : "Add Two Captain Slots, Add +1 to highest Captain Skill",
-			"cost" : 0,
-			"skill" : 1,
-			"factions" : ["independent"]
-		}, {
-			"type" : "captain",
 			"id" : "species_8472_captain_71281",
-			"set" : ["71281", "72012"],
+			"set" : ["71281","72291", "72012"],
 			"name" : "Species 8472",
 			"unique" : false,
 			"text" : "",
@@ -8919,7 +8980,7 @@
 		}, {
 			"type" : "captain",
 			"id" : "xindi_captain_72003p",
-			"set" : ["72003p", "71225", "72224p", "72004p"],
+			"set" : ["72003p", "71225", "72224p", "72004p","72293"],
 			"name" : "Xindi",
 			"cost" : 0,
 			"skill" : 1,
@@ -9084,7 +9145,7 @@
 		}, {
 			"type" : "captain",
 			"id" : "2003",
-			"set" : ["71120", "71121", "71122", "72240", "71268", "71272", "71276", "71280", "72261", "OP4Prize", "u_s_s_yaeger", "71523", "71509", "71526", "71510", "71531", "71997p", "71801", "71998p", "71802", "72008", "72011", "72014", "71201", "71213", "71221", "72231", "72271", "72284p"],
+			"set" : ["71120", "71121", "71122", "72240", "71268","72282", "71272","72292", "71276", "71280", "72261", "OP4Prize", "u_s_s_yaeger", "71523", "71509", "71526", "71510", "71531", "71997p", "71801", "71998p", "71802", "72008", "72011", "72014", "71201", "71213", "71221", "72231", "72271", "72284p"],
 			"name" : "Federation",
 			"unique" : false,
 			"text" : "\r\n      ",
@@ -9419,7 +9480,7 @@
 		}, {
 			"type" : "captain",
 			"id" : "2030",
-			"set" : ["71268"],
+			"set" : ["71268","72282"],
 			"name" : "Kira Nerys",
 			"unique" : true,
 			"text" : "If a [crew] Upgrade on an enemy ship would cause your ship to discard or disable any of your Upgrades, roll 2 defense dice. If you roll at least 1 [evade] result, ignore the effects of the enemy Upgrade. You do not pay a Faction penalty when assigning Kira Nerys to a Federation ship.",
@@ -9452,7 +9513,7 @@
 		}, {
 			"type" : "captain",
 			"id" : "3106",
-			"set" : ["71272"],
+			"set" : ["71272","72292"],
 			"name" : "Styles",
 			"unique" : true,
 			"text" : "Add 1 additional [tech] icon to your ship's Upgrade bar.",
@@ -9714,6 +9775,17 @@
 				"ship" : {},
 				"fleet" : {}
 			}
+		}, {
+			"type" : "captain",
+			"id" : "degra_muratas",
+			"set" : ["72293"],
+			"name" : "Degra",
+			"cost" : 3,
+			"skill" : 4,
+			"talents" : 0,
+			"text" : "When attacking with a Secondary [weapon] Upgrade, gain +1 attack die. +2 attack dice if the attack is made with a Xindi [weapon] Upgrade.",
+			"unique" : true,
+			"factions" : ["xindi"]
 		}, {
 			"type" : "captain",
 			"id" : "kiaphet_amman'sor_72281",
@@ -10723,7 +10795,7 @@
 		}, {
 			"type" : "captain",
 			"id" : "2029",
-			"set" : ["71268"],
+			"set" : ["71268","72282"],
 			"name" : "Benjamin Sisko",
 			"unique" : true,
 			"text" : "Once per round, you may re-roll any one of your attack or defense dice.",
@@ -10756,7 +10828,7 @@
 		}, {
 			"type" : "captain",
 			"id" : "2046",
-			"set" : ["71272"],
+			"set" : ["71272","72292"],
 			"name" : "Hikaru Sulu",
 			"unique" : true,
 			"text" : "<b>ACTION:</b> Disable one of your [crew] Upgrades to remove an opponent's [target-lock] Token from your ship. Remove the corresponding token from the opponent's ship as well.",
@@ -11063,6 +11135,21 @@
 			"factions" : ["ferengi"]
 		}, {
 			"type" : "captain",
+			"id" : "jonathan_archer_72290p",
+			"set" : ["72290p"],
+			"name" : "Jonathan Archer",
+			"cost" : 4,
+			"skill" : 6,
+			"talents" : 1,
+			"text" : "When attacking, during the Compare Results step, you may place an Auxiliary Power Token beside your ship to convert 1 of your [crit] results into  2 [hit] results.",
+			"unique" : true,
+			"factions" : ["mirror-universe"],
+			"intercept" : {
+				"ship" : {},
+				"fleet" : {}
+			}
+		}, {
+			"type" : "captain",
 			"id" : "worf_71807",
 			"set" : ["71807"],
 			"name" : "Worf",
@@ -11255,7 +11342,7 @@
 		}, {
 			"type" : "captain",
 			"id" : "bioship_alpha_pilot_71281",
-			"set" : ["71281"],
+			"set" : ["71281","72291"],
 			"name" : "Bioship Alpha Pilot",
 			"unique" : true,
 			"text" : "Each round during the Planning Phase, after all other players have chosen their Maneuvers, target a ship within Range 1 of your ship, look at that ship's chosen Maneuver, and then choose your Maneuver. the target ship's player cannot change the chosen Maneuver after you have looked at it. You may not perform any Actions the round you use this ability.",
@@ -11596,6 +11683,17 @@
 			"text" : "When attacking, during the Modify Attack Dice step, you may re-roll 1 of your blank results.\n\nIf your ship was just destroyed and another friendly ship is within Range 1-2 of your ship, you may replace that ship's Captain Card with this card. If this Captain Card fielded an [talent] Upgrade, you may assign that Upgrade to the new ship as well, if possible.",
 			"unique" : true,
 			"factions" : ["species-8472"]
+		}, {
+			"type" : "captain",
+			"id" : "dolim_muratas",
+			"set" : ["72293"],
+			"name" : "Dolim",
+			"text" : "During the Gather Forces step, you may treat any of the [crew] or [tech] Upgrade slots on your Upgrade Bar as [weapon] Upgrade slots\n\nAll of your [weapon] Upgrades cost -1SP, -5 Max",
+			"cost" : 5,
+			"skill" : 8,
+			"talents" : 1,
+			"unique" : true,
+			"factions" : ["xindi"]
 		}, {
 			"type" : "captain",
 			"id" : "q_female__72000b",
@@ -12033,6 +12131,102 @@
 		}
 	],
 	"upgrades" : [{
+			"type" : "weapon",
+			"id" : "aft_Photon_torpedoes_72290p",
+			"set" : ["72290p"],
+			"name" : "Aft Photon Torpedoes",
+			"cost" : 4,
+			"range": "2 - 3",
+			"attack" : 4,
+			"text" : "<b>ATTACK: Target Lock</b> Spend your target lock and place 3 Time Tokens on this card to perform this attack\n\nYou may convert 1 of your [battlestations] results into a [crit] result.\n\nYou may only target a ship that is not in your forward firing arc with this attack.",
+			"unique" : false,
+			"factions" : ["federation"]
+		}, {
+			"type" : "crew",
+			"id" : "assault_team_72290p",
+			"set" : ["72290p"],
+			"name" : "Assault Team",
+			"cost" : 5,
+			"text" : "<b>ACTION:</b> If your ship is not Cloaked, disable all of your remaining Shields and target a ship at Range 1-2 that is not Cloaked and has no Active Shields. Discard this card to place 2 Time Tokens on all Upgrades on the target ship that do not already have Time Tokens on them.",
+			"unique" : true,
+			"factions" : ["mirror-universe"]
+		}, {
+			"type" : "crew",
+			"id" : "charles_tucker_iii_72290p",
+			"set" : ["72290p"],
+			"name" : "Charles Tucker III",
+			"cost" : 4,
+			"text" : "<b>ACTION:</b> Disable this card to remove up to 2 Disabled Upgrade Tokens or up to 4 Time Tokens from any of your [tech] or [weapon] Upgrades.",
+			"unique" : true,
+			"factions" : ["mirror-universe"]
+		}, {
+			"type" : "crew",
+			"id" : "tpol_72290p",
+			"set" : ["72290p"],
+			"name" : "T'Pol",
+			"cost" : 4,
+			"text" : "<b>ACTION:</b> Discard this card to target a ship within Range 1-3. Disable 1 [crew] Upgrade and/or 1 [tech] or [weapon] Upgrade on the target ship.",
+			"unique" : true,
+			"factions" : ["mirror-universe"]
+		}, {
+			"type" : "talent",
+			"id" : "patience_is_for_the_dead_muratas",
+			"set" : ["72293"],
+			"name" : "Patience is for the Dead",
+			"cost" : 5,
+			"text" : "At the start of the Combat Phase, before any ships, you may discard this card to attack before all other ships. You cannot roll any defense dice during the round you use this ability.",
+			"unique" : true,
+			"factions" : ["xindi"]
+		}, {
+			"type" : "weapon",
+			"id" : "xindi_torpedoes_muratas",
+			"set" : ["72293"],
+			"name" : "Xindi Torpedoes",
+			"attack" : 4,
+			"cost" : 3,
+			"range": "2 - 3",
+			"text" : "<b>ATTACK:</b> Target Lock, Spend your target lock and place 3 Time Tokens on this card to perform this attack.\n\nIf fired from a Xindi Reptilian Warship add +1 attack dice.",
+			"unique" : false,
+			"factions" : ["xindi"]
+		}, {
+			"type" : "weapon",
+			"id" : "particle_beam_weapon_muratas",
+			"set" : ["72293"],
+			"name" : "Particle Beam Weapon",
+			"cost" : 0,
+			"attack" : "*",
+			"range": "1 - 3",
+			"text" : "<b>ATTACK:</b> The Attack Value of this weapon is equal to the ship's Primary Weapon Value +1\n\nThis Upgrade may only be purchased for a Xindi ship and the SP cost is equal to the ship's Primary Weapon Value.",
+			"unique" : false,
+			"factions" : ["xindi"]
+		}, {
+			"type" : "crew",
+			"id" : "reptilian_analysis_team_muratas",
+			"set" : ["72293"],
+			"name" : "Reptilian Analysis Team",
+			"cost" : 5,
+			"text" : "Add 1 [tech] Upgrade to your Upgrade Bar\n\nWhen you are supposed to disable a [tech] Upgrade, you may disable this card instead and place 3 Time Tokens on the [tech] Upgrade. 2 Time Tokens if it is a Xindi [tech] Upgrade.\n\nThis Upgrade may only be purchased for a Xindi ship and no ship may be equipped with more than one 'Reptillian Analysis Team' Upgrade.",
+			"unique" : false,
+			"factions" : ["xindi"]
+		}, {
+			"type" : "tech",
+			"id" : "thermal_chamber_muratas",
+			"set" : ["72293"],
+			"name" : "Thermal Chamber",
+			"cost" : 3,
+			"text" : "<b>ACTION:</b> Remove all Disabled Upgrade Tokens from all of your Xindi [crew] Upgrades and add +4 to your Captain Skill number for this round.\n\nThis Upgrade may only be purchased for a Xindi-Reptilian warship.",
+			"unique" : false,
+			"factions" : ["xindi"]
+		}, {
+			"type" : "tech",
+			"id" : "sensor_encoders_muratas",
+			"set" : ["72293"],
+			"name" : "Sensor Encoders",
+			"cost" : 3,
+			"text" : "When defending, you may disable this card to re-roll 1 of your defense dice.\n\nIf a friendly ship is destroyed, you may discard this card. If you do so, your ship gains +1 Agility for the rest of the game. \n\nThis Upgrade may only be purchased for a Xindi-Reptilian warship and no ship may be equipped with more than one 'Sensor Encoders' Upgrade.",
+			"unique" : false,
+			"factions" : ["xindi"]
+		}, {
 			"type" : "talent",
 			"id" : "dispersal_pattern_sierra_72284p",
 			"set" : ["72284p"],
@@ -12075,7 +12269,9 @@
 			"id" : "xindi_torpedoes_72281",
 			"set" : ["72281"],
 			"name" : "Xindi Torpedoes",
+			"attack" : 4,
 			"cost" : 3,
+			"range": "2 - 3",
 			"text" : "<b>ATTACK:</b> Target Lock, Spend your target lock and place 3 Time Tokens on this card to perform this attack.\n\nIf fired from a Xindi Aquatic Cruiser add +1 attack dice.",
 			"unique" : false,
 			"factions" : ["xindi"]
@@ -13883,7 +14079,7 @@
 		}, {
 			"type" : "weapon",
 			"id" : "3006",
-			"set" : ["71120", "71268", "71276", "71280", "72261"],
+			"set" : ["71120", "71268","72282", "71276", "71280", "72261"],
 			"name" : "Photon Torpedoes",
 			"unique" : false,
 			"text" : "<b>ATTACK: (Target Lock)</b> Spend your target lock and disable this card to perform this attack. \nYou may convert 1 of your [battlestations] results into a [crit] result. \nYou may fire this weapon from your forward or rear firing arcs. ",
@@ -14115,7 +14311,7 @@
 		}, {
 			"type" : "weapon",
 			"id" : "3024",
-			"set" : ["71121", "71122", "72240", "71272"],
+			"set" : ["71121", "71122", "72240", "71272","72292"],
 			"name" : "Photon Torpedoes",
 			"unique" : false,
 			"text" : "<b>ATTACK: (Target Lock)</b> Spend your target lock and disable this card to perform this attack. \nYou may convert 1 of your [battlestations] results into a [crit] result. \nYou may fire this weapon from your forward or rear firing arcs. ",
@@ -14702,7 +14898,7 @@
 		}, {
 			"type" : "weapon",
 			"id" : "3067",
-			"set" : ["71268", "71531", "72271"],
+			"set" : ["71268","72282", "71531", "72271"],
 			"name" : "Quantum Torpedoes",
 			"unique" : false,
 			"text" : "<b>ATTACK: (Target Lock)</b> Spend your [target-lock] and disable this card to perform this attack. \nIf the target ship is hit, add 1 [hit] result to your total damage. \nYou may fire this weapon from your forward or rear firing arcs.",
@@ -14715,7 +14911,7 @@
 		}, {
 			"type" : "tech",
 			"id" : "3068",
-			"set" : ["71268"],
+			"set" : ["71268","72282"],
 			"name" : "Cloaking Device",
 			"unique" : false,
 			"text" : "Instead of performing a normal Action, you may disable this card to perform the [cloak] Action. While you have a [cloak] token beside your ship, you may perform the [sensor-echo] Action even if this card is disabled. \n\nThis Upgrade costs +5 Squadron Points for any ship other than the U.S.S. Defiant.",
@@ -14728,7 +14924,7 @@
 		}, {
 			"type" : "crew",
 			"id" : "3069",
-			"set" : ["71268"],
+			"set" : ["71268","72282"],
 			"name" : "Worf",
 			"unique" : true,
 			"text" : "<b>ACTION:</b> Target a ship at Range 1. That ship rolls 2 less attack dice this round.",
@@ -14741,7 +14937,7 @@
 		}, {
 			"type" : "talent",
 			"id" : "3088",
-			"set" : ["71268"],
+			"set" : ["71268","72282"],
 			"name" : "Attack Pattern Delta",
 			"unique" : true,
 			"text" : "Disable this card to re-roll your entire defense roll. You must re-roll all of the dice and keep the results of the second roll.",
@@ -14754,7 +14950,7 @@
 		}, {
 			"type" : "talent",
 			"id" : "3071",
-			"set" : ["71268"],
+			"set" : ["71268","72282"],
 			"name" : "Attack Pattern Omega",
 			"unique" : true,
 			"text" : "If you damage an opponent's Hull with a [crit], you may immediately discard this card to search the Damage Deck for a \"Warp Core Breach\" card instead of drawing a random Damage Card. Re-shuffle the Damage Deck when you are done.",
@@ -14767,7 +14963,7 @@
 		}, {
 			"type" : "crew",
 			"id" : "3089",
-			"set" : ["71268"],
+			"set" : ["71268","72282"],
 			"name" : "Jadzia Dax",
 			"unique" : true,
 			"text" : "<b>ACTION:</b> Disable this card to perform an additional \"2\" maneuver this round (forward or bank). \n\nYou cannot attack this round.",
@@ -14780,7 +14976,7 @@
 		}, {
 			"type" : "crew",
 			"id" : "3090",
-			"set" : ["71268"],
+			"set" : ["71268","72282"],
 			"name" : "Miles O'Brien",
 			"unique" : true,
 			"text" : "<b>ACTION:</b> Disable this card to repair 2 Shield Tokens. \n\nYou cannot attack this round.",
@@ -15105,7 +15301,7 @@
 		}, {
 			"type" : "talent",
 			"id" : "3107",
-			"set" : ["71272"],
+			"set" : ["71272","72292"],
 			"name" : "Feint",
 			"unique" : false,
 			"text" : "<b>ACTION:</b> Discard this Upgrade to target a ship at range 2-3. If you attack that ship this round, it rolls 2 less defense dice.",
@@ -15118,7 +15314,7 @@
 		}, {
 			"type" : "crew",
 			"id" : "3108",
-			"set" : ["71272"],
+			"set" : ["71272","72292"],
 			"name" : "Dmitri Valtane",
 			"unique" : true,
 			"text" : "If your ship has a [scan] Token beside it when you attack, you may re-roll up to 2 of your attack dice.",
@@ -15131,7 +15327,7 @@
 		}, {
 			"type" : "crew",
 			"id" : "3109",
-			"set" : ["71272"],
+			"set" : ["71272","72292"],
 			"name" : "Janice Rand",
 			"unique" : true,
 			"text" : "After your ship moves, discard Rand to allow your Captain to perform the Action on one of his [talent] Upgrades as a free Action this round.",
@@ -15144,7 +15340,7 @@
 		}, {
 			"type" : "crew",
 			"id" : "3110",
-			"set" : ["71272"],
+			"set" : ["71272","72292"],
 			"name" : "Lojur",
 			"unique" : true,
 			"text" : "When your ship fires a [weapon] Upgrade that requires you to disable it, you may disable Lojur instead of that [weapon] Upgrade.",
@@ -15157,7 +15353,7 @@
 		}, {
 			"type" : "tech",
 			"id" : "3112",
-			"set" : ["71272"],
+			"set" : ["71272","72292"],
 			"name" : "Positron Beam",
 			"unique" : false,
 			"text" : "During the Planning Phase, you may discard this Upgrade to target a ship at Range 1 of your ship. That ship immediately receives an Auxiliary  Power Token.",
@@ -15170,7 +15366,7 @@
 		}, {
 			"type" : "tech",
 			"id" : "3113",
-			"set" : ["71272"],
+			"set" : ["71272","72292"],
 			"name" : "Transwarp Drive",
 			"unique" : false,
 			"text" : "During the activation phase, if your Maneuver Dial reveals a [forward] 4 or [forward] 5 Maneuver, you may instead use a [forward] 6 Maneuver.",
@@ -15677,7 +15873,7 @@
 		}, {
 			"type" : "tech",
 			"id" : "bio_electric_interference_71281",
-			"set" : ["71281"],
+			"set" : ["71281","72291"],
 			"name" : "Bio-Electric Interference",
 			"unique" : false,
 			"text" : "<b>ACTION:</b> Discard this card to target all other ships within range 1-3 of your ship. Target ships must discard all Tokens that are placed beside their ships except for Auxiliary Power Tokens. A ship that discards a [cloak] Token may immediately raise its Shields. In addition, your ship cannot be target locked this round. This Upgrade may only be purchased for a Species 8472 ship.",
@@ -15742,7 +15938,7 @@
 		}, {
 			"type" : "tech",
 			"id" : "extraordinary_immune_response_71281",
-			"set" : ["71281"],
+			"set" : ["71281","72291"],
 			"name" : "Extraordinary Immune Response",
 			"unique" : false,
 			"text" : "When you defend, you may discard this card to roll 1 extra defense die for every damage card that is by your Ship Card. \n\nThis Upgrade may only be purchased for a Species 8472 ship.",
@@ -15807,7 +16003,7 @@
 		}, {
 			"type" : "tech",
 			"id" : "quantum_singularity_71281",
-			"set" : ["71281"],
+			"set" : ["71281","72291"],
 			"name" : "Quantum Singularity",
 			"unique" : false,
 			"text" : "<b>ACTION:</b> Discard this card to remove your ship from the play area and discard all Tokens that are beside your ship except for Auxiliary Power Tokens. During the End Phase, place your ship back in the play area. You cannot place your ship within Range 1-3 of any other ship. This Upgrade may only be purchased for a Species 8472 ship.",
@@ -15898,7 +16094,7 @@
 		}, {
 			"type" : "talent",
 			"id" : "the_weak_will_perish_71281",
-			"set" : ["71281"],
+			"set" : ["71281","72291"],
 			"name" : "The Weak Will Perish",
 			"unique" : true,
 			"text" : "When attacking with your Primary Weapon, after rolling your attack dice, you may discard this card and disable your Captain Card to choose any number of your attack dice and re-roll them up to 2 times. This Upgrade cost +5 Squadron Points for any ship other than a Species 8472 ship.",
@@ -15950,7 +16146,7 @@
 		}, {
 			"type" : "weapon",
 			"id" : "biological_attack_71281",
-			"set" : ["71281"],
+			"set" : ["71281","72291"],
 			"name" : "Biological Attack",
 			"unique" : false,
 			"text" : "At the end of the Activation Phase, if your ship base is touching an enemy ship base, you may discard this Upgrade and disable your Captain Card to inflict 1 critical damage to the enemy ship's Hull (even if it has Active Shields). Then disable 1 [crew] Upgrade of your choice on the enemy ship. This Upgrade may only be purchased for a Species 8472 ship.",
@@ -15976,7 +16172,7 @@
 		}, {
 			"type" : "weapon",
 			"id" : "energy_blast_71281",
-			"set" : ["71281"],
+			"set" : ["71281","72291"],
 			"name" : "Energy Blast",
 			"unique" : false,
 			"text" : "<b>ATTACK: (Target Lock)</b> Spend your target lock and disable this card to perform this attack. \n\nIf fired from a Species 8472 Bioship, add +2 attack dice.",
@@ -15989,7 +16185,7 @@
 		}, {
 			"type" : "weapon",
 			"id" : "energy_focusing_ship_71281",
-			"set" : ["71281"],
+			"set" : ["71281","72291"],
 			"name" : "Energy Focusing Ship",
 			"unique" : true,
 			"text" : "<b>ATTACK:</b> Discard this card to perform this attack. Target all friendly ships within Range 1 of your ship that have not yet attacked this round. Target ships cannot make a normal attack this round. Instead, add +2 attack dice to your attack roll for this attack for each targeted ship. Place an Auxiliary Power Token beside your ship and each of the target ships. This Upgrade may only be purchased for a Species 8472 ship.",
@@ -22198,7 +22394,15 @@
 			"set" : ["72284r"],
 			"name" : "Senior Staff",
 			"text" : "Each ship in your fleet may field 1 additional [talent] Upgrade for every [crew] Upgrade assigned to it.\n\nEach [talent] Upgrade is placed next to the [crew] Upgrade that fielded it. \n\nIf the [crew] Upgrade is ever discarded, you must also discard the [talent] Upgrade that was fielded by that [crew] Upgrade. The cost of this resource is 1 sp for each additional [talent] Upgrade you assign to your fleet.",
-			"cost" : "?",
+			"cost" : 0,
+			"showShipResourceSlot" : false
+		}, {
+			"type" : "resource",
+			"id" : "mutiny_resource",
+			"set" : ["72290r"],
+			"name" : "Mutiny",
+			"text" : "At the start of the game place 3 Mission Tokens on this card.\n\nOnce per round, during an opposing ship's Perform Action step, if that ship chooses to perform an Action from its Action Bar, you may remove 1 Mission Token from this card to prevent that ship from performing that Action.\n\nNOTE: This ability occurs after the Action is announced, but before the Action is performed and the opposing ship cannot perform any additional Actions during this round in which you use this ability\n\nRemove this card from the game when there are no Mission Tokens left on this card.",
+			"cost" : 10,
 			"showShipResourceSlot" : false
 		}
 	],
