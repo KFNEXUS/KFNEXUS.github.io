@@ -9063,7 +9063,7 @@
 		}, {
 			"type" : "captain",
 			"id" : "mirror_universe_captain_71510b",
-			"set" : ["71510b", "71646b", "71529", "71535", "71796", "71800", "71807"],
+			"set" : ["71510b", "71646b", "71529", "71535", "71796", "71800", "71807", "72290p"],
 			"name" : "Mirror Universe",
 			"unique" : false,
 			"text" : "",
@@ -12144,7 +12144,7 @@
 			"cost" : 4,
 			"range" : "2 - 3",
 			"attack" : 4,
-			"text" : "<b>ATTACK: Target Lock</b> Spend your target lock and place 3 Time Tokens on this card to perform this attack\n\nYou may convert 1 of your [battlestations] results into a [crit] result.\n\nYou may only target a ship that is not in your forward firing arc with this attack.",
+			"text" : "<b>ATTACK: Target Lock</b> Spend your target lock and place 3 Time Tokens on this card to perform this attack.\nYou may convert 1 of your [battlestations] results into a [crit] result.\nYou may only target a ship that is not in your forward firing arc with this attack.",
 			"unique" : false,
 			"factions" : ["federation"]
 		}, {
