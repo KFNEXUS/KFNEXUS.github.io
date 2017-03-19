@@ -80,7 +80,7 @@
 		}, {
 			"type" : "set",
 			"id" : "72281p",
-			"name" : "I.K.S. Hegh'Ta",
+			"name" : "I.K.S. Hegh'ta",
 			"releaseDate" : "2016-11-04",
 			"parentSet" : "Klingon Civil War"
 		}, {
@@ -1409,7 +1409,7 @@
 			"type" : "ship",
 			"id" : "72281p_heghta",
 			"set" : ["72281p"],
-			"name" : "I.K.S. Hegh'Ta",
+			"name" : "I.K.S. Hegh'ta",
 			"class" : "K'Vort Class",
 			"actions" : ["evade", "target-lock", "cloak", "sensor-echo"],
 			"upgrades" : ["tech", "weapon", "crew", "crew"],
@@ -12438,9 +12438,9 @@
 			"type" : "tech",
 			"id" : "auxiliary_power_to_shields_72281p",
 			"set" : ["72281p"],
-			"name" : "Auxiliarly Power To Shields",
+			"name" : "Auxiliary Power to Shields",
 			"cost" : 4,
-			"text" : "When defending, during the Deal Damage step, you may discard this card to immediately repair up to 2 of your Shields that were destroyed with that attack. Place 1 Auxiliary Power Token beside your ship for each Shield Token you repaired with this ability./nNo ship may be equipped with more than one 'Auxiliary Power to Shields' Upgrade.",
+			"text" : "When defending, during the Deal Damage step, you may discard this card to immediately repair up to 2 of your Shields that were destroyed with that attack. Place 1 Auxiliary Power Token beside your ship for each Shield Token you repaired with this ability.\n\nNo ship may be equipped with more than one \"Auxiliary Power to Shields\" Upgrade.",
 			"unique" : true,
 			"factions" : ["klingon"]
 		}, {

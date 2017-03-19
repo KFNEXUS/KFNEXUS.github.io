@@ -5338,6 +5338,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquip: onePerShip("Transporter")
 		},
 		
+		// Particel Beam Weapon - Muratas
 		"weapon:particle_beam_weapon_muratas": {
 			attack: 0,
 			// Equip only on a Xindi ship with hull 4 or more
@@ -5360,6 +5361,33 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					}
 				}
 			}
+		},
+		
+		// Auxiliary Power to Shields - I.K.S. Hegh'ta
+		"tech:auxiliary_power_to_shields_72281p": {
+			rules: "Only one per ship",
+			canEquip: onePerShip("Auxiliary Power to Shields")
+		},
+		
+		// Course Change - I.K.S. Hegh'ta
+		"crew:change_course_72281p_crew": {
+			rules: "Only one per ship",
+			canEquip: onePerShip("Course Change")
+		},
+		
+		"talent:change_course_72281p_talent": {
+			rules: "Only one per ship",
+			canEquip: onePerShip("Course Change")
+		},
+		
+		"tech:change_course_72281p_tech": {
+			rules: "Only one per ship",
+			canEquip: onePerShip("Course Change")
+		},
+		
+		"weapon:change_course_72281p_weapon": {
+			rules: "Only one per ship",
+			canEquip: onePerShip("Course Change")
 		}
 	};
 }]);
