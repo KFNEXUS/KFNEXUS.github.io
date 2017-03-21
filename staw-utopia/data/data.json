@@ -17650,7 +17650,7 @@
 			"set" : ["71526"],
 			"name" : "Aft Phase Cannon",
 			"unique" : false,
-			"text" : "<b>ATTACK: </b>Disable this cad to perform this attack. This Weapon can only be fired from your rear firing arc.",
+			"text" : "<b>ATTACK: </b>Disable this card to perform this attack. This Weapon can only be fired from your rear firing arc.",
 			"factions" : ["federation"],
 			"cost" : 2,
 			"skill" : 0,
