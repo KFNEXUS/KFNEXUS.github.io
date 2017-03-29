@@ -1,6 +1,18 @@
 {
 	"sets" : [{
 			"type" : "set",
+			"id" : "72300p",
+			"name" : "Delta Flyer II",
+			"releaseDate" : "2017-03-30",
+			"parentSet" : "Drive"
+		}, {
+			"type" : "set",
+			"id" : "72300r",
+			"name" : "Co Pilot",
+			"releaseDate" : "2017-03-29",
+			"parentSet" : "Drive Resource"
+		}, {
+			"type" : "set",
 			"id" : "72290p",
 			"name" : "U.S.S. Defiant NCC-1764",
 			"releaseDate" : "2017-02-29",
@@ -1275,6 +1287,23 @@
 		}
 	],
 	"ships" : [{
+			"type" : "ship",
+			"id" : "delta_flyer_2_72300p",
+			"set" : ["72300p"],
+			"name" : "Delta Flyer II",
+			"class" : "Delta Flyer Class Shuttlecraft",
+			"actions" : ["evade", "target-lock", "scan"],
+			"upgrades" : ["tech", "weapon", "crew", "crew"],
+			"attack" : 3,
+			"agility" : 2,
+			"hull" : 2,
+			"shields" : 3,
+			"cost" : 20,
+			"text" : "You may deploy [weapon] Upgrades with a cost of 4 SP or less to this ship.\n\nYou may place an Auxiliarly Power Token next to your ship to perform an [battlestations] Action",
+			"unique" : true,
+			"factions" : ["federation"],
+			"squadron" : false
+		}, {
 			"type" : "ship",
 			"id" : "uss_defiant_72290p",
 			"set" : ["72290p"],
@@ -6183,7 +6212,7 @@
 		}, {
 			"type" : "ship",
 			"id" : "federation_starship_72014",
-			"set" : ["72014"],
+			"set" : ["72014","72300p"],
 			"name" : "Federation Starship",
 			"class" : "Delta Flyer Class Shuttlecraft",
 			"actions" : ["evade", "target-lock", "scan"],
@@ -9151,7 +9180,7 @@
 		}, {
 			"type" : "captain",
 			"id" : "2003",
-			"set" : ["71120", "71121", "71122", "72240", "71268", "72282", "71272", "72292", "71276", "71280", "72261", "OP4Prize", "u_s_s_yaeger", "71523", "71509", "71526", "71510", "71531", "71997p", "71801", "71998p", "71802", "72008", "72011", "72014", "71201", "71213", "71221", "72231", "72271", "72284p"],
+			"set" : ["72300p","71120", "71121", "71122", "72240", "71268", "72282", "71272", "72292", "71276", "71280", "72261", "OP4Prize", "u_s_s_yaeger", "71523", "71509", "71526", "71510", "71531", "71997p", "71801", "71998p", "71802", "72008", "72011", "72014", "71201", "71213", "71221", "72231", "72271", "72284p"],
 			"name" : "Federation",
 			"unique" : false,
 			"text" : "\r\n      ",
@@ -10144,6 +10173,17 @@
 			"cost" : 3,
 			"skill" : 4,
 			"talents" : 0
+		}, {
+			"type" : "captain",
+			"id" : "tom_paris_72300p",
+			"set" : ["72300p"],
+			"name" : "Tom Paris",
+			"cost" : 3,
+			"skill" : 4,
+			"talents" : 1,
+			"text" : "If this card is assigned to a ship with a Hull value of 2 or less, whenever your ship executes a red maneuver, treat it as a white maneuver instead\n\nIf this card is assigned to a shuttlecraft you cannot perform a 'Docking' Action on the round you use this ability.",
+			"unique" : true,
+			"factions" : ["federation"]
 		}, {
 			"type" : "captain",
 			"id" : "tom_paris_72014",
@@ -12137,6 +12177,44 @@
 		}
 	],
 	"upgrades" : [{
+			"type" : "talent",
+			"id" : "quick_thinking72300p",
+			"set" : ["72300p"],
+			"name" : "Quick Thinking",
+			"cost" : 5,
+			"text" : "<b>ACTION:</b> Discard this card to immediately perform a [sensor-echo] Action, even if your ship is not cloaked.",
+			"unique" : true,
+			"factions" : ["federation"]
+		}, {
+			"type" : "tech",
+			"id" : "impulse_thrusters_72300p",
+			"set" : ["72300p"],
+			"name" : "Impulse Thrusters",
+			"cost" : 4,
+			"text" : "<b>ACTION</b> If your ship exacuted a [straight] maneuver with a speed of 3 or less this round, disable this card to immediately execute an addational 1 [straight] maneuver.\n\nNo ship may be equipped with more than one 'Impulse Thrusters' Upgrade.",
+			"unique" : false,
+			"factions" : ["federation"]
+		}, {
+			"type" : "weapon",
+			"id" : "pulse_phased_weapons_72300p",
+			"set" : ["72300p"],
+			"name" : "Pulse Phased Weapons",
+			"attack" : 3,
+			"range" : 1,
+			"cost" : 5,
+			"text" : "<b>ATTACK:</b> Place 3 Time Tokens on this card to perform this attack. Make 2 separate attacks with this weapon. These attacks are defended against separatly and may be used against different ships.\n\nYou may only fire this weapon from your forward firing arc and may not increase the number of dice rolled in your attak.",
+			"unique" : false,
+			"factions" : ["federation"]
+		}, {
+			"type" : "crew",
+			"id" : "belanna_torres_72300p",
+			"set" : ["72300p"],
+			"name" : "B'Elanna Torres",
+			"cost" : 3,
+			"text" : "If your ship ends its move overlapping another ship's base, you may discard this card to perform an Action from your ship's Action Bar.",
+			"unique" : true,
+			"factions" : ["federation"]
+		}, {
 			"type" : "weapon",
 			"id" : "aft_Photon_torpedoes_72290p",
 			"set" : ["72290p"],
@@ -22409,6 +22487,14 @@
 			"name" : "Mutiny",
 			"text" : "At the start of the game place 3 Mission Tokens on this card.\n\nOnce per round, during an opposing ship's Perform Action step, if that ship chooses to perform an Action from its Action Bar, you may remove 1 Mission Token from this card to prevent that ship from performing that Action.\n\nNOTE: This ability occurs after the Action is announced, but before the Action is performed and the opposing ship cannot perform any additional Actions during this round in which you use this ability\n\nRemove this card from the game when there are no Mission Tokens left on this card.",
 			"cost" : 10,
+			"showShipResourceSlot" : false
+		}, {
+			"type" : "resource",
+			"id" : "co_pilot_resource",
+			"set" : ["72300r"],
+			"name" : "Co Pilot",
+			"text" : "<i>To be released</i>",
+			"cost" : 5,
 			"showShipResourceSlot" : false
 		}
 	],
