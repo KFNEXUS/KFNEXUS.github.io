@@ -1293,7 +1293,7 @@
 			"name" : "Delta Flyer II",
 			"class" : "Delta Flyer Class Shuttlecraft",
 			"actions" : ["evade", "target-lock", "scan"],
-			"upgrades" : ["tech", "weapon", "crew", "crew"],
+			"upgrades" : ["tech", "tech", "weapon", "crew", "crew"],
 			"attack" : 3,
 			"agility" : 2,
 			"hull" : 2,
@@ -22493,7 +22493,7 @@
 			"id" : "co_pilot_resource",
 			"set" : ["72300r"],
 			"name" : "Co Pilot",
-			"text" : "<i>To be released</i>",
+			"text" : "At the start of the game, place 5 Mission Tokens on this card. Once per round, during the Combat Phase, you may remove one Mission Token from this card to use one of the folowing abilities for one of your ships.\n\n1. Add +3 to your Captain Skill Number.\n\n2. Re-roll one of your attack or defense dice.\n\n3. Place an [evade] or a [battlestations] Token beside your ship.\n\nRemove this card from the game when there are no Mission Tokens left on this card.",
 			"cost" : 5,
 			"showShipResourceSlot" : false
 		}
