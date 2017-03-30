@@ -5338,10 +5338,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquip: onePerShip("Transporter")
 		},
 		
-		// Particel Beam Weapon - Muratas
+		// Particle Beam Weapon - Muratas
 		"weapon:particle_beam_weapon_muratas": {
 			attack: 0,
-			// Equip only on a Xindi ship with hull 4 or more
+			// Equip only on a Xindi
 			canEquip: function(upgrade,ship,fleet) {
 				return $factions.hasFaction(ship,"xindi", ship, fleet);
 			},
@@ -5388,6 +5388,56 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"weapon:change_course_72281p_weapon": {
 			rules: "Only one per ship",
 			canEquip: onePerShip("Course Change")
+		},
+		
+		// Hatchery - Orassin
+		"tech:hatchery_orassin": {
+			// Equip only on a Xindi ship
+			canEquip: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship,"xindi", ship, fleet) && onePerShip("Hatchery");
+			},/*
+			upgradeSlots: cloneSlot( 1 , 
+				{ 
+					type: ["crew"],
+					source: "Face-down Xindi",
+					intercept: {
+						ship: {
+							cost: function(upgrade,ship,fleet,cost) {
+								cost = 0;
+								return cost;
+							},
+							canEquip: function(card,ship,fleet,canEquip) {
+								if( !$factions.hasFaction( card, "xindi", ship, fleet ) )
+									return false;
+								return canEquip;
+							}
+						}
+					}
+				}
+			),*/
+			upgradeSlots: [  
+				{ 
+					type: ["crew"],
+					source: "Face-down Xindi (free)",
+					intercept: {
+						ship: {
+							cost: function(upgrade,ship,fleet,cost) {
+								cost = 0;
+								return cost;
+							},
+							canEquip: function(card,ship,fleet,canEquip) {
+								if( !$factions.hasFaction( card, "xindi", ship, fleet ) )
+									return false;
+								return canEquip;
+							}
+						}
+					}
+				},
+				{ 
+					type: ["crew"]
+				}
+			]
+
 		}
 	};
 }]);
