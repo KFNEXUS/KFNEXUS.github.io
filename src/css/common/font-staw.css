@@ -213,11 +213,11 @@
 }
 
 .fs-refit:before {
-  content: "a";
+  content: "0";
 }
 
 .fs-borg:before {
-  content: "b";
+  content: "1";
 }
 
 
