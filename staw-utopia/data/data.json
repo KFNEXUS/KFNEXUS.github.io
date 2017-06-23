@@ -1299,7 +1299,7 @@
 			"hull" : 2,
 			"shields" : 3,
 			"cost" : 20,
-			"text" : "You may deploy [weapon] Upgrades with a cost of 4 SP or less to this ship.\n\nYou may place an Auxiliarly Power Token next to your ship to perform an [battlestations] Action",
+			"text" : "You may deploy [weapon] Upgrades with a cost of 4 SP or less to this ship.\n\nYou may place an Auxiliary Power Token next to your ship to perform an [battlestations] Action",
 			"unique" : true,
 			"factions" : ["federation"],
 			"squadron" : false
@@ -1405,7 +1405,7 @@
 			"hull" : 3,
 			"shields" : 3,
 			"cost" : 22,
-			"text" : "When defending, during the Roll Defence Dice step, if your ship is not Cloaked, you may roll +2 defence dice. If you do so place an Auxiliarly Power Token beside your ship.",
+			"text" : "When defending, during the Roll Defence Dice step, if your ship is not Cloaked, you may roll +2 defence dice. If you do so place an Auxiliary Power Token beside your ship.",
 			"unique" : true,
 			"factions" : ["klingon"],
 			"intercept" : {
@@ -1655,7 +1655,7 @@
 			"hull" : 3,
 			"shields" : 3,
 			"cost" : 22,
-			"text" : "<b>ACTION:</b> Once this round, if you inflict a critical damage on an enemy ship's Hull, you may search the Damaage Deck for a \"Direct Hit\" damage card and place it beside the enemy's Ship Card. Shuffle the Damaage Deck when you are done.",
+			"text" : "<b>ACTION:</b> Once this round, if you inflict a critical damage on an enemy ship's Hull, you may search the Damaage Deck for a \"Direct Hit\" damage card and place it beside the enemy's Ship Card. Shuffle the Damage Deck when you are done.",
 			"unique" : true,
 			"factions" : ["klingon"],
 			"intercept" : {
@@ -1676,7 +1676,7 @@
 			"hull" : 3,
 			"shields" : 2,
 			"cost" : 18,
-			"text" : "When attacking with your Primary Weapon, if your ship is not Cloaked, during the Declare Target step, you may perform a 1 [straight] Maneuver before chosing an enemy ship to attack.",
+			"text" : "When attacking with your Primary Weapon, if your ship is not Cloaked, during the Declare Target step, you may perform a 1 [straight] Maneuver before choosing an enemy ship to attack.",
 			"unique" : true,
 			"factions" : ["romulan"],
 			"squadron" : false
@@ -1837,7 +1837,7 @@
 			"hull" : 3,
 			"shields" : 3,
 			"cost" : 22,
-			"text" : "If your ship has an opposing ship target locked, during the Activation Phase, you may switch the target lock to a diffrent ship within Range 1-3 as a free Action",
+			"text" : "If your ship has an opposing ship target locked, during the Activation Phase, you may switch the target lock to a different ship within Range 1-3 as a free Action",
 			"unique" : true,
 			"factions" : ["federation"],
 			"squadron" : false
@@ -2009,7 +2009,7 @@
 			"hull" : 3,
 			"shields" : 3,
 			"cost" : 20,
-			"text" : "When defending during the Roll Defense Dice step, you may disable one of your Active Shilds to gain +2 defence dice for that attack.",
+			"text" : "When defending during the Roll Defense Dice step, you may disable one of your Active Shields to gain +2 defence dice for that attack.",
 			"unique" : true,
 			"factions" : ["kazon"],
 			"squadron" : false
@@ -2179,7 +2179,7 @@
 			"hull" : 4,
 			"shields" : 3,
 			"cost" : 22,
-			"text" : "During the Actavation Phase, you may perform a second Action from your Action Bar as a free Action. If you do so place an Auxiliary Power Token beside your ship.",
+			"text" : "During the Activation Phase, you may perform a second Action from your Action Bar as a free Action. If you do so place an Auxiliary Power Token beside your ship.",
 			"unique" : true,
 			"factions" : ["federation"],
 			"squadron" : false
@@ -2213,7 +2213,7 @@
 			"hull" : 2,
 			"shields" : 2,
 			"cost" : 16,
-			"text" : "During the Activation Phase you may perform a [scan] Action as a free Action. If you do so place an Auxiliry Power Token beside your ship.",
+			"text" : "During the Activation Phase you may perform a [scan] Action as a free Action. If you do so place an Auxiliary Power Token beside your ship.",
 			"unique" : true,
 			"factions" : ["romulan"],
 			"intercept" : {
@@ -9661,7 +9661,7 @@
 			"set" : ["71535"],
 			"name" : "Worf",
 			"unique" : true,
-			"text" : "<b>ACTION:</b> Target a friendly ship at Range 1-2 with a Hull Value of 3 or less. The target ship immediately makes one free attack with its Primary Weapon against an enemy ship in its forward firing arc. Place an Auxiliarly Power Token beside the target ship.",
+			"text" : "<b>ACTION:</b> Target a friendly ship at Range 1-2 with a Hull Value of 3 or less. The target ship immediately makes one free attack with its Primary Weapon against an enemy ship in its forward firing arc. Place an Auxiliary Power Token beside the target ship.",
 			"factions" : ["mirror-universe"],
 			"cost" : 2,
 			"skill" : 3,
@@ -10146,7 +10146,7 @@
 			"set" : ["71803"],
 			"name" : "Day Kannu",
 			"unique" : true,
-			"text" : "When attacking with your Primary Weapon, during the Roll Attack Dice step, you may set one of your attack dice on the result of your choice. If you do so, place an Auxiliary Power Token beside your ship. This die cannot be rolled or re-rolld during the round you use this ability.",
+			"text" : "When attacking with your Primary Weapon, during the Roll Attack Dice step, you may set one of your attack dice on the result of your choice. If you do so, place an Auxiliary Power Token beside your ship. This die cannot be rolled or re-rolled during the round you use this ability.",
 			"factions" : ["bajoran"],
 			"cost" : 3,
 			"skill" : 4,
@@ -11764,7 +11764,7 @@
 			"cost" : 6,
 			"skill" : 9,
 			"talents" : 1,
-			"text" : "<b>ACTION:</b> Place a [battlestations] Token beside your ship. When attacking this round during the Modify Attack Dice Step you may spend this Token to re-roll up to 2 of your attack dice OR When defending this round, during the Modify Defence Dice step you may spend this Token to re-roll up to 2 of your defense dice. You may still perform the [battlestations] Action as a free Action this Round if pssable.",
+			"text" : "<b>ACTION:</b> Place a [battlestations] Token beside your ship. When attacking this round during the Modify Attack Dice Step you may spend this Token to re-roll up to 2 of your attack dice OR When defending this round, during the Modify Defence Dice step you may spend this Token to re-roll up to 2 of your defense dice. You may still perform the [battlestations] Action as a free Action this Round if possible.",
 			"unique" : true,
 			"factions" : ["federation"]
 		}, {
@@ -11885,7 +11885,7 @@
 			"set" : ["71523"],
 			"name" : "James T. Kirk",
 			"unique" : true,
-			"text" : "<b>FLEET ACTION:</b> Target a ship at Range 1.  Disable one Upgrade of your choice on the target ship.",
+			"text" : "<b>FLEET ACTION:</b> Target a ship at Range 1. Disable one Upgrade of your choice on the target ship.",
 			"factions" : ["federation"],
 			"cost" : 5,
 			"skill" : 2,
@@ -11973,7 +11973,7 @@
 			"set" : ["71535"],
 			"name" : "Worf",
 			"unique" : true,
-			"text" : "<b>FLEET ACTION:</b> Target a friendly ship at Range 1-2 with a Hull Value of 3 or less. The target ship immediately makes one free attack with its Primary Weapon against an enemy ship in its forward firing arc. Place an Auxiliarly Power Token beside the target ship.",
+			"text" : "<b>FLEET ACTION:</b> Target a friendly ship at Range 1-2 with a Hull Value of 3 or less. The target ship immediately makes one free attack with its Primary Weapon against an enemy ship in its forward firing arc. Place an Auxiliary Power Token beside the target ship.",
 			"factions" : ["mirror-universe"],
 			"cost" : 2,
 			"skill" : 0,
@@ -12191,7 +12191,7 @@
 			"set" : ["72300p"],
 			"name" : "Impulse Thrusters",
 			"cost" : 4,
-			"text" : "<b>ACTION</b> If your ship exacuted a [straight] maneuver with a speed of 3 or less this round, disable this card to immediately execute an addational 1 [straight] maneuver.\n\nNo ship may be equipped with more than one 'Impulse Thrusters' Upgrade.",
+			"text" : "<b>ACTION</b> If your ship executed a [straight] maneuver with a speed of 3 or less this round, disable this card to immediately execute an additional 1 [straight] maneuver.\n\nNo ship may be equipped with more than one 'Impulse Thrusters' Upgrade.",
 			"unique" : false,
 			"factions" : ["federation"]
 		}, {
@@ -12202,7 +12202,7 @@
 			"attack" : 3,
 			"range" : 1,
 			"cost" : 5,
-			"text" : "<b>ATTACK:</b> Place 3 Time Tokens on this card to perform this attack. Make 2 separate attacks with this weapon. These attacks are defended against separatly and may be used against different ships.\n\nYou may only fire this weapon from your forward firing arc and may not increase the number of dice rolled in your attak.",
+			"text" : "<b>ATTACK:</b> Place 3 Time Tokens on this card to perform this attack. Make 2 separate attacks with this weapon. These attacks are defended against separately and may be used against different ships.\n\nYou may only fire this weapon from your forward firing arc and may not increase the number of dice rolled in your attack.",
 			"unique" : false,
 			"factions" : ["federation"]
 		}, {
@@ -12289,7 +12289,7 @@
 			"set" : ["72293"],
 			"name" : "Reptilian Analysis Team",
 			"cost" : 5,
-			"text" : "Add 1 [tech] Upgrade to your Upgrade Bar\n\nWhen you are supposed to disable a [tech] Upgrade, you may disable this card instead and place 3 Time Tokens on the [tech] Upgrade. 2 Time Tokens if it is a Xindi [tech] Upgrade.\n\nThis Upgrade may only be purchased for a Xindi ship and no ship may be equipped with more than one 'Reptillian Analysis Team' Upgrade.",
+			"text" : "Add 1 [tech] Upgrade to your Upgrade Bar\n\nWhen you are supposed to disable a [tech] Upgrade, you may disable this card instead and place 3 Time Tokens on the [tech] Upgrade. 2 Time Tokens if it is a Xindi [tech] Upgrade.\n\nThis Upgrade may only be purchased for a Xindi ship and no ship may be equipped with more than one 'Reptilian Analysis Team' Upgrade.",
 			"unique" : false,
 			"factions" : ["xindi"]
 		}, {
@@ -12374,7 +12374,7 @@
 			"set" : ["72281"],
 			"name" : "Subspace Vortex",
 			"cost" : 5,
-			"text" : "<b>ACTION:</b> Discard this card to execute an additional 4[straight], 5[straight] or 6[straight] Maneuver. Place an Auxiliarly Power Token beside your ship.\n\nThis Upgrade costs +5 for any non-Xindi ship.",
+			"text" : "<b>ACTION:</b> Discard this card to execute an additional 4[straight], 5[straight] or 6[straight] Maneuver. Place an Auxiliary Power Token beside your ship.\n\nThis Upgrade costs +5 for any non-Xindi ship.",
 			"unique" : false,
 			"factions" : ["xindi"]
 		}, {
@@ -12473,7 +12473,7 @@
 			"set" : ["72282p"],
 			"name" : "Aft Shields",
 			"cost" : 4,
-			"text" : "If you are not Cloaked and defending against an attack from a ship that is not in your forward firing arc, during the Compare Results step, you may discard this card to cancel up to 2 of attacking ship's [hit] or [crit] results. If you do so, place an Auxiliarly Power Token beside your ship.\n\nNo ship may be equipped with more than one 'Aft Shields' Upgrade.",
+			"text" : "If you are not Cloaked and defending against an attack from a ship that is not in your forward firing arc, during the Compare Results step, you may discard this card to cancel up to 2 of attacking ship's [hit] or [crit] results. If you do so, place an Auxiliary Power Token beside your ship.\n\nNo ship may be equipped with more than one 'Aft Shields' Upgrade.",
 			"unique" : false,
 			"factions" : ["klingon"]
 		}, {
@@ -12666,7 +12666,7 @@
 			"set" : ["72263"],
 			"name" : "Holo-Communicator",
 			"cost" : 5,
-			"text" : "During the Activation Phase you may disable this card to target a friendly ship within range 1-2. If you do so you may perform the Action listed on that ship's Captain Card.\n\nNo ship may be equipped with more than one ‘Holo-Communicator’ Upgrade.",
+			"text" : "During the Activation Phase you may disable this card to target a friendly ship within range 1-2. If you do so you may perform the Action listed on that ship's Captain Card.\n\nNo ship may be equipped with more than one ‘Holo-Communicator Upgrade.",
 			"unique" : false,
 			"factions" : ["federation"]
 		}, {
@@ -13445,7 +13445,7 @@
 			"set" : ["72231"],
 			"name" : "Thruster Array",
 			"cost" : 3,
-			"text" : "<b>ACTION:</b> Discard this card to immeditaly perform a speed 1 or 2 Reverse Maneuver. Treat this maneuver as a red maneuver.",
+			"text" : "<b>ACTION:</b> Discard this card to immediately perform a speed 1 or 2 Reverse Maneuver. Treat this maneuver as a red maneuver.",
 			"unique" : false,
 			"factions" : ["federation"]
 		}, {
@@ -13707,11 +13707,11 @@
 			"factions" : ["kazon"]
 		}, {
 			"type" : "crew",
-			"id" : "kazon_gurad_Halik",
+			"id" : "kazon_guard_Halik",
 			"set" : ["71192"],
-			"name" : "Kazon Gurad",
+			"name" : "Kazon Guard",
 			"cost" : 4,
-			"text" : "During the Activation Phase, you may discard this card to place an [evade] Token beside your ship, even if there is already one there. If you do so place an Auxiliary Power Token beside your ship. No ship may be equiped with more than one 'Kazon Gurad' Upgrade.",
+			"text" : "During the Activation Phase, you may discard this card to place an [evade] Token beside your ship, even if there is already one there. If you do so place an Auxiliary Power Token beside your ship. No ship may be equipped with more than one 'Kazon Guard' Upgrade.",
 			"unique" : false,
 			"factions" : ["kazon"]
 		}, {
@@ -13722,7 +13722,7 @@
 			"cost" : 3,
 			"attack" : 0,
 			"range" : "1 - 2",
-			"text" : "<b>ATTACK: </b>Place 3 Time Tokens on this card to perform this attack. Place an Auxiliary Power Token beside the target ship if there if there is at lease one uncancled [hit] or [crit] result.",
+			"text" : "<b>ATTACK: </b>Place 3 Time Tokens on this card to perform this attack. Place an Auxiliary Power Token beside the target ship if there if there is at lease one uncancelled [hit] or [crit] result.",
 			"unique" : false,
 			"factions" : ["kazon"]
 		}, {
@@ -13751,7 +13751,7 @@
 			"set" : ["71192"],
 			"name" : "Unremarkable Species",
 			"cost" : 5,
-			"text" : "This Upgrade does not require an Upgrade slot and my not be deployed to a Borg ship. While this upgrade is equipped to your ship your Kazon Upgrades cannot be targed by the Borg Assimilation Tubules Upgrade. In addation when defending against a Borg ship, during the Roll Defense Dice step roll +2 defence dice. This Upgrade costs +5SP if purchased for a non Kazon ship and no ship may be equipped with more than 1 'Unremarkable Species' Upgrade.",
+			"text" : "This Upgrade does not require an Upgrade slot and my not be deployed to a Borg ship. While this upgrade is equipped to your ship your Kazon Upgrades cannot be targeted by the Borg Assimilation Tubules Upgrade. In addition when defending against a Borg ship, during the Roll Defense Dice step roll +2 defence dice. This Upgrade costs +5SP if purchased for a non Kazon ship and no ship may be equipped with more than 1 'Unremarkable Species' Upgrade.",
 			"unique" : false,
 			"factions" : ["kazon"]
 		}, {
@@ -13769,7 +13769,7 @@
 			"set" : ["71211"],
 			"name" : "LEGENDARY HERO",
 			"cost" : 5,
-			"text" : "You may discard this card at the start of the Combat Phase to gain +2 attack dice and +2 defense dice for that round. This Upgrade may only be purchased for a Bajoran captain assigned to a Bajoren Ship.",
+			"text" : "You may discard this card at the start of the Combat Phase to gain +2 attack dice and +2 defense dice for that round. This Upgrade may only be purchased for a Bajoran captain assigned to a Bajoran Ship.",
 			"unique" : true,
 			"factions" : ["bajoran"]
 		}, {
@@ -13868,7 +13868,7 @@
 			"set" : ["71221"],
 			"name" : "Red Squad",
 			"cost" : 5,
-			"text" : "At the start of the game, place a number of Tokens [evade], [scan], or [battlestations] on this card equal to the number of Federation [crew] Upgrades assigned to your ship 4 max. During the Activation Phase before performing your Action, you may remove 1 Token from on top of this card and place it beside your ship. This Upgrade may only be purchesed for a Federation Captain assigned to a Federation ship.",
+			"text" : "At the start of the game, place a number of Tokens [evade], [scan], or [battlestations] on this card equal to the number of Federation [crew] Upgrades assigned to your ship 4 max. During the Activation Phase before performing your Action, you may remove 1 Token from on top of this card and place it beside your ship. This Upgrade may only be purchased for a Federation Captain assigned to a Federation ship.",
 			"unique" : true,
 			"factions" : ["federation"]
 		}, {
@@ -13895,7 +13895,7 @@
 			"set" : ["71221"],
 			"name" : "Dorian Collins",
 			"cost" : 2,
-			"text" : "If your ship suffers damage to its Hull you may immeditaly disable this card to repair 1 Shield.",
+			"text" : "If your ship suffers damage to its Hull you may immediately disable this card to repair 1 Shield.",
 			"unique" : true,
 			"factions" : ["federation"]
 		}, {
@@ -13904,7 +13904,7 @@
 			"set" : ["71221"],
 			"name" : "Nog",
 			"cost" : 5,
-			"text" : "<b>ACTION:</b> Disable this card to repair 1 damage to your Hull or Shields. OR If you exacute a Red Maneuver you may disable this card after skipping your perform Action Step to remove 1 Auxiliary Power Token form beside your ship.",
+			"text" : "<b>ACTION:</b> Disable this card to repair 1 damage to your Hull or Shields. OR If you execute a Red Maneuver you may disable this card after skipping your perform Action Step to remove 1 Auxiliary Power Token form beside your ship.",
 			"unique" : true,
 			"factions" : ["federation"]
 		}, {
@@ -13924,7 +13924,7 @@
 			"set" : ["71223"],
 			"name" : "DIVERSION",
 			"cost" : 5,
-			"text" : "When an opposing ship delcares an attack against a friendly ship that is within Range 1 of your ship. If you are also in the attacking ships forward fireing arc you may discard this card to force the attacking ship to make its aggack against your ship instead. The attack is made at -2 attack dice.",
+			"text" : "When an opposing ship declares an attack against a friendly ship that is within Range 1 of your ship. If you are also in the attacking ships forward firing arc you may discard this card to force the attacking ship to make its aggack against your ship instead. The attack is made at -2 attack dice.",
 			"unique" : true,
 			"factions" : ["independent"]
 		}, {
@@ -14018,7 +14018,7 @@
 			"set" : ["71201"],
 			"name" : "Navigational Station",
 			"cost" : 4,
-			"text" : "After you prreform a green manever you may disable this card to immeditaly perform an [evade] Action as a free Action. No ship may be equiped with more than one 'Navigational Station' Upgrade.",
+			"text" : "After you prreform a green manever you may disable this card to immediately perform an [evade] Action as a free Action. No ship may be equiped with more than one 'Navigational Station' Upgrade.",
 			"unique" : false,
 			"factions" : ["federation"]
 		}, {
@@ -14027,7 +14027,7 @@
 			"set" : ["71201"],
 			"name" : "Warp Jump",
 			"cost" : 5,
-			"text" : "At the start of the Combat Phase before any attacks have been made, you my discard this card to remove your ship form the play area. At the end of the Combat Phase after all other ships have attacked, place your ship anywere in the play area but not within Range 1-3 of any other ship. All Tokens that were beside your ship are removed. You can not attack during the round in which you use this ability.",
+			"text" : "At the start of the Combat Phase before any attacks have been made, you my discard this card to remove your ship form the play area. At the end of the Combat Phase after all other ships have attacked, place your ship anywhere in the play area but not within Range 1-3 of any other ship. All Tokens that were beside your ship are removed. You can not attack during the round in which you use this ability.",
 			"unique" : false,
 			"factions" : ["federation"]
 		}, {
@@ -14047,7 +14047,7 @@
 			"set" : ["71222"],
 			"name" : "Covert Mission",
 			"cost" : 5,
-			"text" : "This Upgrade may be filded by any Captain. If the Captains card does not have an [talent] icon, this Upgrade costs +1 SP. During the End Phase of each round, place 1 Mission Token on this card, max 3.\n<b>ACTION:</b> Discard this card to gain +1 attack die for each mission Token beside this card for your first attack this round.",
+			"text" : "This Upgrade may be fielded by any Captain. If the Captains card does not have an [talent] icon, this Upgrade costs +1 SP. During the End Phase of each round, place 1 Mission Token on this card, max 3.\n<b>ACTION:</b> Discard this card to gain +1 attack die for each mission Token beside this card for your first attack this round.",
 			"unique" : true,
 			"factions" : ["romulan"]
 		}, {
@@ -14079,11 +14079,11 @@
 			"factions" : ["romulan"]
 		}, {
 			"type" : "tech",
-			"id" : "gravition_field_generator_pi",
+			"id" : "graviton_field_generator_pi",
 			"set" : ["71222"],
-			"name" : "Gravition Field Generator",
+			"name" : "Graviton Field Generator",
 			"cost" : 2,
-			"text" : "When defending if your ship is not Cloaked, during the Deal Damage step you may discard this card to add 1 Shield Token. This Shield Token my not exceed your ship's starting Shield Value and is treated like a normal Shield Token. No ship my be equipped with more than 1 'Gravition Field Generator' Upgrade.",
+			"text" : "When defending if your ship is not Cloaked, during the Deal Damage step you may discard this card to add 1 Shield Token. This Shield Token my not exceed your ship's starting Shield Value and is treated like a normal Shield Token. No ship my be equipped with more than 1 'Graviton Field Generator' Upgrade.",
 			"unique" : false,
 			"factions" : ["romulan"]
 		}, {
@@ -15089,7 +15089,7 @@
 			"set" : ["71269"],
 			"name" : "Concussive Charges",
 			"unique" : false,
-			"text" : "<b>ATTACK: (Target Lock)</b> Spend your target lock and disable this card to perform this attack. \nFor every uncanceled [hit] or [crit] result, the target ship loses 1 token of your choice that has been placed beside it in the play area. \nYou may fire this weapon from your forward or rear firing arcs.",
+			"text" : "<b>ATTACK: (Target Lock)</b> Spend your target lock and disable this card to perform this attack. \nFor every uncancelled [hit] or [crit] result, the target ship loses 1 token of your choice that has been placed beside it in the play area. \nYou may fire this weapon from your forward or rear firing arcs.",
 			"factions" : ["klingon"],
 			"cost" : 4,
 			"skill" : 0,
@@ -15440,7 +15440,7 @@
 			"set" : ["71272", "72292"],
 			"name" : "Positron Beam",
 			"unique" : false,
-			"text" : "During the Planning Phase, you may discard this Upgrade to target a ship at Range 1 of your ship. That ship immediately receives an Auxiliary  Power Token.",
+			"text" : "During the Planning Phase, you may discard this Upgrade to target a ship at Range 1 of your ship. That ship immediately receives an Auxiliary Power Token.",
 			"factions" : ["federation"],
 			"cost" : 2,
 			"skill" : 0,
@@ -16597,7 +16597,7 @@
 			"set" : ["71444", "71513a"],
 			"name" : "Borg Missile",
 			"unique" : false,
-			"text" : "<b>ATTACK: </b>Disable this card to perform this attack. The target ship does not sustain normal damage from this attack. Instead, place 1 Auxillary Power Token beside the target ship AND destroy 1 of its Active Shields for each [hit] or [crit] result. The target ship does not roll defense dice against this attack. This Upgrade may only be purchased for a Borg ship.",
+			"text" : "<b>ATTACK: </b>Disable this card to perform this attack. The target ship does not sustain normal damage from this attack. Instead, place 1 Auxiliary Power Token beside the target ship AND destroy 1 of its Active Shields for each [hit] or [crit] result. The target ship does not roll defense dice against this attack. This Upgrade may only be purchased for a Borg ship.",
 			"factions" : ["borg"],
 			"cost" : 6,
 			"skill" : 0,
@@ -18118,7 +18118,7 @@
 			"set" : ["71646c", "71793", "blind_nistrim_culluh"],
 			"name" : "Photonic Charges",
 			"unique" : false,
-			"text" : "<b>ATTACK: </b>Disable this card to perform this attack. \n\nPlace an Auxiliarly Power Token beside the target ship if there is at least 1 uncancelled [hit] or [crit] result. \n\nThis Upgrade costs +4 SP if purchased for a non-Predator class ship.",
+			"text" : "<b>ATTACK: </b>Disable this card to perform this attack. \n\nPlace an Auxiliary Power Token beside the target ship if there is at least 1 uncancelled [hit] or [crit] result. \n\nThis Upgrade costs +4 SP if purchased for a non-Predator class ship.",
 			"factions" : ["kazon"],
 			"cost" : 4,
 			"skill" : 0,
@@ -20684,7 +20684,7 @@
 			"cost" : 5,
 			"attack" : 5,
 			"range" : "1",
-			"text" : "<b>ATTACK: </b>Discard this card and your Captain Card to perform this attack. Place a Mission Token in the play area, in your forward firing arc, within Range 1 of your ship that is not on top of another ship's base. Using a 360 arc from the Mission Token, target all ships in a line up to Range 2 and make a separate attack againts each ship in the line (at -1 attack die for each ship past the first). Remove the Mission Token from the play area after the attack. This Upgrade may only be purchased for a Xindi ship.",
+			"text" : "<b>ATTACK: </b>Discard this card and your Captain Card to perform this attack. Place a Mission Token in the play area, in your forward firing arc, within Range 1 of your ship that is not on top of another ship's base. Using a 360 arc from the Mission Token, target all ships in a line up to Range 2 and make a separate attack against each ship in the line (at -1 attack die for each ship past the first). Remove the Mission Token from the play area after the attack. This Upgrade may only be purchased for a Xindi ship.",
 			"unique" : false,
 			"factions" : ["xindi"]
 		}, {
@@ -21440,7 +21440,7 @@
 			"cost" : 4,
 			"attack" : 4,
 			"range" : "1 - 3",
-			"text" : "<b>ATTACK: </b>Disable this card to perform this attack. While this card is disabled, you roll 1 less defense die.\nIf you hit an Attack Squadron with this attack, during the Deal Damage step, discard 1 Attack Squadron Token for each uncanceled [hit] or [crit] result (max 3).\nYou may only fire this weapon from your forward firing arc.",
+			"text" : "<b>ATTACK: </b>Disable this card to perform this attack. While this card is disabled, you roll 1 less defense die.\nIf you hit an Attack Squadron with this attack, during the Deal Damage step, discard 1 Attack Squadron Token for each uncancelled [hit] or [crit] result (max 3).\nYou may only fire this weapon from your forward firing arc.",
 			"unique" : false,
 			"factions" : ["ferengi"]
 		}, {
@@ -21497,7 +21497,7 @@
 			"set" : ["71807"],
 			"name" : "Inverse Tachyon Pulse",
 			"cost" : 2,
-			"text" : "When you initiate an attack while there is a [scan] token beside your ship, you may disable this card. If you do so, the defending shiph rolls -1 defense die against that attack.\n\nNo ship may be equipped with more than 1 Inverse Tachyon Pulse Upgrade.",
+			"text" : "When you initiate an attack while there is a [scan] token beside your ship, you may disable this card. If you do so, the defending ship rolls -1 defense die against that attack.\n\nNo ship may be equipped with more than 1 Inverse Tachyon Pulse Upgrade.",
 			"unique" : false,
 			"factions" : ["mirror-universe"],
 			"intercept" : {
@@ -22042,7 +22042,7 @@
 			"cost" : 5,
 			"attack" : 6,
 			"range" : "1 - 2",
-			"text" : "<b>ATTACK: </b>Discard this card to perform this attack. If the defending ship is not cloaked and has no Active Shields and you have at least 1 uncanceled [crit] result, draw 2 Damage Cards (instead of 1) and choose which one to place beside the enemy's Ship Card; discard the unused Damage Cards.\nIf this attack is fired at Range 1 and hits, your ship suffers 1 damage.",
+			"text" : "<b>ATTACK: </b>Discard this card to perform this attack. If the defending ship is not cloaked and has no Active Shields and you have at least 1 uncancelled [crit] result, draw 2 Damage Cards (instead of 1) and choose which one to place beside the enemy's Ship Card; discard the unused Damage Cards.\nIf this attack is fired at Range 1 and hits, your ship suffers 1 damage.",
 			"unique" : false,
 			"factions" : ["mirror-universe"]
 		}, {
@@ -22203,7 +22203,7 @@
 			"id" : "4001",
 			"set" : ["OP1Participation2"],
 			"name" : "Elite Attack Die",
-			"text" : "1) Once during every round, a player may choose to exchange 1 of their attack dice with the Elite Attack Die. Players may not roll this die more than once per round, regardless of how many ships they have in their fleet.\r\n\r\n2) The pips on the Elite Attack Die are [hit][hit], [crit], [crit], [hit], [hit], [hit], [battlestations], [battlestations].\r\n\r\n3) The [hit][hit] result may be canceled by 1 [evade] result.\r\n\r\n4) The [hit][hit] result inflicts 2 damage if it is not canceled.\r\n\r\n5) When canceling the attack dice with [evade] results, the order that the dice are canceled is: [hit] first, then [hit][hit], then [crit].",
+			"text" : "1) Once during every round, a player may choose to exchange 1 of their attack dice with the Elite Attack Die. Players may not roll this die more than once per round, regardless of how many ships they have in their fleet.\r\n\r\n2) The pips on the Elite Attack Die are [hit][hit], [crit], [crit], [hit], [hit], [hit], [battlestations], [battlestations].\r\n\r\n3) The [hit][hit] result may be cancelled by 1 [evade] result.\r\n\r\n4) The [hit][hit] result inflicts 2 damage if it is not cancelled.\r\n\r\n5) When cancelling the attack dice with [evade] results, the order that the dice are cancelled is: [hit] first, then [hit][hit], then [crit].",
 			"cost" : 5,
 			"showShipResourceSlot" : false
 		}, {
@@ -22509,7 +22509,7 @@
 			"id" : "rule_muon_token",
 			"set" : ["AdditionalRules"],
 			"name" : "Muon Token",
-			"text" : "This card explains the rules for a Muon Token and serves as a reference to remind players of its effect.\n\nA ship with a Muon Token assigned to it follows these special rules:\n\n1. A Muon Token stays wih a ship until it is removed.\n\n2. During the Activation Phase, after the ship moves, the ship takes damage to its Hull equal to the number of its current Maneuver -1. The type of Maneuver does not matter, just the number.\n\n3. After the ship performs a Green or White Maneuver, it can spend an Action to remove the Muon Token."
+			"text" : "This card explains the rules for a Muon Token and serves as a reference to remind players of its effect.\n\nA ship with a Muon Token assigned to it follows these special rules:\n\n1. A Muon Token stays with a ship until it is removed.\n\n2. During the Activation Phase, after the ship moves, the ship takes damage to its Hull equal to the number of its current Maneuver -1. The type of Maneuver does not matter, just the number.\n\n3. After the ship performs a Green or White Maneuver, it can spend an Action to remove the Muon Token."
 		}, {
 			"type" : "token",
 			"id" : "rule_regenerate",
