@@ -11713,6 +11713,7 @@
 			"id": "jean_luc_picard_enterprise_72284p",
 			"set": ["72284p"],
 			"name": "Jean-Luc Picard",
+			"unique": true,
 			"text": "Your ship costs -2SP and each Upgrade assigned to your ship costs -1SP.\nMax -5SP total",
 			"cost": 5,
 			"skill": 8,
