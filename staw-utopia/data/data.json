@@ -1355,7 +1355,7 @@
 		}, {
 			"type": "ship",
 			"id": "uss_grissom_72001wp",
-			"set": ["72001wp"],
+			"set": ["72011wp"],
 			"name": "U.S.S. Grissom",
 			"class": "Oberth Class",
 			"actions": ["evade", "target-lock", "scan"],
@@ -1376,7 +1376,7 @@
 		}, {
 			"type": "ship",
 			"id": "ufederation_starship_72001wp",
-			"set": ["72001wp"],
+			"set": ["72011wp"],
 			"name": "Federation Starship",
 			"class": "Oberth Class",
 			"actions": ["evade", "target-lock", "scan"],
@@ -9546,7 +9546,7 @@
 		}, {
 			"type": "captain",
 			"id": "jt_esteban_72001p",
-			"set": ["72001wp"],
+			"set": ["72011wp"],
 			"name": "J.T. Esteban",
 			"cost": 2,
 			"skill": 3,
