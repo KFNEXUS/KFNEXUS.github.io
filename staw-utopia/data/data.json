@@ -12400,7 +12400,7 @@
         }, {
             "type": "talent",
             "id": "captains_discretion_72001wp",
-            "set": ["72001wp"],
+            "set": ["72011wp"],
             "name": "Captain's Discretion",
             "cost": 4,
             "text": "<b>FREE ACTION:</b> Discard this card.\n\nPerform the Action of a [crew] Upgrade equipped to this ship.",
@@ -12409,7 +12409,7 @@
         }, {
             "type": "crew",
             "id": "david_marcus_72001wp",
-            "set": ["72001wp"],
+            "set": ["72011wp"],
             "name": "David Marcus",
             "cost": 3,
             "text": "<b>IF A [crew] Upgrade equipped to this ship would be discarded</b>\nDiscard this card instead\n\n<b>When Defending:</b> Discard this card. Add 1 [evade]",
@@ -12418,7 +12418,7 @@
         }, {
             "type": "crew",
             "id": "saavik_72001wp",
-            "set": ["72001wp"],
+            "set": ["72011wp"],
             "name": "Saavik",
             "cost": 1,
 			"range": "1 - 2",
@@ -12428,7 +12428,7 @@
         }, {
             "type": "crew",
             "id": "federation_helmsman_72001wp",
-            "set": ["72001wp"],
+            "set": ["72011wp"],
             "name": "Federation Helmsman",
             "cost": 3,
             "text": "<b>ACTION:</b> Place an [aux] Token beside this ship.\n\nPerfrom a White 1 straight, bank, or turn Maneuver. ",
@@ -12437,7 +12437,7 @@
         }, {
             "type": "tech",
             "id": "comm_station_72001wp",
-            "set": ["72001wp"],
+            "set": ["72011wp"],
             "name": "Comm Station",
             "cost": 4,
 			"range": "1 - 2",
@@ -12447,7 +12447,7 @@
         }, {
             "type": "tech",
             "id": "close-range_scan_72001wp",
-            "set": ["72001wp"],
+            "set": ["72011wp"],
             "name": "Close-Range Scan",
             "cost": 3,
             "text": "<b>ACTIVATION PHASE:</b> If this ship performed a [scan] Action, disable 1 Shield.\n\nPlace a [scan] Token beside this ship.",
@@ -12456,7 +12456,7 @@
         }, {
             "type": "tech",
             "id": "genesis_effect_72001wp",
-            "set": ["72001wp"],
+            "set": ["72011wp"],
             "name": "Genesis Effect",
             "cost": 2,
 			"range": "1 - 2",
@@ -12466,7 +12466,7 @@
         }, {
             "type": "crew",
             "id": "william_t_riker_72001wp",
-            "set": ["72001wp"],
+            "set": ["72011wp"],
             "name": "William T. Riker",
             "cost": 4,
             "text": "Modify the Captain SKill of the Captain equipped to this ship by +3.\n\n<b>IF THE CAPTAIN EQUIPPED TO THIS SHIP IS DISABLED OR DISCARDED.</b>\nThis ships Captain Skill is 5.\n\n<b>IF THIS SHIP RECEIVES A FACE UP 'COMMUNICATIONS FAILURE' OR 'INJURED CAPTAIN' DAMAGE CARD,</b>\nFlip that damage card face down.",
