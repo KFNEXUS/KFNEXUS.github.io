@@ -12568,7 +12568,7 @@
             "cost": 1,
             "text": "<b>WHEN ATTACKING:</b>\n\nThis ship may reroll 1 [blank]. If the defending ship is a Dominion Ship, this ship may also convert 1 [blank] into 1 [hit].",
             "unique": true,
-            "factions": ["dominion"]
+            "factions": ["independent"]
         }, {
             "type": "crew",
             "id": "goroth_72012wp",
