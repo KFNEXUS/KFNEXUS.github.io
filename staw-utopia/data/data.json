@@ -1324,9 +1324,9 @@
 	],
 	"ships": [{
 			"type": "ship",
-			"id": "prototype_01_71536",
+			"id": "prototype_02_71536",
 			"set": ["72014wp"],
-			"name": "Prototype 01",
+			"name": "Prototype 02",
 			"class": "Romulan Drone Ship",
 			"actions": ["evade", "target-lock", "scan"],
 			"upgrades": ["tech", "tech", "tech", "weapon"],
@@ -1421,7 +1421,7 @@
 			"squadron": false
 		}, {
 			"type": "ship",
-			"id": "i_k_s_ves_balth_71448",
+			"id": "ship_71448",
 			"set": ["72012wp"],
 			"name": "Klingon Starship",
 			"class": "Raptor Class",
