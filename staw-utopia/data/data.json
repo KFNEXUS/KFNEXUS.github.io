@@ -13635,7 +13635,7 @@
 			"factions": ["mirror-universe"]
 		}, {
 			"type": "tech",
-			"id": "temporal_cold_war_temporal_conduit",
+			"id": "temporal_conduit_72224gp",
 			"set": ["72224gp"],
 			"name": "Temporal Conduit",
 			"cost": 5,
