@@ -1371,7 +1371,7 @@
 			"name": "Dreadnought",
 			"class": "Cardassian ATR-4107",
 			"actions": ["evade", "target-lock", "scan"],
-			"upgrades": ["tech", "weapon", "weapon", "weapon"],
+			"upgrades": ["tech", "tech", "weapon", "weapon"],
 			"attack": 6,
 			"agility": 0,
 			"hull": 4,
@@ -12566,9 +12566,18 @@
             "set": ["72013wp"],
             "name": "B'Elanna Torres",
             "cost": 1,
-            "text": "<b>WHEN ATTACKING:</b>\n\nThis ship may reroll 1 [blank]. If the defending ship is a Dominion Ship, this ship may also convert 1 [blank] into 1 [hit].",
+            "text": "<b>WHEN ATTACKING:</b>\n\nThis ship may reroll 1 | |. If the defending ship is a Dominion Ship, this ship may also convert 1 |  | into 1 [hit].",
             "unique": true,
             "factions": ["independent"]
+        }, {
+            "type": "crew",
+            "id": "dna_encoding_72012wp",
+            "set": ["72012wp"],
+            "name": "DNA Encoded Message",
+            "cost": 5,
+            "text": "<b>SETUP:</b> Place 3 Klingon [talent] Upgrade face down beneath this card.\n\n<b>ACTIVATION PHASE:</b> Discard this card.\nFlip 1 of the Klingon [talent] Upgrades beneath this card face up and equip it to the Captain equiped to this ship. Remove the other 2 face down Klingon [talent] Upgrades from the game.",
+            "unique": true,
+            "factions": ["klingon"]
         }, {
             "type": "crew",
             "id": "goroth_72012wp",
