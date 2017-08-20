@@ -4850,7 +4850,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				ship: {
 					cost: function(upgrade,ship,fleet,cost) {
 						if( ship && !$factions.hasFaction(ship,"mirror-universe", ship, fleet) )
-							return resolve(upgrade,ship,fleet,cost) + 5;
+							return resolve(upgrade,ship,fleet,cost) + 4;
 						return cost;
 					}
 				}
