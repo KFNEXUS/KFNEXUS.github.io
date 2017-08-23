@@ -3760,11 +3760,32 @@
 		}, {
 			"type": "ship",
 			"id": "borg_sphere_71283",
-			"set": ["71283", "72255", "72283"],
+			"set": ["71283", "72283"],
 			"name": "Borg Starship",
 			"class": "Borg Sphere",
 			"actions": ["target-lock", "scan", "regenerate"],
 			"upgrades": ["borg", "borg", "weapon", "crew"],
+			"attack": 6,
+			"agility": 0,
+			"hull": 7,
+			"shields": 6,
+			"cost": 38,
+			"text": "",
+			"unique": false,
+			"factions": ["borg"],
+			"intercept": {
+				"ship": {},
+				"fleet": {}
+			},
+			"squadron": false
+		}, {
+			"type": "ship",
+			"id": "borg_sphere_71283",
+			"set": ["72255"],
+			"name": "Borg Starship",
+			"class": "Borg Sphere",
+			"actions": ["target-lock", "scan", "regenerate"],
+			"upgrades": ["borg", "tech", "weapon", "crew"],
 			"attack": 6,
 			"agility": 0,
 			"hull": 7,
@@ -12446,7 +12467,7 @@
             "name": "Repair Protocol",
             "cost": 4,
             "text": "<b>END PHASE:</b> Place 3 [time] Tokens on this card.\n\nRepair 1 damage to this ship's Shields or Hull.\n(Romulan Drone Ship)",
-            "unique": ["OnePerShip"],
+            "unique": "OnePerShip",
             "factions": ["romulan"]
         }, {
             "type": "weapon",
