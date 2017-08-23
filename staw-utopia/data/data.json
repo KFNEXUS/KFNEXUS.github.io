@@ -12441,6 +12441,16 @@
 		}
 	],
 	"upgrades": [{
+            "type": "crew",
+            "id": "bounty_hunter_72012wp",
+            "set": ["72012wp"],
+            "name": "Tellarite Bounty Hunter",
+            "cost": 1,
+			"range": "1 - 2",
+            "text": "<b>WHEN THIS CARD WOULD BE DISCARDED:</b> Discard an Evade token beside an opposing ship",
+            "unique": false,
+            "factions": ["independent"]
+        }, {
             "type": "weapon",
             "id": "triphasic_emitters_72014wp",
             "set": ["72014wp"],
@@ -13060,6 +13070,7 @@
 			"set": ["72282p"],
 			"name": "Lursa",
 			"cost": 3,
+			"talents": 1,
 			"text": "You may preform a [cloak] or a [sensor-echo] Action as a free action, if your ship has the appropriate Action on its Action Bar\n\nIf B'Etor is the Captain of your ship, you may fill one of your [crew] Upgrade slots with this card and gain +4 to your Captain Skill.",
 			"unique": true,
 			"factions": ["klingon"]
@@ -13069,6 +13080,7 @@
 			"set": ["72282p"],
 			"name": "B'Etor",
 			"cost": 3,
+			"talents": 1,
 			"text": "A friendly ship within Range 1-2 of your ship may use the Action or Ability of your [talent] Upgrade as if it were assigned to that ship.\n\nIf Lursa is the Captain of your ship, you may fill one of your [crew] Upgrade slots with this card and gain +4 to your Captain Skill.",
 			"unique": true,
 			"factions": ["klingon"]
