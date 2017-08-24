@@ -12547,7 +12547,7 @@
             "id": "quantum_torpedoes_72013wp",
             "set": ["72013wp"],
             "name": "Quantum Torpedoes",
-            "cost": 6,
+            "cost": 3,
 			"range": "2 - 3",
 			"attack": 5,
 			"arc": ["front","rear"],
