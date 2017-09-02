@@ -12560,8 +12560,26 @@
             "unique": false,
             "factions": ["dominion"]
         }, {
-            "type": "question",
-            "id": "captured_72013wp",
+            "type": "tech",
+            "id": "tech_captured_72013wp",
+            "set": ["72013wp"],
+            "name": "Captured",
+            "cost": 1,
+            "text": "This Upgrade does not require an Upgrade Slot\n\nThis ship gains the Independent Faction.\n\n<b>WHEN DEFENDING:</b> If the attacking shares a Faction with this ship other then Independent.\n\nThe attacking ship rolls +1 attack dice",
+            "unique": false,
+            "factions": ["independent"]
+        }, {
+            "type": "weapon",
+            "id": "weapon_captured_72013wp",
+            "set": ["72013wp"],
+            "name": "Captured",
+            "cost": 1,
+            "text": "This Upgrade does not require an Upgrade Slot\n\nThis ship gains the Independent Faction.\n\n<b>WHEN DEFENDING:</b> If the attacking shares a Faction with this ship other then Independent.\n\nThe attacking ship rolls +1 attack dice",
+            "unique": false,
+            "factions": ["independent"]
+        }, {
+            "type": "crew",
+            "id": "crew_captured_72013wp",
             "set": ["72013wp"],
             "name": "Captured",
             "cost": 1,
@@ -12592,8 +12610,7 @@
             "set": ["72013wp"],
             "name": "Shield Adaptation",
             "cost": 5,
-			"hull": "4+",
-            "text": "Discard this card if this ship has no active Shields.\n\n<b>WHEN DEFENDING:</b> The attacking ship rolls -2 attack dice when firing a Primary Weapon and -1 when firing a [weapon] Upgrade.",
+            "text": "Discard this card if this ship has no active Shields.\n\n<b>WHEN DEFENDING:</b> The attacking ship rolls -2 attack dice when firing a Primary Weapon and -1 when firing a [weapon] Upgrade.\n<i>Ship with 4+ Hull Only</i>",
             "unique": true,
             "factions": ["dominion"]
         }, {
