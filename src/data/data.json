@@ -3760,11 +3760,32 @@
 		}, {
 			"type": "ship",
 			"id": "borg_sphere_71283",
-			"set": ["71283", "72255", "72283"],
+			"set": ["71283", "72283"],
 			"name": "Borg Starship",
 			"class": "Borg Sphere",
 			"actions": ["target-lock", "scan", "regenerate"],
 			"upgrades": ["borg", "borg", "weapon", "crew"],
+			"attack": 6,
+			"agility": 0,
+			"hull": 7,
+			"shields": 6,
+			"cost": 38,
+			"text": "",
+			"unique": false,
+			"factions": ["borg"],
+			"intercept": {
+				"ship": {},
+				"fleet": {}
+			},
+			"squadron": false
+		}, {
+			"type": "ship",
+			"id": "borg_sphere_72255",
+			"set": ["72255"],
+			"name": "Borg Starship",
+			"class": "Borg Sphere",
+			"actions": ["target-lock", "scan", "regenerate"],
+			"upgrades": ["borg", "tech", "weapon", "crew"],
 			"attack": 6,
 			"agility": 0,
 			"hull": 7,
@@ -12420,6 +12441,16 @@
 		}
 	],
 	"upgrades": [{
+            "type": "crew",
+            "id": "bounty_hunter_72012wp",
+            "set": ["72012wp"],
+            "name": "Tellarite Bounty Hunter",
+            "cost": 1,
+			"range": "1 - 2",
+            "text": "<b>WHEN THIS CARD WOULD BE DISCARDED:</b> Discard an Evade token beside an opposing ship",
+            "unique": false,
+            "factions": ["independent"]
+        }, {
             "type": "weapon",
             "id": "triphasic_emitters_72014wp",
             "set": ["72014wp"],
@@ -12446,7 +12477,8 @@
             "name": "Repair Protocol",
             "cost": 4,
             "text": "<b>END PHASE:</b> Place 3 [time] Tokens on this card.\n\nRepair 1 damage to this ship's Shields or Hull.\n(Romulan Drone Ship)",
-            "unique": ["OnePerShip"],
+            "unique": false,
+			"limit": true,
             "factions": ["romulan"]
         }, {
             "type": "weapon",
@@ -12457,7 +12489,8 @@
 			"attack": 4,
 			"range": "1 - 3",
             "text": "<b>ATTACK:</b> Place 3 [time] Tokens on this card.\n\nIf there is at least 1 uncancelled [hit], modify the defender's Agility Value by -1 until the end of the game round.",
-            "unique": ["OnePerShip"],
+            "unique": false,
+			"limit": true,			
             "factions": ["independent"]
         }, {
             "type": "tech",
@@ -12466,7 +12499,8 @@
             "name": "Evasive Protocol",
             "cost": 3,
             "text": "<b>COMBAT PHASE:</b> If this ship is in the primary of Secondary Firing Arc of an opposing ship place 3 [time] Tokens on this card.\n\nPerform a [sensor-echo] Action as a Free Action if this ship does also remove an opposing [target-lock] Token from this ship.\n(Romulan Drone Ship)",
-            "unique": ["OnePerShip"],
+            "unique": false,
+			"limit": true,
             "factions": ["romulan"]
         }, {
             "type": "tech",
@@ -12475,7 +12509,8 @@
             "name": "Disguise Protocol",
             "cost": 4,
             "text": "<b>WHEN DEFENDING:</b> Place 3 [time] Tokens on this card.\n\nThe attacking ship rolls -2 attack dice.\n(Romulan Drone Ship)",
-            "unique": ["OnePerShip"],
+            "unique": false,
+			"limit": true,
             "factions": ["romulan"]
         }, {
             "type": "weapon",
@@ -12509,14 +12544,15 @@
 			"attack": 4,
 			"arc": ["front","rear"],
             "text": "<b>Attack:</b> Discard this card.\n\nThe defending ship cannot spend [battlestations] or [evade] Tokens\n\n<b>WHEN DEFENDING:</b> Discard this card\n\nThe attacking ship suffers 1 [crit].",
-            "unique": ["OnePerShip"],
+            "unique": false,
+			"limit": true,
             "factions": ["dominion"]
         }, {
             "type": "weapon",
             "id": "quantum_torpedoes_72013wp",
             "set": ["72013wp"],
             "name": "Quantum Torpedoes",
-            "cost": 6,
+            "cost": 3,
 			"range": "2 - 3",
 			"attack": 5,
 			"arc": ["front","rear"],
@@ -12524,8 +12560,26 @@
             "unique": false,
             "factions": ["dominion"]
         }, {
-            "type": "question",
-            "id": "captured_72013wp",
+            "type": "tech",
+            "id": "tech_captured_72013wp",
+            "set": ["72013wp"],
+            "name": "Captured",
+            "cost": 1,
+            "text": "This Upgrade does not require an Upgrade Slot\n\nThis ship gains the Independent Faction.\n\n<b>WHEN DEFENDING:</b> If the attacking shares a Faction with this ship other then Independent.\n\nThe attacking ship rolls +1 attack dice",
+            "unique": false,
+            "factions": ["independent"]
+        }, {
+            "type": "weapon",
+            "id": "weapon_captured_72013wp",
+            "set": ["72013wp"],
+            "name": "Captured",
+            "cost": 1,
+            "text": "This Upgrade does not require an Upgrade Slot\n\nThis ship gains the Independent Faction.\n\n<b>WHEN DEFENDING:</b> If the attacking shares a Faction with this ship other then Independent.\n\nThe attacking ship rolls +1 attack dice",
+            "unique": false,
+            "factions": ["independent"]
+        }, {
+            "type": "crew",
+            "id": "crew_captured_72013wp",
             "set": ["72013wp"],
             "name": "Captured",
             "cost": 1,
@@ -12556,8 +12610,7 @@
             "set": ["72013wp"],
             "name": "Shield Adaptation",
             "cost": 5,
-			"hull": "4+",
-            "text": "Discard this card if this ship has no active Shields.\n\n<b>WHEN DEFENDING:</b> The attacking ship rolls -2 attack dice when firing a Primary Weapon and -1 when firing a [weapon] Upgrade.",
+            "text": "Discard this card if this ship has no active Shields.\n\n<b>WHEN DEFENDING:</b> The attacking ship rolls -2 attack dice when firing a Primary Weapon and -1 when firing a [weapon] Upgrade.\n<i>Ship with 4+ Hull Only</i>",
             "unique": true,
             "factions": ["dominion"]
         }, {
@@ -12617,7 +12670,8 @@
             "cost": 4,
 			"hull": "3+",
             "text": "<b>WHEN DEFENDING:</b> Disable this card.\n\nThis game round, replace the attacking ship's Primary Weapon Value with 4. For the remainder of the game round, the attacking ships Primary Weapon Value can not be replaced or modified.",
-            "unique": ["OnePerShip"],
+            "unique": false,
+			"limit": true,
             "factions": ["klingon"]
         }, {
             "type": "tech",
@@ -12693,7 +12747,8 @@
             "cost": 4,
 			"range": "1 - 2",
             "text": "Add 1 [crew] to this ship's Upgrade Bar.\n\n<b>ACTIVATION PHASE:</b> Disable this card and target a friendly ship.\n\nThis game round, replace the Captain Skill on this ship's Captain with the Captain Skill of the target ship's Captain.",
-            "unique": ["OnePerShip"],
+            "unique": false,
+			"limit": true,
             "factions": ["federation"]
         }, {
             "type": "tech",
@@ -12702,7 +12757,8 @@
             "name": "Close-Range Scan",
             "cost": 3,
             "text": "<b>ACTIVATION PHASE:</b> If this ship performed a [scan] Action, disable 1 Shield.\n\nPlace a [scan] Token beside this ship.",
-            "unique": ["OnePerShip"],
+            "unique": false,
+			"limit": true,
             "factions": ["federation"]
         }, {
             "type": "tech",
@@ -13039,6 +13095,7 @@
 			"set": ["72282p"],
 			"name": "Lursa",
 			"cost": 3,
+			"talents": 1,
 			"text": "You may preform a [cloak] or a [sensor-echo] Action as a free action, if your ship has the appropriate Action on its Action Bar\n\nIf B'Etor is the Captain of your ship, you may fill one of your [crew] Upgrade slots with this card and gain +4 to your Captain Skill.",
 			"unique": true,
 			"factions": ["klingon"]
@@ -13048,6 +13105,7 @@
 			"set": ["72282p"],
 			"name": "B'Etor",
 			"cost": 3,
+			"talents": 1,
 			"text": "A friendly ship within Range 1-2 of your ship may use the Action or Ability of your [talent] Upgrade as if it were assigned to that ship.\n\nIf Lursa is the Captain of your ship, you may fill one of your [crew] Upgrade slots with this card and gain +4 to your Captain Skill.",
 			"unique": true,
 			"factions": ["klingon"]
@@ -13635,7 +13693,7 @@
 			"factions": ["mirror-universe"]
 		}, {
 			"type": "tech",
-			"id": "temporal_cold_war_temporal_conduit",
+			"id": "temporal_conduit_72224gp",
 			"set": ["72224gp"],
 			"name": "Temporal Conduit",
 			"cost": 5,
