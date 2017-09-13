@@ -5498,6 +5498,30 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return $factions.hasFaction(ship, "independent", ship, fleet) && $factions.hasFaction(ship.captain, "independent", ship, fleet);
 			}
 		},
+		
+		//DNA Encoded Messages
+		"talent:dna_encoding_72012wp":{
+		upgradeSlots: cloneSlot( 4 , 
+				{ 
+					type: ["talent"], 
+					rules: "Klingon Talent Only",
+					faceDown: true,
+					intercept: {
+						ship: {
+							cost: function() { return 0; },
+							factionPenalty: function() { return 0; },
+							canEquip: function(card,ship,fleet,canEquip) {
+								if( !$factions.hasFaction( card, "klingon", ship, fleet ) )
+									return false;
+								return canEquip;
+							}
+						}
+					}
+				}
+			)
+			factionPenalty: 0
+		},
+		
 		// Hatchery - Orassin
 		"tech:hatchery_orassin": {
 			// Equip only on a Xindi ship
