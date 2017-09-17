@@ -2852,6 +2852,30 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		// RESOURCES
 		
+		"resource:fleet_commander"{
+			slotType: "captain",
+			cost: 0,
+			hideCost: true,
+			showShipResourceSlot: function(card,ship,fleet) {
+				if( ship.resource && ship.resource.type == "captain" )
+					return true;
+				
+				var show = true;
+				$.each( fleet.ships, function(i,ship) {
+					if( ship.resource )
+						show = false;
+				} );
+				return show;
+			},
+			onRemove: function(resource,ship,fleet) {
+				$.each( fleet.ships, function(i,ship) {
+					if( ship.resource )
+						delete ship.resource;
+				} );
+			},
+			
+		},
+		
 		"resource:fleet_captain_collectiveop2": {
 			slotType: "fleet-captain",
 			cost: 0,
@@ -4845,11 +4869,15 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		
 		// Temporal Conduit - +5 SP if fielded on a non-Mirror Universe ship
-		"tech:temporal_cold_war_temporal_conduit": {
-			cost: function(upgrade,ship,fleet,cost) {
-				if( ship && !$factions.hasFaction(ship,"mirror-universe", ship, fleet) )
-					return resolve(upgrade,ship,fleet,cost) + 5;
-				return cost;
+		"tech:temporal_conduit_72224gp": {
+			intercept: {
+				ship: {
+					cost: function(upgrade,ship,fleet,cost) {
+						if( ship && !$factions.hasFaction(ship,"mirror-universe", ship, fleet) )
+							return resolve(upgrade,ship,fleet,cost) + 4;
+						return cost;
+					}
+				}
 			}
 		},
 		
@@ -5388,6 +5416,110 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"weapon:change_course_72281p_weapon": {
 			rules: "Only one per ship",
 			canEquip: onePerShip("Course Change")
+		},
+		//Lursa and B'Etor crew
+		"crew:lursa_crew_72282p": {
+			upgradeSlots: [
+				{
+					type: ["talent"]
+				}
+			],
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.captain && ship.captain.name == "B'Etor";
+			},
+			intercept: {
+				ship: {
+					skill: function(upgrade,ship,fleet,skill) {
+						if( upgrade == ship.captain )
+							return resolve(upgrade,ship,fleet,skill) + 4;
+						return skill;
+					}
+				}
+			}
+		},
+		
+		"crew:betor_crew_72282p": {
+			upgradeSlots: [ 
+				{ 
+					type: ["talent"]
+				}
+			],
+			canEquip: function(captain,ship,fleet) {
+				return captain.name == "Lursa";
+			}
+
+			intercept: {
+				ship: {
+					skill: function(card,ship,fleet,skill) {
+						if( card == ship.captain )
+							return resolve(card,ship,fleet,skill) + 4;
+						return skill;
+					}
+				}
+			}
+		},
+		
+		"tech:tech_captured_72013wp": {
+			upgradeSlots: [
+				{
+					type: ["tech"]
+				}
+			],
+			intercept: {
+				ship: {
+					// No faction penalty for upgrades
+					factionPenalty: function(card, ship, fleet, factionPenalty) {
+						if( hasFaction(upgrade,"independent",ship,fleet) )
+							return 0;
+						return factionPenalty;
+					}
+				}
+			}
+		},
+		
+		"weapon:weapon_captured_72013wp": {
+			upgradeSlots: [
+				{
+					type: ["weapon"]
+				}
+			],
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship, "independent", ship, fleet) && $factions.hasFaction(ship.captain, "independent", ship, fleet);
+			}
+		},
+		
+		"crew:crew_captured_72013wp": {
+			upgradeSlots: [
+				{
+					type: ["crew"]
+				}
+			],
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return $factions.hasFaction(ship, "independent", ship, fleet) && $factions.hasFaction(ship.captain, "independent", ship, fleet);
+			}
+		},
+		
+		//DNA Encoded Messages
+		"talent:dna_encoding_72012wp":{
+		upgradeSlots: cloneSlot( 4 , 
+				{ 
+					type: ["talent"], 
+					rules: "Klingon Talent Only",
+					faceDown: true,
+					intercept: {
+						ship: {
+							cost: function() { return 0; },
+							factionPenalty: function() { return 0; },
+							canEquip: function(card,ship,fleet,canEquip) {
+								if( !$factions.hasFaction( card, "klingon", ship, fleet ) )
+									return false;
+								return canEquip;
+							}
+						}
+					}
+				}
+			)
+			factionPenalty: 0
 		},
 		
 		// Hatchery - Orassin
