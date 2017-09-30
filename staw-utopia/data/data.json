@@ -1384,7 +1384,7 @@
 			"squadron": false
 		}, {
 			"type": "ship",
-			"id": "prototype_02_71536",
+			"id": "prototype_02_72014wp",
 			"set": ["72014wp"],
 			"name": "Prototype 02",
 			"class": "Romulan Drone Ship",
@@ -1405,7 +1405,7 @@
 			"squadron": false
 		}, {
 			"type": "ship",
-			"id": "romulan_starship_71536",
+			"id": "romulan_starship_72014wp",
 			"set": ["72014wp"],
 			"name": "Romulan Starship",
 			"class": "Romulan Drone Ship",
