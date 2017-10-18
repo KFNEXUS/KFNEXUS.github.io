@@ -2442,10 +2442,19 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 	//U.S.S. Enterprise-E :71531
 		//Matthew Dougherty
-		"captain:matthew_dougherty_cap_71531":{},
-		"admiral:matthew_dougherty_71531":{},
+		"captain:matthew_dougherty_cap_71531":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}},
+		"admiral:matthew_dougherty_71531":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}},
 		// Picard 8
 		"captain:jean_luc_picard_b_71531": {
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			},
 			upgradeSlots: [ 
 				{/* Existing Talent Slot */}, 
 				{ 
@@ -2455,17 +2464,32 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		// Advanced Shields
 		"tech:advanced_shields_71531": {
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			},
 			// Only one per ship
 			canEquip: onePerShip("Advanced Shields")
 		},
 		//Fire At Will!
-		"talent:fire_at_will__71531":{},
+		"talent:fire_at_will__71531":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}},
 		//Make It So
-		"talent:make_it_so_71531":{},
+		"talent:make_it_so_71531":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}},
 		//Data
-		"crew:data_71531":{},
+		"crew:data_71531":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}},
 		// William T. Riker (Ent-E)
 		"crew:william_t_riker_71531": {
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			},
 			upgradeSlots: [ 
 				{ 
 					type: ["crew"]
@@ -2474,6 +2498,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		// Geordi LaForge
 		"crew:geordi_la_forge_71531": {
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			},
 			upgradeSlots: [
 				{
 					type: ["tech"]
@@ -2481,11 +2508,20 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			]
 		},
 		//Beverly Crusher
-		"crew:beverly_crusher_71531":{},
+		"crew:beverly_crusher_71531":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}},
 		//Deanna Troi
-		"crew:deanna_troi_71531":{},
+		"crew:deanna_troi_71531":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}},
 		// Photon Torpedoes (Sovereign)
 		"weapon:photon_torpedoes_71531": {
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			},
 			intercept: {
 				self: {
 					attack: function(upgrade,ship,fleet,attack) {
@@ -2498,6 +2534,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		// Dorsal Phaser Array
 		"weapon:dorsal_phaser_array_71531": {
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			},
 			attack: 0,
 			// Equip only on a Federation ship with hull 4 or more
 			canEquip: function(upgrade,ship,fleet) {
@@ -2565,7 +2604,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				ship: {
 					cost: function(upgrade,ship,fleet,cost) {
-						if( $factions.hasFaction(ship,"independent", ship, fleet) || $factions.hasFaction(ship,"ferengi", ship, fleet) || $factions.hasFaction(ship,"kazon", ship, fleet) || $factions.hasFaction(ship,"xindi", ship, fleet) && isUpgrade(upgrade) )
+						if( $factions.hasFaction(ship,"independent", ship, fleet) && isUpgrade(upgrade) )
 							return resolve(upgrade,ship,fleet,cost) - 1;
 						return cost;
 					}
@@ -6671,7 +6710,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"tech:aft_shields_72282p":{
 			rules: "Only one per ship",
 			canEquip: onePerShip("Aft Shields")
-		}
+		},
 		
 	//Sela's Warbird :72282gp
 		//Movar
