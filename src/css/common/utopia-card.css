@@ -63,6 +63,10 @@
 	top: -0.3em;
 }
 
+.card-limit .card-corner-top-left .card-corner-inner {
+	top: -0.3em;
+}
+
 .card-corner-top-right .card-corner-inner {
 	border-top-right-radius: 0.2em;
 	top: 1em;
@@ -135,6 +139,19 @@
 	color: #e1a825;
 	position: relative;
 	left: 0.1em;
+	top: -0.1em;
+	z-index: 1;
+	text-align: center;
+}
+
+.card-limit-icon {
+	font-size: 1.3em;
+	border: 0.05em solid #a8b6bf;
+	border-radius: 1em;
+	background: black;
+	color: white;
+	position: relative;
+	left: 0em;
 	top: -0.1em;
 	z-index: 1;
 	text-align: center;
@@ -394,6 +411,11 @@
 }
 
 .card-upgrade.card-unique .card-title-container {
+	padding-left: 0.4em;
+	margin-left: 1.2em;
+}
+
+.card-upgrade.card-limit .card-title-container {
 	padding-left: 0.4em;
 	margin-left: 1.2em;
 }
