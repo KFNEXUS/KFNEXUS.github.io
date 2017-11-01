@@ -198,13 +198,6 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 
 	//Core Starter Set :71120
-		"ship:1001":{
-			upgradeSlots: [
-				{
-					type: ["resource"]
-				}
-			]
-		},
 		//Will Riker 5
 		"captain:2002":{
 			factionPenalty: function(upgrade, ship, fleet) {
@@ -374,14 +367,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 							cost: {
 								priority: 100,
 								fn: function(upgrade, ship, fleet, cost) {
-									if( hasFaction(upgrade,"federation",ship,fleet) )
+									if( hasFaction(upgrade,"federation",ship,fleet) || hasFaction(upgrade,"bajoran",ship,fleet) || hasFaction(upgrade,"vulcan",ship,fleet) )
 										return 3;
 									return cost;
 								}
 							},
 							// TODO Check if faction penalty should be applied
 							factionPenalty: function(upgrade, ship, fleet, factionPenalty) {
-								if( hasFaction(upgrade,"federation",ship,fleet) )
+								if( hasFaction(upgrade,"federation",ship,fleet) || hasFaction(upgrade,"bajoran",ship,fleet) || hasFaction(upgrade,"vulcan",ship,fleet) )
 									return 0;
 								return factionPenalty;
 							}
@@ -1805,7 +1798,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"tech:mutli_adaptive_shields_71509": {
 			name: "Multi-Adaptive Shields",
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return $factions.hasFaction(ship,"federation", ship, fleet);
+				return $factions.hasFaction(ship,"federation", ship, fleet) && $factions.hasFaction(ship,"bajoran", ship, fleet) && $factions.hasFaction(ship,"vulcan", ship, fleet);
 			}
 		},
 		// Reinforced Structural Integrity
@@ -2330,7 +2323,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				ship: {
 					// All Kazon weapons are -1 SP
 					cost: function(upgrade, ship, fleet, cost) {
-						if( upgrade.type == "weapon" && $factions.hasFaction(upgrade,"kazon", ship, fleet) ) {
+						if( upgrade.type == "weapon" && $factions.hasFaction(upgrade,"kazon", ship, fleet) || $factions.hasFaction(upgrade,"independent", ship, fleet)) {
 							return resolve(upgrade, ship, fleet, cost) - 1;
 						}
 						return cost;
@@ -2612,7 +2605,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				ship: {
 					cost: function(upgrade,ship,fleet,cost) {
-						if( $factions.hasFaction(ship,"independent", ship, fleet) && isUpgrade(upgrade) )
+						if( ($factions.hasFaction(ship,"independent", ship, fleet) || $factions.hasFaction(ship,"ferengi", ship, fleet) || $factions.hasFaction(ship,"kazon", ship, fleet) || $factions.hasFaction(ship,"xindi", ship, fleet) )&& isUpgrade(upgrade) )
 							return resolve(upgrade,ship,fleet,cost) - 1;
 						return cost;
 					}
@@ -3716,7 +3709,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship.hull <= 3;
 			},
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return $factions.hasFaction( ship, "federation", ship, fleet );
+				return $factions.hasFaction( ship, "federation", ship, fleet ) || $factions.hasFaction( ship, "bajoran", ship, fleet ) || $factions.hasFaction( ship, "vulcan", ship, fleet );
 			}
 		},
 				// Phasing Cloaking Device
@@ -4956,8 +4949,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				self: {
 					cost: function(card,ship,fleet,cost) {
-						if( ship && !hasFaction(ship,"federation", ship, fleet) )
-							return resolve(card,ship,fleet,cost) + 3;
+						if( ship && ( !hasFaction(ship,"federation", ship, fleet) && !hasFaction(ship,"bajoran", ship, fleet) && !hasFaction(ship,"vulcan", ship, fleet)) )
+							return resolve(card,ship,fleet,cost) + 2;
 						return cost;
 					}
 				},
@@ -4979,8 +4972,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				self: {
 					cost: function(card,ship,fleet,cost) {
-						if( ship && !hasFaction(ship,"federation", ship, fleet) )
-							return resolve(card,ship,fleet,cost) + 5;
+						if( ship && (!hasFaction(ship,"federation", ship, fleet) && !hasFaction(ship,"bajoran", ship, fleet) && !hasFaction(ship,"vulcan", ship, fleet) ) )
+							return resolve(card,ship,fleet,cost) + 4;
 						return cost;
 					}
 				},
@@ -5011,7 +5004,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						return range;
 					}
 				}
-			},
+			}
 		},
 		
 		
