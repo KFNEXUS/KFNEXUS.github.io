@@ -50,7 +50,7 @@
   content: "A";
 }
 
-.fs-limit:before {
+.fs-OnePerShip:before {
   content: "4";
 }
 
@@ -211,14 +211,39 @@
 .fs-crew:before {
   content: "Y";
 }
-
 .fs-talent:before {
   content: "Z";
 }
-
 .fs-refit:before {
   content: "a";
 }
+
+
+.fs-factionFederation:before {
+  content: "!";
+}
+.fs-factionKlingon:before {
+  content: ")";
+}
+.fs-factionRomulan:before {
+  content: "#";
+}
+.fs-factionDominion:before {
+  content: "$";
+}
+.fs-factionIndependent:before {
+  content: "%";
+}
+.fs-factionBorg:before {
+  content: "&";
+}
+.fs-faction8472:before {
+  content: "'";
+}
+.fs-factionMirror:before {
+  content: "(";
+}
+
 
 .fs-borg:before {
   content: "1";
@@ -228,6 +253,18 @@
 }
 .fs-time:before {
   content: "3";
+}
+
+.fs-FrontArc:before {
+  content: "5";
+}
+
+.fs-RearArc:before {
+  content: "6";
+}
+
+.fs-Hull:before {
+  content: "7";
 }
 
 .fs-ship:before {

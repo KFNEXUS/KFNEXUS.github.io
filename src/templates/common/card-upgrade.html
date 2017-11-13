@@ -1,8 +1,8 @@
-<div class="card-outer card-upgrade font-staw" ng-class="{ 'card-unique': upgrade.unique, 'card-mirror': upgrade.mirror, 'dragging': upgrade == dragStore.item }" draggable drag-item="upgrade" drag-store="dragStore" drag-source="dragSource">
+<div class="card-outer card-upgrade font-staw" ng-class="{ 'card-unique': upgrade.unique, 'card-OnePerShip': upgrade.OnePerShip, 'card-factionFederation': upgrade.factionFederation, 'card-FrontArc': upgrade.FrontArc, 'card-RearArc': upgrade.RearArc, 'card-Hull': upgrade.Hull, 'card-mirror': upgrade.mirror, 'dragging': upgrade == dragStore.item }" draggable drag-item="upgrade" drag-store="dragStore" drag-source="dragSource">
 
 	<div class="card-image"></div>
 
-	<div class="card-corner-top-left pull-left"><i ng-if="upgrade.unique" class="card-unique-icon fs fs-unique pull-left"></i><i ng-if="upgrade.limit" class="card-limit-icon fs fs-limit pull-left"></i>
+	<div class="card-corner-top-left pull-left"><i ng-if="upgrade.unique" class="card-unique-icon fs fs-unique pull-left"></i><i ng-if="upgrade.OnePerShip" class="card-OnePerShip-icon fs fs-OnePerShip pull-left"></i>
 		<div class="card-corner-inner pull-right"></div>
 	</div>
 
@@ -16,9 +16,16 @@
 	</div>
 
 	<div class="card-border-left pull-left">
+		<i ng-if="upgrade.factionFederation" class="card-factionFederation-icon fs fs-factionFederation pull-left"></i>
+		<i ng-if="upgrade.factionKlingon" class="card-factionKlingon-icon fs fs-factionKlingon pull-left"></i>
+		<i ng-if="upgrade.factionRomulan" class="card-factionRomulan-icon fs fs-factionRomulan pull-left"></i>
+		<i ng-if="upgrade.factionDominion" class="card-factionDominion-icon fs fs-factionDominion pull-left"></i>
+		
+		<i ng-if="upgrade.FrontArc" class="card-FrontArc-icon fs fs-FrontArc pull-left"></i>
+		<i ng-if="upgrade.RearArc" class="card-RearArc-icon fs fs-RearArc pull-left"></i>
+		<i ng-if="upgrade.Hull" class="card-Hull-icon fs fs-Hull pull-left"></i>
 	</div>
-	<div class="card-front-arc-icon"></div>
-	<div class="card-rear-arc-icon"></div>
+	
 	<div class="card-text">
 		<div ng-if="upgrade.range" class="card-weapon-range pull-right">{{upgrade|valueOf:'range':ship:fleet}}</div>
 		<div class="card-text-inner font-staw-alt" ng-bind-html="upgrade.text | icons" ng-class="{'card-text-inner-long': upgrade.text.length > 300, 'card-text-inner-super-long': upgrade.text.length > 530, 'text-left': upgrade.range }"></div>
