@@ -5589,7 +5589,7 @@
 			"hull": 1,
 			"shields": 0,
 			"cost": 24,
-			"text": "ATTACK SQUADRON TOKENS: 5\r\nDuring the Roll Attack Dice step, you may disable one of your [SQUADRON] Upgrade to gain +1 additional attack die for that attack.",
+			"text": "ATTACK SQUADRON TOKENS: 5\r\nDuring the Roll Attack Dice step, you may disable one of your [squadron] Upgrade to gain +1 additional attack die for that attack.",
 			"unique": true,
 			"factions": ["dominion"],
 			"intercept": {
@@ -11968,6 +11968,17 @@
 			"factions": ["klingon"]
 		}, {
 			"type": "captain",
+			"id": "tomalak_75001",
+			"set": ["75001"],
+			"name": "Tomalak",
+			"cost": 5,
+			"skill": 8,
+			"talents": 1,
+			"text": "Add 1 [tech] to this ships Upgrade Bar.\n\n<b>WHEN ATTACKING:</b>\nThis may re-roll 1 attack die for each [tech] Upgrade equipped to it.",
+			"unique": true,
+			"factions": ["romulan"]
+		}, {
+			"type": "captain",
 			"id": "dolim_weapon_zero",
 			"set": ["71225"],
 			"name": "Dolim",
@@ -12579,17 +12590,6 @@
 		}
 	],
 	"upgrades": [{
-            "type": "crew",
-            "id": "talaktalan_75002",
-            "set": ["75002"],
-            "name": "Talak'Talan",
-            "cost": 2,
-			"range": "1 - 2",
-            "text": "<b>ACTION:</b> Discard this card and target all friendly ships.\n\nPlace a [battlestations] Token beside this ship and all target ships. \n(<i>Dominion Only</i>)",
-            "unique": true,
-			"factionDominion": true,
-            "factions": ["dominion"]
-        }, {
             "type": "talent",
             "id": "all_power_to_weapons_75002",
             "set": ["75002"],
@@ -12600,6 +12600,29 @@
             "unique": true,
 			"factionDominion": true,
 			"Hull": true,
+            "factions": ["dominion"]
+        }, {
+			"type": "weapon",
+			"id": "disruptor_cannon",
+			"set": ["75002"],
+			"name": "Disruptor Cannon",
+			"cost": 3,
+			"range": "1 - 2",
+			"Attack": 6,
+			"text": "<b>ATTACK:</b> Spend this ships [target-lock] Token, discard this card, and target an opposing ship.\n\nPerfrom this attack twice against the target ship.\n       (<i>Jem'Hadar Battleship</i>)",
+			"unique": true,
+			"RearArc": true,
+			"factions": ["dominion"]
+		}, { 
+            "type": "crew",
+            "id": "talaktalan_75002",
+            "set": ["75002"],
+            "name": "Talak'Talan",
+            "cost": 2,
+			"range": "1 - 2",
+            "text": "<b>ACTION:</b> Discard this card and target all friendly ships.\n\nPlace a [battlestations] Token beside this ship and all target ships. \n(<i>Dominion Only</i>)",
+            "unique": true,
+			"factionDominion": true,
             "factions": ["dominion"]
         }, {
             "type": "crew",
@@ -12718,7 +12741,6 @@
             "cost": 3,
 			"range": "1 - 2",
 			"attack": 4,
-			"arc": ["front","rear"],
             "text": "<b>Attack:</b> Discard this card.\n\nThe defending ship cannot spend [battlestations] or [evade] Tokens\n\n<b>WHEN DEFENDING:</b> Discard this card\n\nThe attacking ship suffers 1 [crit].",
             "OnePerShip": true,
 			"FrontArc": true,
@@ -12732,7 +12754,6 @@
             "cost": 3,
 			"range": "2 - 3",
 			"attack": 5,
-			"arc": ["front","rear"],
             "text": "<b>Attack:</b>Spend this ship's [target-lock] Token and place 2 [time] Tokens on this card. \n\nIf this attack hits, add 1 [hit] or add 2 [hit] if this weapon is equipped to a Cardassian ATR-4107.",
             "FrontArc": true,
 			"RearArc": true,
