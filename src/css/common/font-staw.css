@@ -42,7 +42,7 @@
  content: "?";
 }
 
-.fs-blank:before {
+.fs-empty:before {
   content: "";
 }
 
@@ -244,7 +244,9 @@
   content: "(";
 }
 
-
+.fs-blank:before {
+  content: "0";
+}
 .fs-borg:before {
   content: "1";
 }
