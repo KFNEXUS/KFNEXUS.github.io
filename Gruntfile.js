@@ -106,14 +106,6 @@ module.exports = function(grunt) {
 				src: [ "jquery.powertip.min.css" ],
 				dest: "staw-utopia/css/",
 			}
-		},
-		
-		utopia_data: {
-			spacedock: {
-				files: {
-					"staw-utopia/data/data.json": "src/data/*",
-				},
-			},
 		}
 	
 	});
@@ -125,12 +117,29 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-utopia-data');
 	
 	grunt.registerTask('build-js', ["ngtemplates","uglify"]);
 	grunt.registerTask('build-css', ["cssmin","copy:css"]);
 	grunt.registerTask('build-index', ["copy:index"]);
-	grunt.registerTask('build-data', ["utopia_data"]);
+	grunt.registerTask('build-data', function() {
+		var done = this.async();
+		var spawn = require('child_process').spawn;
+
+		spawn('npm', ['run', 'data']).
+			on('close', function(code) {
+				if(code === 0) { // success
+					grunt.log.ok('Generated Utopia data');
+					done();
+				} else { // failure
+					grunt.warn('Failed generating Utopia data.');
+					done(false);
+				}
+			}).
+			on('error', function(err) {
+				console.error('ERROR:', err);
+				done(false);
+			});
+	})
 	
 	//grunt.registerTask('default', ["clean","build-js","build-css","build-index","build-data","copy","clean:templates"]);
 	grunt.registerTask('default', ["build-js","build-css","build-index","build-data","copy","clean:templates"]);
