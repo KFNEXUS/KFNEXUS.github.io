@@ -123,22 +123,19 @@ module.exports = function(grunt) {
 	grunt.registerTask('build-index', ["copy:index"]);
 	grunt.registerTask('build-data', function() {
 		var done = this.async();
-		var spawn = require('child_process').spawn;
+		var exec = require('child_process').exec;
 
-		spawn('npm', ['run', 'data']).
-			on('close', function(code) {
-				if(code === 0) { // success
-					grunt.log.ok('Generated Utopia data');
-					done();
-				} else { // failure
-					grunt.warn('Failed generating Utopia data.');
-					done(false);
-				}
-			}).
-			on('error', function(err) {
-				console.error('ERROR:', err);
+		exec('npm run data', function(err, stdout, stderr) {
+			if(err) {
+				grunt.warn('Failed generating Utopia data.');
+				console.error(err);
 				done(false);
-			});
+				return;
+			}
+
+			grunt.log.ok('Generated Utopia data');
+			done();
+		});
 	})
 	
 	//grunt.registerTask('default', ["clean","build-js","build-css","build-index","build-data","copy","clean:templates"]);
