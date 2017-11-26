@@ -12,6 +12,7 @@
   },
   "homepage": "https://github.com/ComaToes/staw-utopia#readme",
   "scripts": {
+    "start": "grunt",
     "data": "npm run lint-data && npm run generate-data",
     "generate-data": "node ./src/data/index.js",
     "lint-data": "eslint --fix 'src/data/**/*.js'"
