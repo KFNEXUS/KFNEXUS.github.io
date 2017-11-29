@@ -198,6 +198,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 
 	//Core Starter Set :71120
+		//Enterprise-D 360
+		"ship:1001":{
+			slotType: "resource"
+		},
 		//Will Riker 5
 		"captain:2002":{
 			factionPenalty: function(upgrade, ship, fleet) {
