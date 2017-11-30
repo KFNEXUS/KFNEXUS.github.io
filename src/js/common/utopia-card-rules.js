@@ -7326,7 +7326,26 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			]
 		},
 		
-		
+	//D'Kora Card Pack
+		//Lurin
+		"captain:lurin_73001":{
+			intercept: {
+				ship: {
+					// No faction Lurin or Ferengi upgrades
+					factionPenalty: function(card,ship,fleet,factionPenalty) {
+						if( $factions.hasFaction(card,"ferengi", ship, fleet) )
+							return 0;
+						return factionPenalty;
+					},
+					// Ferengi upgrades are -1
+					cost: function(card,ship,fleet,cost) {
+						if( isUpgrade(card) && hasFaction(card,"ferengi",ship,fleet) )
+							cost = resolve(card,ship,fleet,cost) - 1;
+						return cost;
+					}
+				}
+			}
+		},
 		
 		
 
