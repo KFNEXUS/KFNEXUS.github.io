@@ -387,6 +387,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			)
 		},
+		
 		//Cheat Death
 		"talent:3025":{
 			factionPenalty: function(upgrade, ship, fleet) {
@@ -8124,7 +8125,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		
 	//Senior Staff
-		"resource:senior_staff":{},
+		"resource:senior_staff":{
+
+		},
 		
 		"resource:captains_chair_resource":{
 			intercept: {
