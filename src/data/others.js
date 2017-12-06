@@ -824,4 +824,78 @@ module.exports = [{
 		ship: {},
 		fleet: {}
 	}
+}, {
+	type: "ship-resource",
+	id: "fleet_commander_ship",
+	set: ["72280r"],
+	name: "Fleet Commander",
+	factions: ["independent"],
+	text: "Captain Skill is increased +1.\n\nAdd +1 to either Shield or Hull value.",
+	cost: 5,
+	upgrades: [{
+		type: ["captain"],
+		source: "Fleet Commander"
+	}
+	],
+	upgradeSlots: [{
+		type: ["captain"],
+		source: "Fleet Commander"
+	}
+	],
+	showType: true,
+	canEquip: true,
+	canEquipFaction: true,
+	isShipModifier: true,
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	factionPenalty: 0,
+	unique: true
+} , {
+	type: "ship-resource",
+	id: "captains_chair_ship",
+	set: ["72301r"],
+	name: "Captains Chair",
+	factions: ["independent"],
+	text: "Ship with Captain skill +5",
+	cost: 3,
+	showType: true,
+	canEquip: true,
+	canEquipFaction: true,
+	isShipModifier: true,
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	factionPenalty: 0,
+	unique: true
+}, {
+	type: "ship-resource",
+	id: "front_line_retrofit_ship",
+	set: ["72302r"],
+	name: "Front Line Retrofit",
+	factions: ["independent"],
+	text: "Hull 4+ and adds +1 to Shield and Captain Skill values",
+	cost: 5,
+	upgrades: [{
+		type: ["weapon"],
+		source: "Retrofit Weapon"
+	}
+	],
+	upgradeSlots: [{
+		type: ["weapon"],
+		source: "Retrofit Weapon"
+	}
+	],
+	showType: true,
+	canEquip: true,
+	canEquipFaction: true,
+	isShipModifier: true,
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	factionPenalty: 0,
+	unique: true
 }];
