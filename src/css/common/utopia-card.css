@@ -657,8 +657,8 @@
 }
 
 .card-upgrade.card-OnePerShip .card-title-container {
-	padding-left: 0.4em;
-	margin-left: 1.2em;
+	padding-left: 0.8em;
+	margin-left: 0.5em;
 }
 
 .card-border-left {
@@ -675,6 +675,7 @@
 
 .card-upgrade.card-OnePerShip-icon .card-border-left {
 	padding-left: 0.5em;
+	margin-left: 0.5em;
 }
 
 .card-upgrade .card-text {
