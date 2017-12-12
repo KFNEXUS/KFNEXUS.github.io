@@ -89,7 +89,7 @@ module.exports = [{
 	range: "1 - 2",
 	text: "<b>ACTION:</b> Discard this card and target all friendly ships.\n\nPlace a [battlestations] Token beside this ship and all target ships.",
 	unique: true,
-	shipDominion: true,
+	shipDominion: "",
 	factions: ["dominion"]
 }, {
 	type: "crew",
@@ -111,6 +111,17 @@ module.exports = [{
 	factions: ["romulan"]
 }, {
 	type: "tech",
+	id: "auxiliary_power_core_75001",
+	set: ["75001"],
+	name: "Auxiliary Power Core",
+	cost: 3,
+	text: "When this card has 2 or more [aux] Tokens on it, discard it.\n________________________\n<b>WHEN AN [aux] TOKEN WOULD BE PLACED BESIDE THIS SHIP:</b>\n\nPlace that [aux] Token on this card instead.",
+	OnePerShip: true,
+	hullConstraint: "4+",
+	shipRomulan: "+2",
+	factions: ["romulan"]
+}, {
+	type: "tech",
 	id: "reinforced_shields_75001",
 	set: ["75001"],
 	name: "Reinforced Shields",
@@ -127,6 +138,27 @@ module.exports = [{
 	cost: 3,
 	text: "<b>WHEN ATTACKING:</b> If this ship is Cloaked, discard this card.\n\nFlip this ships [cloak] Token to its green side.",
 	unique: false,
+	factions: ["romulan"]
+}, {
+	type: "talent",
+	id: "tal_shiar_75001",
+	set: ["75001"],
+	name: "Tal Shiar",
+	cost: 2,
+	text: "<b>PLANNING PHASE:</b> After all ships have chosen their Maneuvers, discard this card and target an opposing ship. Look at the target ship's Maneuver Dial and place a [battlestations] Token beside this ship. This ship cannot perfrom a [battlestations] Action this game round.",
+	unique: true,
+	captainRomulan: true,
+	range: "1 - 3",
+	factions: ["romulan"]
+},  {
+	type: "weapon",
+	id: "disruptor_beams_75001",
+	set: ["75001"],
+	name: "Disruptor Beams",
+	cost: 5,
+	text: "<b>ATTACK:</b> Place 3 [time] Tokens on this card and target an opposing ship.\n\nFor each [hit] or [crit] the defending ship suffers, roll 1 attack die. If you roll at least 1 [hit] or [crit], the defending ships suffer 1 additional [hit].",
+	attack: 5,
+	range: "1 - 3",
 	factions: ["romulan"]
 }, {
 	type: "weapon",
@@ -182,6 +214,15 @@ module.exports = [{
 	unique: true,
 	factions: ["romulan"]
 }, {
+	type: "crew",
+	id: "bochra_75001",
+	set: ["75001"],
+	name: "Bochra",
+	cost: 1,
+	text: "<b>ACTIVATION PHASE:</b> Discard this card.\n\nThis ship activates last this game round.",
+	unique: true,
+	factions: ["romulan"]
+}, {
 	type: "talent",
 	id: "make_it_so_2017core",
 	set: ["2017core"],
@@ -206,7 +247,7 @@ module.exports = [{
 	cost: 5,
 	text: "<b>WHEN ATTACKING:</b> If this ship is Cloaked:\n\nConvert all [blank] to [hit]",
 	unique: true,
-	shipKlingon: true,
+	shipKlingon: "",
 	factions: ["klingon"]
 }, {
 	type: "talent",
