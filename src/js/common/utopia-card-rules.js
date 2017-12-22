@@ -7347,7 +7347,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		//Blood Oath
 		"talent:blood_oath_2017core":{
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return $factions.hasFaction(ship,"klingon", ship, fleet) && ship.captain && $factions.hasFaction(ship.captain,"klingon", ship, fleet);
+				return ship.captain && $factions.hasFaction(ship.captain,"klingon", ship, fleet);
 			}},
 		//Exocomp
 		"tech:exocomp_2017core":{
@@ -7441,7 +7441,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		//Tal Shiar
 		"talent:tal_shiar_75001":{
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return $factions.hasFaction(ship,"romulan", ship, fleet) && ship.captain && $factions.hasFaction(ship.captain,"romulan", ship, fleet);
+				return ship.captain && $factions.hasFaction(ship.captain,"romulan", ship, fleet);
 			}			
 		},
 		//Interphase Generator
@@ -7553,6 +7553,12 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}},
 			
 	//Borg Octahedron
+		//Neural Transponder
+		"talent:neural_transponder_73002":{
+			canEquip: onePerShip("Neural Transponder"),
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return ship.captain && $factions.hasFaction(ship.captain,"borg", ship, fleet);
+			}},
 		//Neonatal Borg
 		"crew:neonatal_borg_73002":{
 			upgradeSlots: [ 
@@ -7560,6 +7566,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					type: ["crew"]
 				}
 			],
+			canEquip: onePerShip("Neonatal Borg"),
 			canEquipFaction: function(upgrade,ship,fleet) {
 				return $factions.hasFaction( ship, "borg", ship, fleet )
 			},

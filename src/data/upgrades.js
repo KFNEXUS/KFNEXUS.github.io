@@ -1,4 +1,16 @@
 module.exports = [{
+	type: "talent",
+	id: "neural_transponder_73002",
+	set: ["73002"],
+	name: "Neural Transponder",
+	cost: 2,
+	text: "<b>WHENEVER A [battlestations], [evade], [scan] OR [aux] TOKEN IS PLACED BESIDE THIS SHIP:</b> You must discard this card.\n\nEach other friendly ship within range that has a Neural Transponder Upgrade equipped to it must also place a token of the same type beside it if it does not already have one.",
+	OnePerShip: true,
+	shipBorg: true,
+	captainBorg: true,
+	range: "1 - 2",
+	factions: ["borg"]
+}, {
 	type: "crew",
 	id: "neonatal_borg_73002",
 	set: ["73002"],
@@ -20,9 +32,9 @@ module.exports = [{
 	type: "crew",
 	id: "doctor_reyga_73001",
 	set: ["73001"],
-	name: "<b>ACTION:</b> Discard this card.\n\nRemove a Disabled Token from a [tech] Upgrade equipped to this ship and repair 1 damage to this ships Shields.",
+	name: "Doctor Reyga",
 	cost: 3,
-	text: "Doctor Reyga",
+	text: "<b>ACTION:</b> Discard this card.\n\nRemove a Disabled Token from a [tech] Upgrade equipped to this ship and repair 1 damage to this ships Shields.",
 	unique: true,
 	factions: ["ferengi"]
 }, {
