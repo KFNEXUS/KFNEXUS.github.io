@@ -202,106 +202,206 @@ angular.module('utopia').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('search.html',
-    "<div class=\"u-search\">\n" +
-    "\t\n" +
-    "\t<div class=\"search-query-container\">\n" +
-    "\t\t<input class=\"u-search-query\" ng-model=\"search.query\" placeholder=\"Search\">\n" +
-    "\t\t<button ng-click=\"resetSearch()\">Reset</button>\n" +
-    "\t\t<button ng-click=\"showAdvanced = !showAdvanced\">Advanced</button>\n" +
-    "\t</div>\n" +
+    "<div class=\"u-search\">\r" +
     "\n" +
-    "\t<div ng-show=\"showAdvanced && (!dragStore.item || dragStore.source == 'search')\">\n" +
-    "\t\n" +
-    "\t\t<div class=\"u-search-size\">\n" +
-    "\t\t\t<button class=\"u-search-smaller\" ng-click=\"modifySearchColumns(-1)\"><i class=\"fa fa-chevron-left\"></i></button>\n" +
-    "\t\t\t<div class=\"u-search-size-text\">Resize Search Results</div>\n" +
-    "\t\t\t<button class=\"u-search-bigger\" ng-click=\"modifySearchColumns(1)\"><i class=\"fa fa-chevron-right\"></i></button>\n" +
-    "\t\t</div>\n" +
-    "\t\n" +
-    "\t\t<search-filter-group title=\"Faction\" open>\n" +
-    "\t\t\t<span ng-repeat=\"(faction,data) in search.factions\">\n" +
-    "\t\t\t\t<label class=\"u-label\"><input type=\"checkbox\" ng-model=\"data.search\" > <div class=\"u-faction card-faction-{{faction}}\"></div> {{faction|removeDashes}}</label>\n" +
-    "\t\t\t</span>\n" +
-    "\t\t</search-filter-group>\n" +
+    "\t\r" +
     "\n" +
-    "\t\t<search-filter-group title=\"Type\" open>\n" +
-    "\t\t\t<span class=\"u-search-type\" ng-repeat=\"(type,data) in search.types\">\n" +
-    "\t\t\t\t<label class=\"u-label\"><input type=\"checkbox\" ng-model=\"data.search\" > <i class=\"fs fs-{{type}}\"></i> {{type|removeDashes}}</label>\n" +
-    "\t\t\t</span>\n" +
-    "\t\t</search-filter-group>\n" +
+    "\t<div class=\"search-query-container\">\r" +
     "\n" +
-    "\t\t<search-filter-group title=\"Uniqueness\" open>\n" +
-    "\t\t\t<span>\n" +
-    "\t\t\t\t<label class=\"u-label\"><input type=\"checkbox\" ng-model=\"search.unique\"> <i class=\"fs fs-unique\"></i> Unique</label>\n" +
-    "\t\t\t</span>\n" +
-    "\t\t\t<span>\n" +
-    "\t\t\t\t<label class=\"u-label\"><input type=\"checkbox\" ng-model=\"search.generic\"> <i class=\"fs\"></i> Generic</label>\n" +
-    "\t\t\t</span>\n" +
-    "\t\t</search-filter-group>\n" +
+    "\t\t<input class=\"u-search-query\" ng-model=\"search.query\" placeholder=\"Search\" spellcheck=\"false\" autocorrect=\"off\">\r" +
     "\n" +
-    "\t\t<search-filter-group title=\"Order By\" open>\n" +
-    "\t\t\t<div class=\"u-search-filter-comment\">\n" +
-    "\t\t\t\tOrder results by <select ng-model=\"search.sortBy\" ng-options=\"sortable.value as sortable.name for sortable in sortables\"></select>\n" +
-    "\t\t\t\t<select ng-model=\"search.ascending\"><option value=\"true\">Ascending</option><option value=\"false\">Descending</option></select>\n" +
-    "\t\t\t\t<div class=\"u-order-default\" ng-show=\"search.sortBy != defaults.search.sortBy || search.ascending != defaults.search.ascending\">\n" +
-    "\t\t\t\t\t<button ng-click=\"defaults.search.sortBy = search.sortBy; defaults.search.ascending = search.ascending\">Set as Default</button>\n" +
-    "\t\t\t\t\t<div>Default order is saved in browser for future sessions.</div>\n" +
-    "\t\t\t\t</div>\n" +
-    "\t\t\t</div>\n" +
-    "\t\t</search-filter-group>\n" +
-    "\t\t\n" +
-    "\t\t<search-filter-group title=\"Custom Filter\" open>\n" +
-    "\t\t\t<div class=\"u-search-filter-comment\" ng-init=\"search.filterOperator = '<'\">\n" +
-    "\t\t\t\t<select ng-model=\"search.filterField\"><option value=\"\">- No Filter -</option><option ng-repeat=\"sortable in sortables\" value=\"{{sortable.value}}\">{{sortable.name}}</option></select>\n" +
-    "\t\t\t\t<select ng-model=\"search.filterOperator\"><option value=\"<\">&lt;</option><option value=\"<=\">&lt;=</option><option value=\"=\">=</option><option value=\">=\">&gt;=</option><option value=\">\">&gt;</option></select>\n" +
-    "\t\t\t\t<input ng-model=\"search.filterValue\" placeholder=\"Value\"></input>\n" +
-    "\t\t\t</div>\n" +
-    "\t\t</search-filter-group>\n" +
+    "\t\t<button ng-click=\"resetSearch()\">Reset</button>\r" +
     "\n" +
-    "\t\t<search-filter-group title=\"Owned Expansions\">\n" +
-    "\t\t\t<div class=\"u-search-filter-comment\">\n" +
-    "\t\t\t\tExpansion filter settings are stored in your browser for future sessions. Uncheck the expansions you don't own. New expansions are automatically checked. These settings are not affected by the \"Reset\" button.\n" +
-    "\t\t\t</div>\n" +
-    "\t\t\t<div class=\"u-search-filter-comment\">\n" +
-    "\t\t\t\t<label class=\"u-label\"><input type=\"checkbox\" ng-model=\"search.ignoreSetsFilter\"> Temporarily show all cards</label>\n" +
-    "\t\t\t</div>\n" +
-    "\t\t\t<button ng-click=\"uncheckAllSets()\">Uncheck all sets</button>\n" +
-    "\t\t\t<button ng-click=\"checkAllSets()\">Check all sets</button>\n" +
-    "\t\t\t<div ng-repeat=\"set in setList | orderBy:'-releaseDate'\" class=\"u-search-set\" ng-hide=\"search.ignoreSetsFilter\">\n" +
-    "\t\t\t\t<label class=\"u-label\"><input type=\"checkbox\" ng-model=\"search.sets[set.id].search\"> {{set.parentSet}}: {{set.name}}</label>\n" +
-    "\t\t\t</div>\n" +
-    "\t\t</search-filter-group>\n" +
-    "\t\t\n" +
-    "\t</div>\n" +
+    "\t\t<button ng-click=\"showAdvanced = !showAdvanced\">Advanced</button>\r" +
     "\n" +
-    "</div>\n" +
+    "\t</div>\r" +
     "\n" +
-    "<div ng-init=\"resultLimit = 10\">\n" +
+    "\r" +
     "\n" +
-    "\t<div class=\"u-loading\" ng-show=\"loading\">Loading cards...</div>\n" +
+    "\t<div ng-show=\"showAdvanced && (!dragStore.item || dragStore.source == 'search')\">\r" +
     "\n" +
-    "\t<div class=\"card-container\" ng-show=\"dragStore.item && dragStore.source != 'search'\" droppable can-drop=\"true\" drop=\"$emit('removeFromFleetDropped',$item)\" drag-store=\"dragStore\">\n" +
-    "\t\t<div class=\"card-outer card-drop-target font-staw\">\n" +
-    "\t\t\t<div class=\"card-drop-target-inner\">\n" +
-    "\t\t\t\t<div class=\"card-drop-target-type\">\n" +
-    "\t\t\t\t\t<i class=\"fs fs-captain\"></i><br/>Remove From Fleet\n" +
-    "\t\t\t\t</div>\n" +
-    "\t\t\t</div>\n" +
-    "\t\t</div>\n" +
-    "\t</div>\n" +
-    "\t\n" +
-    "\t<div ng-hide=\"dragStore.item && dragStore.source != 'search'\">\n" +
+    "\t\r" +
     "\n" +
-    "\t\t<div class=\"card-container\" ng-repeat=\"card in cards | cardFilter:search | sortBy:search.sortBy:search.ascending | limitTo:resultLimit*search.columns\">\n" +
-    "\t\t\t<card card=\"card\" drag-store=\"dragStore\" drag-source=\"search\"></card>\n" +
-    "\t\t</div>\n" +
-    "\t\t\n" +
-    "\t\t<div>\n" +
-    "\t\t\t<button class=\"u-show-more\" ng-hide=\"loading\" ng-click=\"resultLimit = resultLimit + 10\">Show More</button>\n" +
-    "\t\t</div>\n" +
-    "\t\t\n" +
-    "\t</div>\n" +
-    "\t\n" +
+    "\t\t<div class=\"u-search-size\">\r" +
+    "\n" +
+    "\t\t\t<button class=\"u-search-smaller\" ng-click=\"modifySearchColumns(-1)\"><i class=\"fa fa-chevron-left\"></i></button>\r" +
+    "\n" +
+    "\t\t\t<div class=\"u-search-size-text\">Resize Search Results</div>\r" +
+    "\n" +
+    "\t\t\t<button class=\"u-search-bigger\" ng-click=\"modifySearchColumns(1)\"><i class=\"fa fa-chevron-right\"></i></button>\r" +
+    "\n" +
+    "\t\t</div>\r" +
+    "\n" +
+    "\t\r" +
+    "\n" +
+    "\t\t<search-filter-group title=\"Faction\" open>\r" +
+    "\n" +
+    "\t\t\t<span ng-repeat=\"(faction,data) in search.factions\">\r" +
+    "\n" +
+    "\t\t\t\t<label class=\"u-label\"><input type=\"checkbox\" ng-model=\"data.search\" > <div class=\"u-faction card-faction-{{faction}}\"></div> {{faction|removeDashes}}</label>\r" +
+    "\n" +
+    "\t\t\t</span>\r" +
+    "\n" +
+    "\t\t</search-filter-group>\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "\t\t<search-filter-group title=\"Type\" open>\r" +
+    "\n" +
+    "\t\t\t<span class=\"u-search-type\" ng-repeat=\"(type,data) in search.types\">\r" +
+    "\n" +
+    "\t\t\t\t<label class=\"u-label\"><input type=\"checkbox\" ng-model=\"data.search\" > <i class=\"fs fs-{{type}}\"></i> {{type|removeDashes}}</label>\r" +
+    "\n" +
+    "\t\t\t</span>\r" +
+    "\n" +
+    "\t\t</search-filter-group>\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "\t\t<search-filter-group title=\"Uniqueness\" open>\r" +
+    "\n" +
+    "\t\t\t<span>\r" +
+    "\n" +
+    "\t\t\t\t<label class=\"u-label\"><input type=\"checkbox\" ng-model=\"search.unique\"> <i class=\"fs fs-unique\"></i> Unique</label>\r" +
+    "\n" +
+    "\t\t\t</span>\r" +
+    "\n" +
+    "\t\t\t<span>\r" +
+    "\n" +
+    "\t\t\t\t<label class=\"u-label\"><input type=\"checkbox\" ng-model=\"search.generic\"> <i class=\"fs\"></i> Generic</label>\r" +
+    "\n" +
+    "\t\t\t</span>\r" +
+    "\n" +
+    "\t\t</search-filter-group>\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "\t\t<search-filter-group title=\"Order By\" open>\r" +
+    "\n" +
+    "\t\t\t<div class=\"u-search-filter-comment\">\r" +
+    "\n" +
+    "\t\t\t\tOrder results by <select ng-model=\"search.sortBy\" ng-options=\"sortable.value as sortable.name for sortable in sortables\"></select>\r" +
+    "\n" +
+    "\t\t\t\t<select ng-model=\"search.ascending\"><option value=\"true\">Ascending</option><option value=\"false\">Descending</option></select>\r" +
+    "\n" +
+    "\t\t\t\t<div class=\"u-order-default\" ng-show=\"search.sortBy != defaults.search.sortBy || search.ascending != defaults.search.ascending\">\r" +
+    "\n" +
+    "\t\t\t\t\t<button ng-click=\"defaults.search.sortBy = search.sortBy; defaults.search.ascending = search.ascending\">Set as Default</button>\r" +
+    "\n" +
+    "\t\t\t\t\t<div>Default order is saved in browser for future sessions.</div>\r" +
+    "\n" +
+    "\t\t\t\t</div>\r" +
+    "\n" +
+    "\t\t\t</div>\r" +
+    "\n" +
+    "\t\t</search-filter-group>\r" +
+    "\n" +
+    "\t\t\r" +
+    "\n" +
+    "\t\t<search-filter-group title=\"Custom Filter\" open>\r" +
+    "\n" +
+    "\t\t\t<div class=\"u-search-filter-comment\" ng-init=\"search.filterOperator = '<'\">\r" +
+    "\n" +
+    "\t\t\t\t<select ng-model=\"search.filterField\"><option value=\"\">- No Filter -</option><option ng-repeat=\"sortable in sortables\" value=\"{{sortable.value}}\">{{sortable.name}}</option></select>\r" +
+    "\n" +
+    "\t\t\t\t<select ng-model=\"search.filterOperator\"><option value=\"<\">&lt;</option><option value=\"<=\">&lt;=</option><option value=\"=\">=</option><option value=\">=\">&gt;=</option><option value=\">\">&gt;</option></select>\r" +
+    "\n" +
+    "\t\t\t\t<input ng-model=\"search.filterValue\" placeholder=\"Value\"></input>\r" +
+    "\n" +
+    "\t\t\t</div>\r" +
+    "\n" +
+    "\t\t</search-filter-group>\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "\t\t<search-filter-group title=\"Owned Expansions\">\r" +
+    "\n" +
+    "\t\t\t<div class=\"u-search-filter-comment\">\r" +
+    "\n" +
+    "\t\t\t\tExpansion filter settings are stored in your browser for future sessions. Uncheck the expansions you don't own. New expansions are automatically checked. These settings are not affected by the \"Reset\" button.\r" +
+    "\n" +
+    "\t\t\t</div>\r" +
+    "\n" +
+    "\t\t\t<div class=\"u-search-filter-comment\">\r" +
+    "\n" +
+    "\t\t\t\t<label class=\"u-label\"><input type=\"checkbox\" ng-model=\"search.ignoreSetsFilter\"> Temporarily show all cards</label>\r" +
+    "\n" +
+    "\t\t\t</div>\r" +
+    "\n" +
+    "\t\t\t<button ng-click=\"uncheckAllSets()\">Uncheck all sets</button>\r" +
+    "\n" +
+    "\t\t\t<button ng-click=\"checkAllSets()\">Check all sets</button>\r" +
+    "\n" +
+    "\t\t\t<div ng-repeat=\"set in setList | orderBy:'-releaseDate'\" class=\"u-search-set\" ng-hide=\"search.ignoreSetsFilter\">\r" +
+    "\n" +
+    "\t\t\t\t<label class=\"u-label\"><input type=\"checkbox\" ng-model=\"search.sets[set.id].search\"> {{set.parentSet}}: {{set.name}}</label>\r" +
+    "\n" +
+    "\t\t\t</div>\r" +
+    "\n" +
+    "\t\t</search-filter-group>\r" +
+    "\n" +
+    "\t\t\r" +
+    "\n" +
+    "\t</div>\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "</div>\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "<div ng-init=\"resultLimit = 10\">\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "\t<div class=\"u-loading\" ng-show=\"loading\">Loading cards...</div>\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "\t<div class=\"card-container\" ng-show=\"dragStore.item && dragStore.source != 'search'\" droppable can-drop=\"true\" drop=\"$emit('removeFromFleetDropped',$item)\" drag-store=\"dragStore\">\r" +
+    "\n" +
+    "\t\t<div class=\"card-outer card-drop-target font-staw\">\r" +
+    "\n" +
+    "\t\t\t<div class=\"card-drop-target-inner\">\r" +
+    "\n" +
+    "\t\t\t\t<div class=\"card-drop-target-type\">\r" +
+    "\n" +
+    "\t\t\t\t\t<i class=\"fs fs-captain\"></i><br/>Remove From Fleet\r" +
+    "\n" +
+    "\t\t\t\t</div>\r" +
+    "\n" +
+    "\t\t\t</div>\r" +
+    "\n" +
+    "\t\t</div>\r" +
+    "\n" +
+    "\t</div>\r" +
+    "\n" +
+    "\t\r" +
+    "\n" +
+    "\t<div ng-hide=\"dragStore.item && dragStore.source != 'search'\">\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "\t\t<div class=\"card-container\" ng-repeat=\"card in cards | cardFilter:search | sortBy:search.sortBy:search.ascending | limitTo:resultLimit*search.columns\">\r" +
+    "\n" +
+    "\t\t\t<card card=\"card\" drag-store=\"dragStore\" drag-source=\"search\"></card>\r" +
+    "\n" +
+    "\t\t</div>\r" +
+    "\n" +
+    "\t\t\r" +
+    "\n" +
+    "\t\t<div>\r" +
+    "\n" +
+    "\t\t\t<button class=\"u-show-more\" ng-hide=\"loading\" ng-click=\"resultLimit = resultLimit + 10\">Show More</button>\r" +
+    "\n" +
+    "\t\t</div>\r" +
+    "\n" +
+    "\t\t\r" +
+    "\n" +
+    "\t</div>\r" +
+    "\n" +
+    "\t\r" +
+    "\n" +
     "</div>"
   );
 
@@ -339,6 +439,7 @@ angular.module('utopia').run(['$templateCache', function($templateCache) {
     "\t\t<div class=\"arc arc-fill arc-fore-90\" ng-show=\"shipClass.frontArc == 90\"></div>\n" +
     "\t\t<div class=\"arc arc-fill arc-fore-180\" ng-show=\"shipClass.frontArc == 180\"></div>\n" +
     "\t\t<div class=\"arc arc-rear-90\" ng-show=\"shipClass.rearArc == 90\"></div>\n" +
+    "\t\t<div class=\"arc arc-second-45\" ng-show=\"shipClass.secondArc == 45\"></div>\n" +
     "\t\t<div class=\"arc-hole\"></div>\n" +
     "\t\t<div class=\"arc-name\">{{getBaseTileName(ship)}}</div>\n" +
     "\t\t<div class=\"arc-stats\">\n" +
@@ -501,15 +602,23 @@ angular.module('utopia').run(['$templateCache', function($templateCache) {
     "\t</div>\n" +
     "\n" +
     "\t<div class=\"card-border-left pull-left\">\n" +
-    "\t\t<i ng-if=\"upgrade.captainFederation\" class=\"card-captainFederation-icon fs fs-captainFederation\"></i>\n" +
-    "\t\t<i ng-if=\"upgrade.captainKlingon\"  class=\"card-captainKlingon-icon fs fs-captainKlingon\"></i>\t\n" +
-    "\t\t<i ng-if=\"upgrade.captainRomulan\" class=\"card-captainRomulan-icon fs fs-captainRomulan\"></i>\t\n" +
-    "\t\t<i ng-if=\"upgrade.captainDominion\" class=\"card-captainDominion fs fs-captainDominion\"></i>\n" +
-    "\t\t\n" +
-    "\t\t<i ng-if=\"upgrade.shipFederation\" class=\"card-shipFederation-icon fs fs-shipFederation\"></i>\n" +
+    "\t\t<i ng-if=\"upgrade.shipFederation\" class=\"card-shipFederation-icon fs fs-card-shipFederation\"></i>\n" +
     "\t\t<i ng-if=\"upgrade.shipKlingon\" class=\"card-shipKlingon-icon fs fs-shipKlingon\"></i>\t\n" +
     "\t\t<i ng-if=\"upgrade.shipRomulan\" class=\"card-shipRomulan-icon fs fs-shipRomulan\"></i>\t\n" +
     "\t\t<i ng-if=\"upgrade.shipDominion\" class=\"card-shipDominion-icon fs fs-shipDominion\"></i>\n" +
+    "\t\t<i ng-if=\"upgrade.shipBorg\" class=\"card-shipBorg-icon fs fs-shipBorg\"></i>\n" +
+    "\t\t\n" +
+    "\t\t<i ng-if=\"upgrade.captainFederation\" class=\"card-captainFederation-icon fs fs-captainFederation\"></i>\n" +
+    "\t\t<i ng-if=\"upgrade.captainKlingon\"  class=\"card-captainKlingon-icon fs fs-captainKlingon\"></i>\t\n" +
+    "\t\t<i ng-if=\"upgrade.captainRomulan\" class=\"card-captainRomulan-icon fs fs-captainRomulan\"></i>\t\n" +
+    "\t\t<i ng-if=\"upgrade.captainDominion\" class=\"card-captainDominion-icon fs fs-captainDominion\"></i>\n" +
+    "\t\t<i ng-if=\"upgrade.captainBorg\" class=\"card-captainBorg-icon fs fs-captainBorg\"></i>\n" +
+    "\t\t\n" +
+    "\t\t<i ng-if=\"upgrade.costFederation\" class=\"card-costFederation-icon\">{{upgrade|valueOf:'costFederation':ship:fleet}}</i>\n" +
+    "\t\t<i ng-if=\"upgrade.costKlingon\" class=\"card-costKlingon-icon\">{{upgrade|valueOf:'costKlingon':ship:fleet}}</i>\t\n" +
+    "\t\t<i ng-if=\"upgrade.costRomulan\" class=\"card-costRomulan-icon\">{{upgrade|valueOf:'costRomulan':ship:fleet}}</i>\t\n" +
+    "\t\t<i ng-if=\"upgrade.costDominion\" class=\"card-costDominion-icon\">{{upgrade|valueOf:'costDominion':ship:fleet}}</i>\n" +
+    "\t\t<i ng-if=\"upgrade.costBorg\" class=\"card-costBorg-icon\">{{upgrade|valueOf:'costDominion':ship:fleet}}</i>\n" +
     "\t\t\n" +
     "\t\t<i ng-if=\"upgrade.FrontArc\" class=\"card-FrontArc-icon fs fs-FrontArc\"></i>\t\t\n" +
     "\t\t<i ng-if=\"upgrade.RearArc\" class=\"card-RearArc-icon fs fs-RearArc\"></i>\n" +
