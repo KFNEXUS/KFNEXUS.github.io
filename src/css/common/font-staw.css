@@ -243,6 +243,9 @@
 .fs-captainMirror:before {
   content: ".";
 }
+.fs-captainFerengi:before {
+  content: ".";
+}
 
 .fs-shipFederation:before {
   content: ".";
@@ -266,6 +269,9 @@
   content: ".";
 }
 .fs-shipMirror:before {
+  content: ".";
+}
+.fs-shipFerengi:before {
   content: ".";
 }
 
