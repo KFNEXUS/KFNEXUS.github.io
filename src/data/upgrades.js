@@ -11,6 +11,16 @@ module.exports = [{
 	range: "1 - 2",
 	factions: ["borg"]
 },  {
+	type: "tech",
+	id: "technological_analysis_73002",
+	set: ["73002"],
+	name: "Technological Analysis",
+	cost: 4,
+	text: "<b>COMBAT PHASE:</b> Spend 1 Drone Token and target an opposing ship.\n\nDiscard 1 [battlestations], [evade], [scan], or [target-lock] Token beside the target ship.",
+	range: "1 - 3",
+	arc360: true,
+	factions: ["borg"]
+}, {
 	type: "weapon",
 	id: "tractor_beam_73002",
 	set: ["73002"],
