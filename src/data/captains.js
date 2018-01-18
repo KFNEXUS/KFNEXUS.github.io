@@ -2820,7 +2820,7 @@ module.exports = [{
 	cost: 5,
 	skill: 8,
 	talents: 1,
-	text: "<b>SETUP::</b>\nPlace 3 Gold-Pressed Latinum Tokens (GPLT) on this card.\n-----------------------------\n<b>PLANNING PHASE:</b> Spend 1 GPLT and target a Captain equipped to another ship.\n\nIncrease or decrease the target Captains Captain Skill by 2 this game round.",
+	text: "<b>SETUP:</b>\nPlace 3 Gold-Pressed Latinum Tokens (GPLT) on this card.\n-----------------------------\n<b>PLANNING PHASE:</b> Spend 1 GPLT and target a Captain equipped to another ship. Increase or decrease the target Captains Captain Skill by 2 this game round.",
 	unique: true,
 	range: "1 - 3",
 	factions: ["federation"]
