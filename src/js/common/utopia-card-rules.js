@@ -6293,6 +6293,17 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ( ship && ship.class == "Borg Cube" );
 			}
 		},
+		// Borg Support Vehicle Token
+		"question:borg_support_vehicle_token_72255":{
+			type: "question",
+			canEquip: onePerShip("Borg Support Vehicle Token"),
+			isSlotCompatible: function(slotTypes) {
+				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0 || $.inArray( "borg", slotTypes ) >= 0;
+			},
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.hull <= 7;
+			}
+		},
 		// Temporal Vortex
 		"tech:temporal_vortex_72255": {
 			rules: "Borg ship only",
@@ -6923,20 +6934,22 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1;
 			},
-			// All crew cost -1 SP
-			cost: function(upgrade, ship, fleet, cost) {
-				if( upgrade.type == "weapon" )
-					return resolve(upgrade, ship, fleet, cost) - 1;
-				return cost;
-			},
-			upgradeSlots: [ 
-				{ 
-					type: ["weapon"]
-				},
-				{ 
-					type: ["weapon"]
+			intercept: {
+				ship: {
+					// Add the "weapon" type to all Tech and Crew slots
+					type: function(card,ship,fleet,type) {
+						if( $.inArray("tech",type) >= 0 || $.inArray("crew",type) >= 0 )
+							return type.concat(["weapon"]);
+						return type;
+					},
+					// All Weapon type Upgrades cost -1 SP
+					cost: function(upgrade, ship, fleet, cost) {
+						if( upgrade.type == "weapon" )
+							return resolve(upgrade, ship, fleet, cost) - 1;
+						return cost;
+					}
 				}
-			]
+			}
 		},
 		//Patience is for the Dead
 		"talent:patience_is_for_the_dead_muratas":{
@@ -8587,9 +8600,21 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 	//Senior Staff
 		"resource:senior_staff":{
-			
-		},
+			hideCost: true,
 
+			intercept: {
+				fleet: {
+					// Add the two Elite Talent slots
+					upgradeSlots: [
+					{/* Talent */},
+						{
+							type: ["talent"]
+						}
+					]
+				}
+			}
+		}
+		
 	};
 }]);
 

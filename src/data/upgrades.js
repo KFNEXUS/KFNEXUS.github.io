@@ -1738,6 +1738,15 @@ module.exports = [{
 	unique: true,
 	factions: ["borg"]
 }, {
+	type: "question",
+	id: "borg_support_vehicle_token_72255",
+	set: ["72255"],
+	name: "Borg Support Vehicle Token",
+	cost: 0,
+	text: "Ship with a Hull Value of 7 or less.\n\nThis ship costs -10sp. If this ship is a Borg Sphere this ship costs -15sp",
+	unique: true,
+	factions: ["borg"]
+}, {
 	type: "talent",
 	id: "the_classic_movies_retaliatory_strike",
 	set: ["72236p"],
