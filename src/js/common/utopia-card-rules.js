@@ -5360,8 +5360,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		//Ro Laren
 		"crew:ro_laren_blind_interceptor8": {
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "federation", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			},
 			canEquip: function(card,ship,fleet) {
-				return hasFaction(ship,"federation",ship,fleet) || hasFaction(ship,"bajoran",ship,fleet);
+				return hasFaction(ship,"federation",ship,fleet) || hasFaction(ship,"bajoran",ship,fleet) || hasFaction(ship,"vulcan",ship,fleet);
 			},
 		},
 		//Phaser Strike
@@ -5445,7 +5448,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				self: {
 					cost: function(card,ship,fleet,cost) {
-						if( ship && !hasFaction(ship,"vulcan", ship, fleet) )
+						if( ship && !hasFaction(ship,"vulcan", ship, fleet) || !hasFaction(ship,"bajoran", ship, fleet) || !hasFaction(ship,"federation", ship, fleet))
 							return resolve(card,ship,fleet,cost) + 4;
 						return cost;
 					}
@@ -6331,9 +6334,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			intercept: {
 				ship: {
-					// All federation crew cost -1 SP
+					// All federation (Vulcan & Bajoren) crew cost -1 SP
 					cost: function(upgrade, ship, fleet, cost) {
-						if( upgrade.type == "crew" && $factions.hasFaction(upgrade,"federation", ship, fleet) )
+					if( upgrade.type == "crew" && $factions.hasFaction(upgrade,"federation", ship, fleet) || $factions.hasFaction(upgrade,"bajoran", ship, fleet) || $factions.hasFaction(upgrade,"vulcan", ship, fleet) )
 							return resolve(upgrade, ship, fleet, cost) - 1;
 						return cost;
 					},
