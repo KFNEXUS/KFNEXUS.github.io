@@ -27,14 +27,14 @@
 				<div class="text-center">Browse all sets with the <a href="./set-viewer.html">Utopia Set Viewer</a></div><br />
 			
 				<ul class="mission-list">
-					<li ng-repeat="missionSet in missionList | orderBy:'-orderDate'" ng-click="viewer.missionSet = missionSet" ng-class="{'missionSet-selected': viewer.missionSet == missionSet}">-{{missionSet.name}}</li>
+					<li ng-repeat="missionSet in missionList | orderBy:'orderDate'" ng-click="viewer.missionSet = missionSet" ng-class="{'missionSet-selected': viewer.missionSet == missionSet}">-{{missionSet.name}}</li>
 				</ul>
 			</div>
 			
 			<div class="u-fleet missionSet-cards">
 			
-				<div class="missions-header" ng-show="missions.name">{{viewer.missions.name}}</div>
-				<div class="missions-header" ng-show="missions.description">{{viewer.missions.description}}</div>
+				<div class="mission-header" ng-show="mission.name">{{viewer.mission.name}}</div>
+				<div class="mission-header" ng-show="mission.description">{{viewer.mission.description}}</div>
 							
 			</div>
 		
