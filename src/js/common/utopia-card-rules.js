@@ -7868,7 +7868,31 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			],
 		},
-
+		//Enhanced Durability
+		"tech:enhanced_durabilty_73031":{
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.class == "Gorn Raider" && onePerShip("Enhanced Durability");
+			},
+			upgradeSlots: [ 
+				{ 
+					type: ["tech"]
+				}
+			],
+			intercept: {
+				ship: {
+					shields: function(card,ship,fleet,shields) {
+						if( card == ship )
+							return resolve(card,ship,fleet,shields) + 1;
+						return shields;
+					},
+					agility: function(card,ship,fleet,agility) {
+						if( card == ship )
+							return resolve(card,ship,fleet,agility) + 1;
+						return agility;
+					}
+				}
+			}
+		},
 //Faction Penalty For Subfactions 		
 		//Federation
 		":":{
