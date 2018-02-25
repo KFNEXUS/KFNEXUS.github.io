@@ -7869,13 +7869,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			intercept: {
 				ship: {
-					skill: function(upgrade,ship,fleet,skill) {
-					if( upgrade == ship.captain )
-						return resolve(upgrade,ship,fleet,skill) + 1;
-					return skill;
+					skill: function(card,ship,fleet,skill) {
+						if( card == ship.captain )
+							return resolve(card,ship,fleet,skill) + 1;
+						return skill;
 					}
 				}
-			}},
+			}
+		},
 		"question:meridor_gorn_ale_73031":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
@@ -8009,11 +8010,17 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		
 		//Captains Chair
-		"ship-resource:captains_chair_ship":{
-			canEquip: function(upgrade,ship,fleet) {
-				return ship.captain.skill >= 5;
-			}
-		},
+		//"ship-resource:captains_chair_ship":{
+		//	intercept: {
+		//		self: {
+		//			canEquip: function(upgrade,ship,fleet) {
+		//				if( ship && ship.captain && ship.captain.skill >= 5 )
+		//				return true;
+		//			return false;
+		//			}
+		//		}
+		//	}
+		//},
 		"resource:captains_chair_resource":{
 			slotType: "ship-resource",
 			cost: 0,
@@ -8686,15 +8693,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		//Improved Hull
 		"resource:the_classic_movies_improved_hull_resource":{
-			cost: function(card,ship,fleet) {
-				if( !fleet )
-					return 0;
-				var hull = 0;
-				$.each( fleet.ships || [], function(i,ship) {
-					shields += valueOf(ship,"hull",ship,fleet);
-				} );
-				return Math.ceil( hull/2 );
-			}
+
 		},
 
 		
