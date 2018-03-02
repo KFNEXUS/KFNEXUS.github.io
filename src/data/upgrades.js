@@ -114,7 +114,7 @@ module.exports = [{
 	unique: false,
 	factions: ["independent"]
 },   {
-	type: "tech",
+	type: "weapon",
 	id: "hidden_explosives_73031",
 	set: ["73031"],
 	name: "Hidden Explosives",
