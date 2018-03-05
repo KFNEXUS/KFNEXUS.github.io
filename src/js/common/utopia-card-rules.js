@@ -6298,14 +6298,20 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		// Borg Support Vehicle Token
 		"question:borg_support_vehicle_token_72255":{
-			type: "question",
 			canEquip: onePerShip("Borg Support Vehicle Token"),
 			isSlotCompatible: function(slotTypes) {
 				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0 || $.inArray( "borg", slotTypes ) >= 0;
 			},
 			canEquip: function(upgrade,ship,fleet) {
 				return ship.hull <= 7;
-			}
+			},
+				ship: {
+					cost: function(card,ship,fleet,cost) {
+							return resolve(card,ship,fleet,cost) + 1;
+						return cost;
+					}
+				}
+			
 		},
 		// Temporal Vortex
 		"tech:temporal_vortex_72255": {
@@ -6864,6 +6870,26 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
+		
+		"captain:jean_luc_picard_enterprise_72284p": {
+			intercept: {
+				self: {
+					cost: function(upgrade,ship,fleet,cost) {
+						modifier = 0;
+						
+						if ( ship )
+							modifier += 2;
+						
+						if ( modifier > 5)
+							modifier = 5;
+						
+						return cost - modifier;
+					}
+				}
+			}
+		},
+
+
 		//Dispersal Pattern Sierra
 		"talent:dispersal_pattern_sierra_72284p":{
 			factionPenalty: function(upgrade, ship, fleet) {
