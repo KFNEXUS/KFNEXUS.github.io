@@ -150,7 +150,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		
 		return type;
 	}
-	
+		
 	return {
 	
 	//Generic Captains
@@ -6305,19 +6305,17 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquip: function(upgrade,ship,fleet) {
 				return ship.hull <= 7;
 			},
-			intercept:{
-				ship:{
-					cost: function(card,ship,fleet,cost) {
-					modifier = 0;
-						
-					if (ship && ship.class == "Borg Sphere" )
-					modifier = 15;
-						
-					else modifier = 10;
-						
-					return ship.cost - modifier;
-					}
+			intercept: {
+			  self: {
+				cost: function(upgrade, ship, fleet, cost) {
+				  var modifier = 0;
+
+				  if (ship && ship.class == "Borg Sphere") modifier = 15;
+				  else if (ship) modifier = 10;
+
+				  return cost - modifier;
 				}
+			  }
 			}
 		},
 		// Temporal Vortex
