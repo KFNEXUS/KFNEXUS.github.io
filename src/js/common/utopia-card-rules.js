@@ -6306,11 +6306,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship.hull <= 7;
 			},
 			intercept: {
-			  self: {
-				cost: function(upgrade, ship, fleet, cost) {
+			  ship: {
+				cost: function(card, ship, fleet, cost) {
 				  var modifier = 0;
 
-				  if (ship && ship.class == "Borg Sphere") modifier = 15;
+				  if (card == ship && ship.class == "Borg Sphere") modifier = 15;
 				  else if (ship) modifier = 10;
 
 				  return cost - modifier;
