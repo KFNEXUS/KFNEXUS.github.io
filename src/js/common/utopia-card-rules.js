@@ -7983,6 +7983,12 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			]
 		},
+	//Turret Turmoil
+		//Kal-If-Fee
+		"talent:kal_if_fee_72321":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "federation", ship, fleet ) ? 0 : 1;
+			}},
 //Faction Penalty For Subfactions 		
 		//Federation
 		":":{
