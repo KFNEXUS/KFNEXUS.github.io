@@ -936,7 +936,7 @@ module.exports = [{
 	},
 	factionPenalty: 0,
 	unique: true
-}, {
+},{
 	type: "ship-resource",
 	id: "sickbay_ship",
 	set: ["72321r"],
