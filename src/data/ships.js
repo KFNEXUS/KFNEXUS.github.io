@@ -302,7 +302,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "jemhadar_cruiser_71524",
-	set: ["75002"],
+	set: ["75002", "71524"],
 	name: "Dominion Starship",
 	class: "Jem'Hadar Battle Cruiser",
 	actions: ["evade", "target-lock", "scan", "battlestations"],
@@ -2836,27 +2836,6 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "dominion_starship_71279",
-	set: ["71279"],
-	name: "Dominion Starship",
-	class: "Jem'Hadar Battleship",
-	actions: ["target-lock", "scan", "battlestations"],
-	upgrades: ["tech", "weapon", "weapon", "crew", "crew"],
-	attack: 6,
-	agility: 0,
-	hull: 7,
-	shields: 4,
-	cost: 29,
-	text: "",
-	unique: false,
-	factions: ["dominion"],
-	intercept: {
-		ship: {},
-		fleet: {}
-	},
-	squadron: false
-}, {
-	type: "ship",
 	id: "akorem_op6prize",
 	set: ["OP6Prize"],
 	name: "Akorem",
@@ -3636,27 +3615,6 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
-	id: "dominion_starship_71524",
-	set: ["71524"],
-	name: "Dominion Starship",
-	class: "Jem'Hadar Battle Cruiser",
-	actions: ["evade", "target-lock", "scan", "battlestations"],
-	upgrades: ["tech", "weapon", "weapon", "crew"],
-	attack: 5,
-	agility: 1,
-	hull: 6,
-	shields: 4,
-	cost: 29,
-	text: "",
-	unique: false,
-	factions: ["dominion"],
-	intercept: {
-		ship: {},
-		fleet: {}
-	},
-	squadron: false
-}, {
-	type: "ship",
 	id: "ti_mur_71508",
 	set: ["71508"],
 	name: "Ti'Mur",
@@ -3961,7 +3919,7 @@ module.exports = [{
 	agility: 1,
 	hull: 5,
 	shields: 3,
-	cost: 24,
+	cost: 28,
 	text: "",
 	unique: false,
 	factions: ["mirror-universe", "borg"],
@@ -4173,7 +4131,7 @@ module.exports = [{
 	agility: 2,
 	hull: 6,
 	shields: 4,
-	cost: 29,
+	cost: 32,
 	text: "",
 	unique: false,
 	factions: ["romulan", "borg"],
@@ -4467,7 +4425,7 @@ module.exports = [{
 	agility: 1,
 	hull: 3,
 	shields: 2,
-	cost: 20,
+	cost: 13,
 	text: "",
 	unique: false,
 	factions: ["klingon"],
