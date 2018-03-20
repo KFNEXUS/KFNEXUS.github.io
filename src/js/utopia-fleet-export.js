@@ -241,6 +241,16 @@ module.directive( "fleetExport", function() {
 						text += res.text;
 					}
 				});
+
+				$.each( card.upgradeSlots || [], function(i,slot) {
+					if( slot.occupant ) {
+						var res = cardToTextTTS(slot.occupant, ship, fleet);
+						text += res.text;
+						// if( countSlotCost )
+						// 	cost += res.cost;
+					}
+				});
+
 				return { cost: 0, text: text };
 			};
 
