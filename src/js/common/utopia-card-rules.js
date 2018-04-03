@@ -8142,7 +8142,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 
 	// RESOURCES
-	
+
 	//Sickbay
 		"resource:sickbay_resource": {
 			slotType: "ship-resource",
@@ -8636,7 +8636,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			]
 		},
-
+			
 		// Sideboard
 		"resource:4003": {
 			class: "Sideboard",
@@ -9011,23 +9011,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-
+	
 	//Senior Staff
 		"resource:senior_staff":{
-			hideCost: true,
-
-			intercept: {
-				fleet: {
-					// Add the two Elite Talent slots
-					upgradeSlots: [
-					{/* Talent */},
-						{
-							type: ["talent"]
-						}
-					]
-				}
-			}
+						
 		}
-
+		
 	};
 }]);
