@@ -141,7 +141,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		var type = ["weapon"];
 		$.each( $filter("upgradeSlots")(ship), function(i, slot) {
 			if( slot.occupant && slot.occupant.name == upgrade.source ) {
-				console.log(slot.type, i);
+				//console.log(slot.type, i);
 				type = slot.type;
 				return false;
 				}
@@ -3500,6 +3500,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}},
 		//Systems Upgrade
 		"tech:systems_upgrade_71998p": {
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			},
 			type: "question",
 			isSlotCompatible: function(slotTypes) {
 				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0;
@@ -6234,28 +6237,53 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						if( isUpgrade(card) )
 							return 0;
 						return factionPenalty;
+					},
+					//text: "Up to 3 of the Upgrades you purchase for your ship cost exactly 4 SP each and are placed face down beside your Ship Card, the printed cost on those Upgrades cannot be greater than 6",
+					// Discounting up to 3 Upgrades that cost 5 or 6 sp
+					cost: function(card,ship,fleet,cost) {
+					  var replacement_cost = false;
+
+					  // Skip ship cards, save a little processing time
+					  if (card.type != "ship") {
+
+					    //Otherwise, grab all of the upgrade assigned to the ship
+					    var candidates = [];
+					    var occupied_slots = $filter("upgradeSlots")(ship);
+					    $.each(occupied_slots, function(i, slot) {
+					      if (slot.occupant && (slot.occupant.cost == 5 || slot.occupant.cost == 6))
+					        candidates.push(slot);
+					    });
+
+					    // Only process if we have candidate cards
+					    if (candidates.length){
+
+								// Only worry about sorting if we have more than three candidates
+					      if (candidates.length > 3){
+					        candidates.sort(function(a,b){
+					          return b.occupant.cost - a.occupant.cost;
+					        });
+									candidates = candidates.slice(0, 3);
+					      }
+
+								// Now that we know the candidate cards for discount, apply the
+								// discount if the current card is one of the candidates
+								for (var i = 0; i < candidates.length; i++){
+									if (card.id == candidates[i].occupant.id){
+										replacement_cost = true;
+										break;
+									}
+								}
+					    }
+					  }
+
+						var return_value = 0;
+						if (replacement_cost) return_value = 4;
+					  else return_value = resolve(card, ship, fleet, cost);
+
+						return return_value;
 					}
 				}
-			},
-			//text: "Up to 3 of the Upgrades you purchase for your ship cost exactly 4 SP each and are placed face down beside your Ship Card, the printed cost on those Upgrades cannot be greater than 6",
-			// TODO not very sophisticated
-			upgradeSlots: [{/* Existing Talent Slot */} ].concat(cloneSlot( 3 ,
-				{
-					type: upgradeTypes,
-					faceDown: true,
-					intercept: {
-						ship: {
-							cost: function() { return 4; },
-							factionPenalty: function() { return 0; },
-							canEquip: function(card,ship,fleet,canEquip) {
-								if( (valueOf(card,"cost",ship,fleet) <= 6) )
-									return canEquip;
-								return false;
-							}
-						}
-					}
-				}
-			)),
+			}
 		},
 		//Ceti Eel
 		"talent:the_classic_movies_ceti_eel":{
@@ -6656,7 +6684,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						return cost;
 					},
 				}
-			}	
+			}
 		},
 
 	//Orassin :72273
@@ -8022,9 +8050,6 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			},
 			canEquip: onePerShip("Meridor - Gorn Ale"),
-			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship && $factions.hasFaction( ship, "independent", ship, fleet ) || $factions.hasFaction( ship, "ferengi", ship, fleet ) || $factions.hasFaction( ship, "kazon", ship, fleet ) || $factions.hasFaction( ship, "xindi", ship, fleet );
-			},
 			isSlotCompatible: function(slotTypes) {
 				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0;
 			},
@@ -8168,8 +8193,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return valueOf(ship,"hull",ship,fleet) >= 4;
 			}
 		},
-		
-		
+
+
 	 //Front Line Retrofit
 		"resource:front_line_retrofit_resource": {
 			slotType: "ship-resource",
@@ -8633,7 +8658,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			]
 		},
-			
+
 		// Sideboard
 		"resource:4003": {
 			class: "Sideboard",
@@ -9008,11 +9033,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
-	
+
 	//Senior Staff
 		"resource:senior_staff":{
-						
+
 		}
-		
+
 	};
 }]);
