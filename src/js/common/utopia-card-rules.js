@@ -6250,7 +6250,6 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					    var candidates = [];
 					    var occupied_slots = $filter("upgradeSlots")(ship);
 					    $.each(occupied_slots, function(i, slot) {
-					      if (slot.occupant && (slot.occupant.cost == 5 || slot.occupant.cost == 6))
 					        candidates.push(slot);
 					    });
 
@@ -9038,8 +9037,31 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 	//Senior Staff
 		"resource:senior_staff":{
-
+			//Add Ship Resource to all crew
+			intercept: {
+				fleet: {
+					type: function(card,ship,fleet,type) {
+						if( $.inArray("crew",type) >= 0 )
+							return type.concat(["ship-resource"]);
+						return type;
+					}
+				}
+			}
+		},
+		"ship-resource:senior_staff_72284r":{
+			upgradeSlots: [ 
+				{ type: ["crew"] }, 
+				{ type: ["talent"],
+				intercept: {
+					ship: {
+						// Reduce cost of Borg Ablative Hull Armor
+						cost: function(upgrade, ship, fleet, cost) {
+								return resolve(upgrade, ship, fleet, cost) + 1;
+							return cost;
+						}
+					}
+				}
+			} ]
 		}
-
-	};
+	};	
 }]);
