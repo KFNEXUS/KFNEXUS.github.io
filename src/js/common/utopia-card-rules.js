@@ -6813,7 +6813,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			],
 			canEquip: function(upgrade,ship,fleet) {
-				return ship.captain && ship.captain.name == "B'Etor";
+				return ship.captain && ship.captain.id == "betor_72282p";
 			},
 			intercept: {
 				ship: {
@@ -6832,7 +6832,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			],
 			canEquip: function(upgrade,ship,fleet) {
-				return ship.captain && ship.captain.name == "Lursa";
+				return ship.captain && ship.captain.id == "lursa_72282p";
 			},
 			intercept: {
 				ship: {
@@ -6852,9 +6852,26 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 	//Sela's Warbird :72282gp
 		//Movar
-		"captain:movar_72282gp":{},
-		//
-		"Klingon-Romulan Alliance:klingon_romulan_alliance_72282gp":{
+		"captain:movar_72282gp":{
+			intercept: {
+				ship: {
+					type: function(card,ship,fleet,type) {
+						if( $.inArray("tech",type) >= 0 || $.inArray("weapon",type) >= 0 || $.inArray("crew",type) >= 0 )
+							return type.concat(["ship-resource"]);
+						return type;
+					}
+				}
+			}			
+		},
+		//Movar's Ability
+		"ship-resource:movars_ability_72282gp":{
+			upgradeSlots: [ 
+				{ type: ["talent", "tech", "weapon", "crew"] }
+			],
+			//How do you remove a slot type?
+		},
+		//Klingon-Romulan Alliance
+		"talent:klingon_romulan_alliance_72282gp":{
 		canEquipFaction: function(upgrade,ship,fleet) {
 			return hasFaction(ship,"romulan", ship, fleet) && hasFaction(ship.captain,"romulan", ship, fleet);
 		}},
@@ -7821,6 +7838,17 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}},
 
 	//Ferengi Faction Pack: 75003
+		"ship:ferengi_starship_75003":{
+			intercept: {
+				ship: {
+					opBanned: function(upgrade, ship, fleet) {
+						if ( upgrade.cost > 3 )
+							return valueOf(upgrade,"opBanned",ship,fleet) = true;
+						return opBanned;
+					}
+				}
+			}
+		},
 		//Birta
 		"captain:birta_75003":{
 			factionPenalty: function(upgrade, ship, fleet) {
@@ -8021,7 +8049,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		},
 		//Slar
-		"crew:shanthi_cap_72008":{
+		"crew:slar_73031":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			}},
