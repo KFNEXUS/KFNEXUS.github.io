@@ -5614,6 +5614,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		}},
 		// Maintenance Crew
 		"question:maintenance_crew_71212": {
+			isSlotCompatible: function(slotTypes) {
+				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0;
+			},
 			upgradeSlots: [
 				{
 					type: function(upgrade,ship) {
