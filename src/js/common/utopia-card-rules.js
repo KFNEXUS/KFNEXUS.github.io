@@ -7821,9 +7821,6 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			],
 			canEquip: onePerShip("Neonatal Borg"),
-			canEquipFaction: function(upgrade,ship,fleet) {
-				return $factions.hasFaction( ship, "borg", ship, fleet )
-			},
 			intercept: {
 				ship: {
 					// Add the "crew" type to all Tech and Borg slots
