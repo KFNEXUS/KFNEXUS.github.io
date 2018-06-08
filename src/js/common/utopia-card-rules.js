@@ -109,7 +109,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 	};
 
 	var hasFaction = $factions.hasFaction;
-
+	
+	//Add a new var to serch for the value of the modifyer "Printed Value"
+//	var printedValue = upgrade.printedValue;
+	
+	
 	var cloneSlot = function(count, slot) {
 		var slots = [slot];
 		for( var i = 1; i < count; i++ )
@@ -402,19 +406,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					faceDown: true,
 					intercept: {
 						ship: {
-							cost: {
-								priority: 100,
-								fn: function(upgrade, ship, fleet, cost) {
-									if( hasFaction(upgrade,"federation",ship,fleet) || hasFaction(upgrade,"bajoran",ship,fleet) || hasFaction(upgrade,"vulcan",ship,fleet) )
-										return 3;
-									return cost;
-								}
-							},
-							// TODO Check if faction penalty should be applied
-							factionPenalty: function(upgrade, ship, fleet, factionPenalty) {
-								if( hasFaction(upgrade,"federation",ship,fleet) || hasFaction(upgrade,"bajoran",ship,fleet) || hasFaction(upgrade,"vulcan",ship,fleet) )
-									return 0;
-								return factionPenalty;
+							cost: function(card,ship,fleet,cost) { 
+							// Check for a Faction Penalty
+							if( ship.factions != card.factions )
+								return 4;
+							// Check for no Faction Penalty
+							else if( ship.factions == card.factions )
+								return 3;
+							return cost;
 							}
 						}
 					}
@@ -1015,19 +1014,22 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					rules: "Costs exactly 3 SP",
 					intercept: {
 						ship: {
-							cost: {
-								priority: 100,
-								fn: function(upgrade, ship, fleet, cost) {
-									return 3;
-								}
-							},
-							// TODO Does this invoke faction penalty?
-							factionPenalty: function() { return 0; }
+							//Upgrades cost 3 SP
+							cost: function(card,ship,fleet,cost) { 
+							// Check for a Faction Penalty
+							if( ship.factions != card.factions )
+								return 4;
+							// Check for no Faction Penalty
+							else if( ship.factions == card.factions )
+								return 3;
+							return cost;
+							},							
 						}
 					}
 				}
 			]
 		},
+		
 		//Blockade
 		"talent:blockade_op6prize":{
 			factionPenalty: function(upgrade, ship, fleet) {
@@ -1903,6 +1905,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 								// TODO Prevent use of upgrades without a defined cost (e.g. Dorsal Phaser Array)
 								var cost = valueOf(upgrade,"cost",ship,fleet);
 								return cost <= 5;
+
+							return canEquip;
 							},
 							canEquipFaction: function(upgrade,ship,fleet) {
 								return !$factions.hasFaction(upgrade,"borg", ship, fleet);
@@ -3339,7 +3343,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						ship: {
 							free: function() { return true; },
 							canEquip: function(upgrade, ship, fleet, canEquip) {
-								if( hasFaction(upgrade,"borg", ship, fleet) || valueOf(upgrade,"cost",ship,fleet) > 5 )
+								if( upgrade.printedValue == 0 || hasFaction(upgrade,"borg", ship, fleet) || valueOf(upgrade,"cost",ship,fleet) > 5 )
 									return false;
 								return canEquip;
 							}
@@ -7469,8 +7473,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					intercept: {
 						ship: {
 							free: function() { return true; },
-							canEquip: function(upgrade, ship, fleet, canEquip) {
-								if( hasFaction(upgrade,"borg", ship, fleet) || valueOf(upgrade,"cost",ship,fleet) > 5 )
+							canEquip: function(upgrade, ship, fleet, canEquip) { 
+								if( upgrade.printedValue == 0 || hasFaction(upgrade,"borg", ship, fleet) || valueOf(upgrade,"cost",ship,fleet) > 5 )
 									return false;
 								return canEquip;
 							}
