@@ -406,13 +406,11 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					faceDown: true,
 					intercept: {
 						ship: {
-							cost: function(card,ship,fleet,cost) { 
-							// Check for a Faction Penalty
-							if( ship.factions != card.factions )
+							cost: function(upgrade,ship,fleet,cost) { 
+							if( ($factions.match( upgrade, ship, ship, fleet ) && hasFaction(upgrade,"federation",ship,fleet)) || ($factions.match( upgrade, ship, ship, fleet ) && hasFaction(upgrade,"bajoran",ship,fleet)) || ($factions.match( upgrade, ship, ship, fleet ) && hasFaction(upgrade,"vulcan",ship,fleet)) )
+								return 3; 
+							else if ( !$factions.match( upgrade, ship, ship, fleet ) && ( hasFaction(upgrade,"federation",ship,fleet) || hasFaction(upgrade,"bajoran",ship,fleet) || hasFaction(upgrade,"vulcan",ship,fleet) ) )
 								return 4;
-							// Check for no Faction Penalty
-							else if( ship.factions == card.factions )
-								return 3;
 							return cost;
 							}
 						}
@@ -1016,14 +1014,12 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						ship: {
 							//Upgrades cost 3 SP
 							cost: function(card,ship,fleet,cost) { 
-							// Check for a Faction Penalty
-							if( ship.factions != card.factions )
-								return 4;
-							// Check for no Faction Penalty
-							else if( ship.factions == card.factions )
+							if( !$factions.match( card, ship, ship, fleet ) )
+								return 4; 
+							else if( $factions.match( card, ship, ship, fleet ) )
 								return 3;
 							return cost;
-							},							
+							}						
 						}
 					}
 				}
@@ -6416,7 +6412,17 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						else if (card.type == "ship")
 							modifier = 10;
 						return cost - modifier;
-					}
+					},
+					factionPenalty: function(upgrade, ship, fleet, factionPenalty) {
+						return upgrade.id == "borg_support_vehicle_token_72255", factionPenalty;
+					},
+					upgradeSlots: [
+						{
+							type: function(upgrade,ship) {
+								return getSlotType(upgrade,ship);
+							}
+						}
+					]
 				}
 			}
 		},
