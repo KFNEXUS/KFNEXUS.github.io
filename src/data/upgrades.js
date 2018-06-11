@@ -7246,7 +7246,7 @@ module.exports = [{
 	set: ["71531", "72271"],
 	name: "Data",
 	unique: true,
-	text: "<b>When defending:</b> During the Modify Attack Dice Step, you may discard this card to force the attacking ship to re-roll all its attack dice.",
+	text: "<b>WHEN DEFENDING:</b> During the Modify Attack Dice Step, you may discard this card to force the attacking ship to re-roll all its attack dice.",
 	factions: ["federation"],
 	cost: 3,
 	skill: 0,
