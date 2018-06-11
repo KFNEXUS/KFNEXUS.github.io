@@ -407,7 +407,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					intercept: {
 						ship: {
 							cost: function(upgrade,ship,fleet,cost) { 
-							if( ($factions.match( upgrade, ship, ship, fleet ) && hasFaction(upgrade,"federation",ship,fleet)) || ($factions.match( upgrade, ship, ship, fleet ) && hasFaction(upgrade,"bajoran",ship,fleet)) || ($factions.match( upgrade, ship, ship, fleet ) && hasFaction(upgrade,"vulcan",ship,fleet)) )
+							if( upgrade.hasFaction(ship.factions,"federation", ship, fleet) || upgrade.hasFaction(ship.factions,"bajoran", ship, fleet) ||upgrade.hasFaction(ship.factions,"vulcan", ship, fleet) )
 								return 3; 
 							else if ( !$factions.match( upgrade, ship, ship, fleet ) && ( hasFaction(upgrade,"federation",ship,fleet) || hasFaction(upgrade,"bajoran",ship,fleet) || hasFaction(upgrade,"vulcan",ship,fleet) ) )
 								return 4;
@@ -6397,12 +6397,22 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		// Borg Support Vehicle Token
 		"question:borg_support_vehicle_token_72255":{
 			canEquip: onePerShip("Borg Support Vehicle Token"),
+			factionPenalty: function(upgrade, ship, fleet) {
+				return upgrade && upgrade.name == "Borg Support Vehicle Token" ? 0 : 1 ;
+			},
 			isSlotCompatible: function(slotTypes) {
 				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0 || $.inArray( "borg", slotTypes ) >= 0;
 			},
 			canEquip: function(upgrade,ship,fleet) {
 				return ship.hull <= 7;
 			},
+			upgradeSlots: [
+				{
+					type: function(upgrade,ship) {
+						return getSlotType(upgrade,ship);
+					}
+				}
+			],
 			intercept: {
 				ship: {
 					cost: function(card, ship, fleet, cost) {
@@ -6412,17 +6422,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						else if (card.type == "ship")
 							modifier = 10;
 						return cost - modifier;
-					},
-					factionPenalty: function(upgrade, ship, fleet, factionPenalty) {
-						return upgrade.id == "borg_support_vehicle_token_72255", factionPenalty;
-					},
-					upgradeSlots: [
-						{
-							type: function(upgrade,ship) {
-								return getSlotType(upgrade,ship);
-							}
-						}
-					]
+					}
 				}
 			}
 		},
