@@ -407,10 +407,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					intercept: {
 						ship: {
 							cost: function(upgrade,ship,fleet,cost) { 
-							if( ( $factions.hasFaction( upgrade, "federation", ship, fleet ) || $factions.hasFaction( upgrade, "bajoran", ship, fleet ) || $factions.hasFaction( upgrade, "vulcan", ship, fleet ) )&&( ship.hasFaction == "federation" || ship.hasFaction == "bajoran" || ship.hasFaction == "vulcan" ) )
-								return 3; 
-							else if( ( $factions.hasFaction( upgrade, "federation", ship, fleet ) || $factions.hasFaction( upgrade, "bajoran", ship, fleet ) || $factions.hasFaction( upgrade, "vulcan", ship, fleet ) )&&( ship.hasFaction != "federation" || ship.hasFaction != "bajoran" || ship.hasFaction != "vulcan" ) )
-								return 4;
+							if ( ship && upgrade && $factions.hasFaction( ship, "federation", ship, fleet ) ? 0 : 1 )
+								cost = 3;
 							return cost;
 							}
 						}
@@ -1222,6 +1220,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			}},
+		"crew:tuvok_71280":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			}},
 		"tech:the_doctor_tech_71280":{
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
@@ -1578,7 +1580,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				ship: {
 					// All Vulcan/Federation tech is -2 SP
 					cost: function(upgrade, ship, fleet, cost) {
-					if( $factions.hasFaction(upgrade,"federation", ship, fleet) || $factions.hasFaction(upgrade,"bajoran", ship, fleet) || $factions.hasFaction(upgrade,"vulcan", ship, fleet) && upgrade.type == "tech" )
+					if( ( $factions.hasFaction(upgrade,"federation", ship, fleet) || $factions.hasFaction(upgrade,"bajoran", ship, fleet) || $factions.hasFaction(upgrade,"vulcan", ship, fleet) ) && upgrade.type == "tech" )
 							return resolve(upgrade, ship, fleet, cost) - 2;
 						return cost;
 					},
