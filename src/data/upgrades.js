@@ -38,7 +38,6 @@ module.exports = [{
 	text: "<b>ACTIVATION PHASE:</b> Place 3 [time] Tokens on this card. Increase the Captain Skill of the Captain equipped to this ship by 2 this game round and perform a [battlestations] Action as a free Action.",
 	unique: true,
 	talent: 1, 
-	range: "1 - 3",
 	factions: ["mirror-universe","federation"]
 }, {
 	type: "talent",
@@ -67,7 +66,7 @@ module.exports = [{
 	set: ["75005"],
 	name: "Advanced Long Range Torpedo",
 	cost: 3,
-	text: "The Attack Value of this [weapon] is this ship’s Primary Weapon Value +1.\n-----------------------------------\n<b>ATTACK:</b> Spend this ship’s [target-lock] token, place 2 [time] Tokens on this card, and target an opposing ship.\n\nIf the attack hits, every other ship within Range 1 of the opposing ship suffers 1 [hit].\n(<i>Constitution Class Refit Only</i>)",
+	text: "The Attack Value of this [weapon] is this ship’s Primary Weapon Value +1.\n-----------------------------------\n<b>ATTACK:</b> Spend this ship’s [target-lock] token, place 2 [time] Tokens on this card, and target an opposing ship.\n\nIf the attack hits, every other ship within Range 1 of the opposing ship suffers 1 [hit].\n(<i>Kelvin Constitution Class Only</i>)",
 	attack: 0,
 	unique: true,
 	range: "2 - 3",
