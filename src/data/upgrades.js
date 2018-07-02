@@ -37,7 +37,7 @@ module.exports = [{
 	cost: 4,
 	text: "<b>ACTIVATION PHASE:</b> Place 3 [time] Tokens on this card. Increase the Captain Skill of the Captain equipped to this ship by 2 this game round and perform a [battlestations] Action as a free Action.",
 	unique: true,
-	talents: 1, 
+	talent: 1, 
 	factions: ["mirror-universe","federation"]
 }, {
 	type: "talent",
@@ -2494,17 +2494,6 @@ module.exports = [{
 	name: "Klingon Tactical Officer",
 	cost: 3,
 	text: "When attacking with your primary Weapon, during the Modify Attack Dice step, you may disable this card to spend your [evade] Token to convert 1 of your [battlestations] results into a [hit] result.",
-	unique: false,
-	factions: ["klingon"]
-}, {
-	type: "weapon",
-	id: "photon_torpedoes_amar",
-	set: ["72232"],
-	name: "Photon Torpedoes",
-	cost: 5,
-	attack: 5,
-	range: "2 - 3",
-	text: "<b>ATTACK: (Target Lock)</b> Spend your target lock and place 3 Time Tokens on this card to perform this attack. You may convert 1 of your [battlestations] results into 1 [crit] result. You may fire this weapon form your forward or rear firing arcs.",
 	unique: false,
 	factions: ["klingon"]
 }, {
