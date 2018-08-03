@@ -91,7 +91,7 @@ module.exports = [{
 	type: "ship",
 	id: "kelvin_constitution_class_75005",
 	set: ["75005"],
-	name: "Federation/Mirror Universe Starship",
+	name: "Federation/MU Starship",
 	class: "Kelvin Constitution Class",
 	actions: ["evade", "target-lock", "scan", "battlestations"],
 	upgrades: ["tech", "weapon", "weapon", "crew", "crew"],
