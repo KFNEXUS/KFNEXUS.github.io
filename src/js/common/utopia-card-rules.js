@@ -2265,6 +2265,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				}
 			}
 		},
+		
 		// Third of Five
 		"crew:third_of_five_71525": {
 			// Can't equip if fleet contains Hugh
@@ -7870,7 +7871,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				ship: {
 					opBanned: function(upgrade, ship, fleet) {
 						if ( upgrade.cost > 3 )
-							return valueOf(upgrade,"opBanned",ship,fleet) = true;
+							return true;
 						return opBanned;
 					}
 				}
@@ -8206,6 +8207,31 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			canEquip: onePerShip("Optronic Data Core")},
 	//A Motley Fleet
+		"ship:u_s_s_dauntless_75004":{
+			//Add Crew to Captain Slot
+			/*
+			canEquipCaptain: function(upgrade, ship, fleet, canEquip) {
+				if(upgrade.type == "crew" )
+					return true;
+				return canEquip;
+			}*/
+			canEquipAdmiral: function(card,ship,fleet) {
+				return false;
+			},
+			upgradeSlots: [ {
+				type: ["crew"],
+				rules: "Replaces Captain Slot\n\nCaptain Skill is Printed Cost +3",
+					intercept: {
+						ship: {
+							skill: function(upgrade,ship,fleet,skill) {
+								return upgrade.cost + 3;
+							return skill;
+							}
+						}
+					}
+			} ]		
+		},
+
 		"ship:gurngouin_75004":{
 			upgradeSlots: [ {
 					type: ["tech"],
@@ -8232,7 +8258,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"tech:particle_synthesis_75004":{
 			canEquip:function(upgrade,ship,fleet) { 
 				return ship.class == "Dauntless Class"
-			}
+			},
+			canEquip: onePerShip("Particle Synthesis")
 		},
 		"crew:tarah_75004":{
 			canEquip: function(upgrade,ship,fleet) {
