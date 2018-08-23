@@ -1,4 +1,5 @@
-module.exports = [{
+module.exports = [
+{
 	type: "ship-class",
 	id: "kelvin_constitution_class",
 	name: "Constitution Class (Kelvin)",
@@ -6,19 +7,33 @@ module.exports = [{
 	rearArc: "90",
 	maneuvers: {
 		1: {
-			
+			straight: "green",
+			bank: "green"
 		},
 		2: {
-			
+			straight: "green",
+			bank: "green",
+			turn: "white"
 		},
 		3: {
-			
+			straight: "white",
+			bank: "white",
+			turn: "white"
 		},
 		4: {
-			
+			straight: "white"
 		},
-		min: 1,
-		max: 4
+		5: {
+			straight: "white"
+		},
+		6: {
+			straight: "red"
+		},
+		min: -1,
+		max: 6,
+		"-1": {
+			straight: "red"
+		}
 	}
 }, {
 	type: "ship-class",
@@ -96,7 +111,7 @@ module.exports = [{
 			straight: "white"
 		},
 		min: 1,
-		max: 5
+		max: 4
 	}
 }, {
 	type: "ship-class",
