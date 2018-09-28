@@ -8352,13 +8352,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			factionPenalty: function(upgrade, ship, fleet) {
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
 			},
-			intercept: {
-				ship: {
-					canEquip: function(upgrade,ship,fleet) {
-						if ( ship && ship.attack <= 2 )
-						return canEquip;
-					}
-				}
+			canEquip: function(upgrade,ship,fleet) {
+				if( ship.attack <= 2 )
+					return onePerShip("upgradeName")(upgrade,ship,fleet);
+				return false;
 			}
 		},
 		//Enhanced Shield Emitters
