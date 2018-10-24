@@ -25,12 +25,12 @@ module.directive( "cardShipClass", function() {
 					$scope.speeds.push(speed);
 			}
 			
-			if( $scope.speeds.length <= 7 && m.min >= -2 )
+			if( $scope.speeds.length < 7 && m.min > -2 )
 				$scope.speeds.push(9);
-			if( $scope.speeds.length <= 7 && m.min >= -1 )
+			if( $scope.speeds.length < 7 && m.min > -1 )
 				$scope.speeds.push(9);
 			
-			while( $scope.speeds.length < 7 )
+			while( $scope.speeds.length <= 7 )
 				$scope.speeds.unshift(9);
 			
 			$scope.getBaseTileName = function(ship) {

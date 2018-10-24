@@ -8223,14 +8223,15 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			canEquip: onePerShip("Beta Hirogen"),
 			intercept: {
-					ship: {
-						skill: function(upgrade,ship,fleet,skill) {
-							return upgrade.cost + 1;
+				ship: {
+					skill: function(card,ship,fleet,skill) {
+						if( card == ship.captain )
+							return resolve(card,ship,fleet,skill) + 1;
 						return skill;
-						}
 					}
 				}
-			},
+			}
+		},
 			
 		"crew:donik_73042":{
 			canEquip: function(upgrade,ship,fleet) {
