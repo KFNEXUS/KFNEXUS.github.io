@@ -316,7 +316,7 @@ module.exports = [{
 	set: ["75005"],
 	name: "Klingon First Officer",
 	cost: 4,
-	text: "<b>END PHASE:</b> Once per game, discard the Captain equipped to this ship.\n\nPerfrom an attack with this ship's Primary Weapon. This card becomes this ship's Captain with a Captain Skill of 4",
+	text: "<b>END PHASE:</b> Once per game, discard the Captain equipped to this ship.\n\nPerform an attack with this ship's Primary Weapon. This card becomes this ship's Captain with a Captain Skill of 4",
 	shipKlingon: true,
 	OnePerShip: true,
 	factions: ["mirror-universe","klingon"]
@@ -512,7 +512,7 @@ module.exports = [{
 	set: ["73042"],
 	name: "Beta Hirogen",
 	cost: 3,
-	text: "Increase the Captain Skill of the Captain equipped to this ship by 1.\n----------------------------------------\n<b>WHEN THIS SHIP PERFROMS A [scan] ACTION:</b>\n\nPlace an additional [scan] Token beside this ship.",
+	text: "Increase the Captain Skill of the Captain equipped to this ship by 1.\n----------------------------------------\n<b>WHEN THIS SHIP PERFORMS A [scan] ACTION:</b>\n\nPlace an additional [scan] Token beside this ship.",
 	OnePerShip: true,
 	factions: ["independent"]
 }, {
@@ -1009,7 +1009,7 @@ module.exports = [{
 	cost: 3,
 	range: "1 - 2",
 	attack: 6,
-	text: "<b>ATTACK:</b> Spend this ships [target-lock] Token, discard this card, and target an opposing ship.\n\nPerfrom this attack twice against the target ship.\n       (<i>Jem'Hadar Battleship</i>)",
+	text: "<b>ATTACK:</b> Spend this ships [target-lock] Token, discard this card, and target an opposing ship.\n\nPerform this attack twice against the target ship.\n       (<i>Jem'Hadar Battleship</i>)",
 	unique: true,
 	shipLimit: true,
 	RearArc: true,
@@ -1113,7 +1113,7 @@ module.exports = [{
 	set: ["75001"],
 	name: "Quantum Stasis Module",
 	cost: 3,
-	text: "<b>ACTIVATION PHASE:</b> Discard this card and target a Captain or [crew] Upgrade equipped to an opposing ship.\n\nThe target Captain or [crew] Upgrade cannot perfrom Actions this game round.",
+	text: "<b>ACTIVATION PHASE:</b> Discard this card and target a Captain or [crew] Upgrade equipped to an opposing ship.\n\nThe target Captain or [crew] Upgrade cannot perform Actions this game round.",
 	unique: true,
 	range:"1 - 2",
 	factions: ["romulan"]
@@ -1153,7 +1153,7 @@ module.exports = [{
 	set: ["75001"],
 	name: "Tal Shiar",
 	cost: 2,
-	text: "<b>PLANNING PHASE:</b> After all ships have chosen their Maneuvers, discard this card and target an opposing ship. Look at the target ship's Maneuver Dial and place a [battlestations] Token beside this ship. This ship cannot perfrom a [battlestations] Action this game round.",
+	text: "<b>PLANNING PHASE:</b> After all ships have chosen their Maneuvers, discard this card and target an opposing ship. Look at the target ship's Maneuver Dial and place a [battlestations] Token beside this ship. This ship cannot perform a [battlestations] Action this game round.",
 	unique: true,
 	captainRomulan: true,
 	range: "1 - 3",
@@ -1699,7 +1699,7 @@ module.exports = [{
 	set: ["72011wp"],
 	name: "Federation Helmsman",
 	cost: 3,
-	text: "<b>ACTION:</b> Place an [aux] Token beside this ship.\n\nPerfrom a White 1 straight or bank Maneuver.",
+	text: "<b>ACTION:</b> Place an [aux] Token beside this ship.\n\nPerform a White 1 straight or bank Maneuver.",
 	unique: false,
 	factions: ["federation"]
 }, {
