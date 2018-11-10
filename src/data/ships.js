@@ -383,7 +383,7 @@ module.exports = [{
 	hull: 4,
 	shields: 3,
 	cost: 20,
-	text: "<b>WHEN THIS SHIP PERFROMES A 3 [turn-left], 3 [bank-left], 3 [straight], 3 [bank-right], OR 3 [turn-right] MANEUVER:</b>\n\nThis ship may perform a White Maneuver. If it does, it rolls -1 attack die this game round.",
+	text: "<b>WHEN THIS SHIP PERFORMES A 3 [turn-left], 3 [bank-left], 3 [straight], 3 [bank-right], OR 3 [turn-right] MANEUVER:</b>\n\nThis ship may perform a White Maneuver. If it does, it rolls -1 attack die this game round.",
 	unique: true,
 	factions: ["ferengi"],
 	intercept: {
@@ -677,7 +677,7 @@ module.exports = [{
 	hull: 6,
 	shields: 3,
 	cost: 28,
-	text: "\n<b>COMBAT PHASE:</b> After this ship attacks:\n\nThis ship may perfrom a Green 2 Bank Maneuver.",
+	text: "\n<b>COMBAT PHASE:</b> After this ship attacks:\n\nThis ship may perform a Green 2 Bank Maneuver.",
 	unique: true,
 	factions: ["romulan"],
 	intercept: {
@@ -719,7 +719,7 @@ module.exports = [{
 	hull: 2,
 	shields: 2,
 	cost: 12,
-	text: "<b>ACTIVATION PHASE:</b> Place 2 [time] Tokens on this card and target a friendly Romulan ship within Range 1.\n\nTHe target ship may perform an Action as a Free Action.",
+	text: "<b>ACTIVATION PHASE:</b> Place 2 [time] Tokens on this card and target a friendly Romulan ship within Range 1.\n\nThe target ship may perform an Action as a Free Action.",
 	unique: true,
 	factions: ["romulan"],
 	intercept: {

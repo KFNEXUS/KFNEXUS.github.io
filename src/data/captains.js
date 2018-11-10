@@ -473,7 +473,7 @@ module.exports = [{
 	cost: 2,
 	skill: 3,
 	talents: 0,
-	text: "<b>ACTION:</b>\n\nPlace a [scan] Token beside this ship. If this ship is a Romulan ship, it may perfrom an Action on its Action Bar as a Free Action.",
+	text: "<b>ACTION:</b>\n\nPlace a [scan] Token beside this ship. If this ship is a Romulan ship, it may perform an Action on its Action Bar as a Free Action.",
 	unique: true,
 	factions: ["romulan"]
 }, {
@@ -1914,7 +1914,7 @@ module.exports = [{
 	cost: 3,
 	skill: 5,
 	talents: 0,
-	text: "<b>Action:</b>\n\nPerfrom a 1 [bank-left] or 1 [bank-right] Maneuver and place 1 [evade] Token beside this ship.",
+	text: "<b>Action:</b>\n\nPerform a 1 [bank-left] or 1 [bank-right] Maneuver and place 1 [evade] Token beside this ship.",
 	unique: true,
 	specialization: true,
 	factions: ["mirror-universe", "federation"]
@@ -2015,7 +2015,7 @@ module.exports = [{
 	set: ["75001"],
 	name: "Alidar Jarok",
 	unique: true,
-	text: "<b>ACTIVATION PHASE:</b> After an opposing ship moves but before its Perform Action Step, target that ship and place 2 [time] Tokens on this card.\nChoose an Action on the target ships Action Bar other then [regenerate]. This target ship must perfrom the chosen Action during its Perform Action Step.",
+	text: "<b>ACTIVATION PHASE:</b> After an opposing ship moves but before its Perform Action Step, target that ship and place 2 [time] Tokens on this card.\nChoose an Action on the target ships Action Bar other then [regenerate]. This target ship must perform the chosen Action during its Perform Action Step.",
 	factions: ["romulan"],
 	range: "1 - 2",
 	cost: 5,
@@ -3242,7 +3242,7 @@ module.exports = [{
 	cost: 6,
 	skill: 9,
 	talents: 1,
-	text: "<b>ACTION:</b> Decrease the Captain Skill of this Captain by 1 this game round.\n\nPerfrom an Action on this ships Action Bar and an Action on a Dominion [crew] equipped to this ship as Free Actions.",
+	text: "<b>ACTION:</b> Decrease the Captain Skill of this Captain by 1 this game round.\n\nPerform an Action on this ships Action Bar and an Action on a Dominion [crew] equipped to this ship as Free Actions.",
 	unique: true,
 	factions: ["dominion"]
 }, {
