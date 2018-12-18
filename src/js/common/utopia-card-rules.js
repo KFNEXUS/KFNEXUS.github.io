@@ -2400,7 +2400,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				self: {
 					cost: function(upgrade,ship,fleet,cost) {
-						if( ship && ship.class != "Predator Class" )
+						if( ship.class != "Predator Class" )
 							return resolve(upgrade,ship,fleet,cost) + 4;
 						return cost;
 					}
@@ -6906,7 +6906,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		//Klingon-Romulan Alliance
 		"talent:klingon_romulan_alliance_72282gp":{
 		canEquipFaction: function(upgrade,ship,fleet) {
-			return hasFaction(ship,"romulan", ship, fleet) && hasFaction(ship.captain,"romulan", ship, fleet);
+			return ( hasFaction(ship,"romulan", ship, fleet) || hasFaction(ship,"klingon", ship, fleet) ) && ( hasFaction(ship.captain,"romulan", ship, fleet) || hasFaction(ship.captain,"klingon", ship, fleet ));
 		}},
 		//Tachyon Pulse
 		"tech:tachyon_pulse_72282gp":{
@@ -9174,6 +9174,37 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			class: "Sideboard",
 			factions: $factions.listCodified,
 			upgradeSlots: [
+				{
+					type: ["captain"],
+					source: "Sideboard",
+					rules: "Combined cost 20 SP or less",
+					canEquip: function(card,ship,fleet,upgradeSlot) {
+
+						var total = 0;
+						$.each( fleet.resource.upgradeSlots, function(i,slot) {
+							if( slot.occupant && slot != upgradeSlot )
+								total += valueOf(slot.occupant,"cost",ship,fleet);
+						} );
+
+						var cost = valueOf(card,"cost",ship,fleet);
+						return total + cost <= 20;
+
+					},
+					intercept: {
+						ship: {
+							// Remove all restrictions
+							canEquip: {
+								priority: 100,
+								fn: function() { return true; }
+							},
+							canEquipFaction: {
+								priority: 100,
+								fn: function() { return true; }
+							},
+							factionPenalty: function() { return 0; }
+						}
+					},
+				},
 				{
 					type: ["talent"],
 					source: "Sideboard",
